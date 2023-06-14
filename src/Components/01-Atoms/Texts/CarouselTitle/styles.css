@@ -1,0 +1,46 @@
+/*=========================================
+=============CAROUSEL'S TITLE==========
+===============================================*/
+.carousel-title {
+  display: flex;
+
+  place-items: center;
+
+  padding: 1rem;
+
+  font-family: "Amaranth", sans-serif;
+
+  border-bottom: 2px solid var(--contrast);
+}
+
+.carousel-title .decor-triangle-right {
+  margin-right: 1.5rem;
+
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-left: 25px solid var(--contrast);
+  border-bottom: 10px solid transparent;
+}
+
+.carousel-title .decor-circle {
+  margin-right: 0.5rem;
+
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+
+  background-color: var(--contrast);
+}
+
+.carousel-title.small {
+  font-size: 2.4rem;
+}
+
+.carousel-title.medium {
+  font-size: 2.8rem;
+}
+
+.carousel-title.large {
+  font-size: 3.2rem;
+}

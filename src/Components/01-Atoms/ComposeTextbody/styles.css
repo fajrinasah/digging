@@ -1,0 +1,85 @@
+/*=====================================
+=============COMPOSE TEXTBODY==========
+====================================*/
+.compose-textbody {
+  border: 1px solid var(--accent);
+  width: max-content;
+
+  margin: 1rem 0;
+}
+
+.compose-textbody .ql-editor.ql-blank::before {
+  color: var(--contrast);
+}
+
+.compose-textbody .quill {
+  display: flex;
+
+  width: 800px;
+  height: 550px;
+}
+
+.compose-textbody .ql-toolbar.ql-snow {
+  display: flex;
+  flex-direction: column;
+
+  align-content: center;
+
+  width: 100px;
+
+  background-color: var(--accent);
+  border: none;
+}
+
+/*-------if theme === dark-theme-------*/
+.dark-theme .compose-textbody .ql-toolbar.ql-snow {
+  background-color: var(--main);
+}
+
+/*------------------------------*/
+
+.compose-textbody .ql-formats {
+  display: flex;
+  flex-direction: column;
+
+  padding: 10px;
+  margin: 0 15px;
+
+  width: 50px;
+
+  background-color: var(--main);
+}
+
+/*-------if theme === dark-theme-------*/
+.dark-theme .compose-textbody .ql-formats {
+  background-color: var(--contrast);
+}
+
+/*------------------------------*/
+
+.compose-textbody .ql-formats:first-child {
+  border-radius: 5px 5px 0 0;
+
+  padding-top: 40px;
+  margin-top: 40px;
+}
+
+.compose-textbody .ql-formats:last-child {
+  border-radius: 0 0 5px 5px;
+
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+}
+
+.compose-textbody .ql-snow.ql-toolbar button {
+  margin: 5px 0;
+  border-bottom: 0.5px solid var(--contrast);
+}
+
+.compose-textbody .ql-container.ql-snow {
+  width: calc(100% - 100px);
+}
+
+.compose-textbody .ql-editor.ql-blank {
+  background-color: var(--main);
+}

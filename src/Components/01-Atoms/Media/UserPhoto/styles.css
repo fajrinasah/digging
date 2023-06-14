@@ -1,0 +1,26 @@
+/*=========================================
+=================USER PHOTO===============
+===============================================*/
+
+.user-photo {
+  background-color: var(--accent);
+}
+
+.user-photo.small {
+  width: 100px;
+  height: 100px;
+}
+
+.user-photo.medium {
+  width: 200px;
+  height: 200px;
+}
+
+.user-photo.large {
+  width: 300px;
+  height: 300px;
+}
+
+.user-photo img {
+  object-fit: cover;
+}

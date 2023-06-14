@@ -1,0 +1,15 @@
+/*=========================================
+=============FORM PROFILE PUBLIC DATA==========
+===============================================*/
+.form-profile.public-data {
+  place-content: start;
+  place-items: start;
+
+  padding: 1rem;
+
+  border: none;
+}
+
+.form-profile.public-data legend {
+  width: 100%;
+}

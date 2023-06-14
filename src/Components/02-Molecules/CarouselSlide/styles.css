@@ -1,0 +1,67 @@
+/*=========================================
+=============CAROUSEL SLIDE==========
+===============================================*/
+.carousel-slide {
+  width: 650px;
+  height: 500px;
+  margin-bottom: 2rem;
+  padding: 0 1.5rem;
+}
+
+.carousel-slide-content {
+  padding: 2rem 0;
+  height: 100%;
+}
+
+/*======.carousel-slide-left-side=====*/
+
+.carousel-slide-left-side {
+  place-content: center;
+  padding: 2rem;
+
+  border-right: 1px solid var(--contrast);
+}
+
+/*======.carousel-slide-details=====*/
+
+.carousel-slide-details {
+  padding: 1rem 0;
+}
+
+/*======.carousel-slide-right-side=====*/
+
+.carousel-slide-right-side {
+  position: relative;
+  justify-content: space-between;
+
+  padding: 1rem 2rem;
+}
+
+.carousel-slide-right-side .article-headline,
+.carousel-slide-right-side .article-subheadline,
+.carousel-slide-right-side .article-lede {
+  padding-bottom: 1rem;
+}
+
+.carousel-slide-right-side .decor-custom-div {
+  width: 40%;
+  height: 2px;
+
+  background-color: var(--contrast);
+  margin-bottom: 1rem;
+}
+
+.carousel-slide-right-side .decor-blurred {
+  width: 370px;
+  height: 70%;
+
+  position: absolute;
+  bottom: 15%;
+  z-index: 5;
+
+  background: linear-gradient(transparent 10%, var(--main) 75%);
+}
+
+.carousel-slide .button-standard {
+  justify-self: flex-end;
+}

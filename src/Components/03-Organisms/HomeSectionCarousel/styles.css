@@ -1,0 +1,24 @@
+/*=========================================
+============={THIS COMPONENT'S NAME}==========
+===============================================*/
+.carousel {
+  width: 650px;
+  /*
+  margin: 0 calc((100% - 600px) / 2);
+  */
+}
+
+.slider-container .slick-list {
+  margin-top: 1rem;
+}
+
+.slider-container .slick-arrow {
+  background-color: var(--accent);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.slick-dots li button:before {
+  color: var(--accent);
+}

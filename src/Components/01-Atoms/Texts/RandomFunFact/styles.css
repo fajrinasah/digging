@@ -1,0 +1,22 @@
+/*=========================================
+=============RANDOM FUN FACT==========
+===============================================*/
+.random-fun-fact {
+  font-family: "Amaranth", sans-serif;
+}
+
+.random-fun-fact blockquote {
+  padding-left: 2rem;
+}
+
+.random-fun-fact.small blockquote {
+  font-size: 2.6rem;
+}
+
+.random-fun-fact.medium blockquote {
+  font-size: 2.8rem;
+}
+
+.random-fun-fact.large blockquote {
+  font-size: 3rem;
+}

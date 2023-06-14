@@ -1,0 +1,38 @@
+/*=========================================
+=============FORM COMPOSE ARTICLE'S CONTENT==========
+===============================================*/
+.fieldset-container {
+  height: max-content;
+  justify-content: flex-end;
+}
+
+.form-container-article-content {
+  height: 800px;
+  border: none;
+}
+
+.fieldset-container legend {
+  width: 100%;
+}
+
+.form-container-article-content {
+  height: max-content;
+}
+
+/*-------DECOR CUSTOM DIV------------*/
+
+.fieldset-container > .decor-custom-div {
+  width: 1px;
+  height: 500px;
+  margin: 0 2rem;
+  align-self: flex-end;
+  background-color: var(--contrast);
+}
+
+.form-container-article-content .decor-custom-div {
+  width: 40%;
+  height: 1px;
+  margin: 2rem 0;
+
+  background-color: var(--contrast);
+}

@@ -1,0 +1,62 @@
+/*********************************************************
+=======================THEMES========================
+************************************************************/
+:root.default-theme {
+  --main: #eee3c4;
+  --contrast: #302314;
+  --accent: #7c1f1b;
+}
+
+:root.dimmed-theme {
+  --main: #e1e1e1;
+  --contrast: #3e3c3c;
+  --accent: #a3a3a3;
+  /*
+  --accent: #c8c8c8;
+  */
+}
+
+:root.dark-theme {
+  --main: #2f482b;
+  --contrast: #efffef;
+  --accent: #acc1a7;
+}
+
+:root {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: var(--main);
+  color: var(--contrast);
+}
+
+/*---------------------------------------
+
+#body-container.default-theme {
+  --main: #eee3c4;
+  --contrast: #302314;
+  --accent: #7c1f1b;
+}
+
+#body-container.dimmed-theme {
+  --main: #e1e1e1;
+  --contrast: #3e3c3c;
+  --accent: #a3a3a3;
+}
+
+#body-container.dark-theme {
+  --main: #2f482b;
+  --contrast: #efffef;
+  --accent: #acc1a7;
+}
+
+#body-container {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: var(--main);
+  color: var(--contrast);
+}
+*/

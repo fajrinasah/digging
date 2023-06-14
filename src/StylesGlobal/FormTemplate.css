@@ -1,0 +1,31 @@
+/*=========================================
+=============FORM TEMPLATE==========
+===============================================*/
+.form-template {
+  place-items: start;
+}
+
+.form-template .section-title {
+  width: 100%;
+  align-self: flex-start;
+}
+
+/*=========================================
+  =============FORM'S BUTTON WITH CUSTOM DIV==========
+  ===============================================*/
+.form-button-container {
+  width: 100%;
+  align-items: flex-start;
+}
+
+.form-button-container .button-standard {
+  margin: 0 1rem;
+}
+
+.form-button-container .decor-custom-div {
+  width: 40%;
+  height: 1px;
+  margin: 1rem 0 3rem 1rem;
+
+  background-color: var(--contrast);
+}

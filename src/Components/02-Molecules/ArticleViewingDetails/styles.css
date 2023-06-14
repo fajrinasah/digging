@@ -1,0 +1,32 @@
+/*=========================================
+=============ARTICLE VIEWING DETAILS==========
+===============================================*/
+.article-viewing-details {
+  display: flex;
+  flex-direction: column;
+
+  padding: 1rem 2rem;
+
+  background-color: var(--contrast);
+}
+
+.this-article-details {
+  color: var(--main);
+  padding-top: 2rem;
+}
+
+.this-article-details details {
+  padding-bottom: 2rem;
+}
+
+.author-details {
+  padding: 1rem 0;
+}
+
+.to-author-page {
+  padding: 0 1rem;
+}
+
+.to-author-page * {
+  padding-top: 0.5rem;
+}

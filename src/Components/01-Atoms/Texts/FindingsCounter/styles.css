@@ -1,0 +1,14 @@
+/*=========================================
+=============FINDINGS COUNTER==========
+===============================================*/
+.findings-counter .findings {
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+
+  font-weight: bold;
+}
+
+.findings-counter .counter {
+  font-size: 5rem;
+  color: var(--accent);
+}

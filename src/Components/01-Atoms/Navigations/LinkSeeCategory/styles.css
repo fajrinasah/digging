@@ -1,0 +1,20 @@
+/*=====================================
+=============LINK SEE CATEGORY==========
+====================================*/
+.link-see-category {
+  padding: 0.5rem 2rem;
+
+  border-top: 1px solid var(--contrast);
+  border-bottom: 3px solid var(--contrast);
+}
+
+.link-of-see-category {
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: var(--contrast);
+}
+
+.link-of-see-category:hover,
+.link-of-see-category:active {
+  font-weight: bold;
+}

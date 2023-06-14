@@ -1,0 +1,46 @@
+/*=========================================
+=============DISPLAY FLEX BASE==========
+===============================================*/
+.d-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.d-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/*----------JUSTIFY SELF-------*/
+.js-start {
+  justify-self: start;
+}
+
+.js-end {
+  justify-self: end;
+}
+
+.js-center {
+  justify-self: center;
+}
+
+.js-stretch {
+  justify-self: stretch;
+}
+
+/*----------ALIGN SELF-------*/
+.as-start {
+  align-self: start;
+}
+
+.as-end {
+  align-self: end;
+}
+
+.as-center {
+  align-self: center;
+}
+
+.as-stretch {
+  align-self: stretch;
+}

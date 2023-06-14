@@ -1,0 +1,17 @@
+/*=========================================
+=============NAV FOOTER==========
+===============================================*/
+
+.nav-footer {
+  place-items: center;
+}
+
+.nav-footer .nav {
+  border-left: 1px solid var(--contrast);
+  padding-left: 1rem;
+  margin-left: 1rem;
+}
+
+.nav-footer .nav ul li {
+  padding: 0.5rem 1rem;
+}

@@ -1,0 +1,33 @@
+/*=========================================
+=============ARTICLE MAINSHOT==========
+===============================================*/
+
+.article-mainshot {
+  background-color: var(--accent);
+
+  padding: 1rem;
+}
+
+.article-mainshot.flex {
+  width: 100%;
+  height: 100%;
+}
+
+.article-mainshot.small {
+  width: 200px;
+  height: 130px;
+}
+
+.article-mainshot.medium {
+  width: 400px;
+  height: 200px;
+}
+
+.article-mainshot.large {
+  width: 500px;
+  height: 300px;
+}
+
+.article-mainshot img {
+  object-fit: contain;
+}

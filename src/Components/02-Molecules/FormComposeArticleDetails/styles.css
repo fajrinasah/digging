@@ -1,0 +1,14 @@
+/*=========================================
+=============FORM COMPOSE ARTICLE DETAILS==========
+===============================================*/
+.form-compose-article-details {
+  border: none;
+}
+
+.form-compose-article-details legend {
+  width: 100%;
+}
+
+.form-compose-article-details .form-container {
+  padding: 0 2rem;
+}

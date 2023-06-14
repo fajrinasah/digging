@@ -1,0 +1,20 @@
+/*=========================================
+=============CARD ARTICLE SECOND HALF==========
+===============================================*/
+.link-to-article-page {
+  text-decoration: none;
+  border: none;
+  padding: 1rem;
+}
+
+.article-byline {
+  width: max-content;
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+
+  color: var(--contrast);
+
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--contrast);
+}

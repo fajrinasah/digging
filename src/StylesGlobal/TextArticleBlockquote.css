@@ -1,0 +1,30 @@
+/*=========================================
+=============TEXT ARTICLE'S BLOCKQUOTE==========
+===============================================*/
+
+blockquote {
+  font-size: 1.8rem;
+  border-left: 5px solid var(--accent);
+}
+
+.small blockquote {
+  font-size: 1.6rem;
+}
+
+.medium blockquote {
+  font-size: 1.8rem;
+}
+
+.large blockquote {
+  font-size: 2rem;
+}
+
+.test-div {
+  width: 50vw;
+  margin: 2rem auto;
+}
+
+.test-div2 {
+  width: 25vw;
+  margin: 2rem auto;
+}

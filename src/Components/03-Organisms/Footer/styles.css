@@ -1,0 +1,18 @@
+/*=========================================
+=============FOOTER==========
+===============================================*/
+.footer-container {
+  border-top: 1px solid var(--contrast);
+
+  padding: 0.5rem 0rem;
+
+  margin-top: 10rem;
+}
+
+footer {
+  align-items: center;
+  border-top: 3px solid var(--contrast);
+  padding: 1rem 0;
+
+  justify-content: space-between;
+}

@@ -1,0 +1,11 @@
+/*=========================================
+=============CARD ARTICLE FIRST HALF==========
+===============================================*/
+
+.card-article-first-half {
+  align-items: start;
+}
+
+.card-article-first-half .article-mainshot {
+  margin: 1rem 0;
+}

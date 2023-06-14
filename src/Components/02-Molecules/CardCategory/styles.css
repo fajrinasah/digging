@@ -1,0 +1,70 @@
+/*=========================================
+=============CARD CATEGORY==========
+===============================================*/
+
+.card-category {
+  cursor: pointer;
+
+  padding: 2rem 2rem 0 2rem;
+
+  display: grid;
+  grid-template: 1fr 2fr 1fr / 2rem auto;
+  grid-template-areas:
+    "category category"
+    "p-top details"
+    "see-all see-all";
+
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out;
+}
+
+.card-category .link-category {
+  grid-area: category;
+}
+
+.card-category .p-top {
+  grid-area: p-top;
+  align-self: center;
+  justify-self: center;
+
+  width: auto;
+  height: auto;
+
+  transform: rotate(270deg);
+  letter-spacing: 1rem;
+  text-align: center;
+}
+
+.card-category .article-details {
+  grid-area: details;
+  padding-left: 1rem;
+  margin: 0.5rem;
+
+  border-left: 1px solid var(--contrast);
+}
+
+.card-category .article-details .article-byline {
+  border: none;
+}
+
+.card-category .link-see-category {
+  grid-area: see-all;
+  margin-top: 1rem;
+
+  height: max-content;
+}
+
+/*-----------HOVER------------*/
+.card-category:hover {
+  background-color: var(--contrast);
+}
+
+.card-category:hover * {
+  color: var(--main);
+  border-color: var(--main);
+}
+
+/*-----------ACTIVE------------*/
+.card-category:active {
+  transform: scale(0.99);
+}

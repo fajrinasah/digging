@@ -1,0 +1,11 @@
+/*=========================================
+=============TEXT ARTICLE'S PUBLISHED DATE==========
+===============================================*/
+
+.article-date {
+  font-size: 1.6rem;
+}
+
+.article-date.bold {
+  font-weight: bold;
+}

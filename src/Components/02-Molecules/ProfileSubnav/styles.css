@@ -1,0 +1,31 @@
+/*=========================================
+=============PROFILE SUBNAV==========
+===============================================*/
+
+.profile-subnav ul {
+  place-content: center;
+  place-items: center;
+
+  padding: 1rem 2rem;
+  margin: 4rem 3rem;
+
+  border-bottom: 2px solid var(--contrast);
+}
+
+.profile-subnav .nav-link-li {
+  padding: 1rem 2rem;
+}
+
+.profile-subnav .nav-link-li:hover,
+.profile-subnav .nav-link-li:active {
+  background-color: var(--accent);
+  color: var(--main);
+}
+
+.profile-subnav .decor-custom-div {
+  background-color: var(--contrast);
+  width: 1px;
+  height: 3rem;
+
+  margin: 0 3rem;
+}

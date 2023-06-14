@@ -1,0 +1,25 @@
+/*=====================================
+=============LOGO HEADER==========
+====================================*/
+.logo.small {
+  font-size: 2rem;
+  width: max-content;
+  transition: color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.logo.small a {
+  color: var(--contrast);
+  text-decoration: none;
+}
+
+.logo.small a:hover,
+.logo.small a:active {
+  color: var(--main);
+}
+
+.logo.small:hover,
+.logo.small a:active {
+  color: var(--main);
+  background-color: var(--contrast);
+}

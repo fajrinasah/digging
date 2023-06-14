@@ -1,0 +1,12 @@
+/*=========================================
+=============ARTICLE FIGURE FIGCAPTION==========
+===============================================*/
+
+.article-figure-figcaption {
+  height: 100%;
+  text-align: right;
+  padding: 2rem 1.5rem;
+  border-right: 2px solid var(--accent);
+
+  margin-right: 1.5rem;
+}

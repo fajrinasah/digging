@@ -1,0 +1,26 @@
+/*=========================================
+=============TEXT ARTICLE'S HEADLINE==========
+===============================================*/
+.article-headline {
+  font-family: "Amaranth", serif;
+}
+
+.article-headline.smallest {
+  font-size: 1.6rem;
+}
+
+.article-headline.smaller {
+  font-size: 2rem;
+}
+
+.article-headline.small {
+  font-size: 3rem;
+}
+
+.article-headline.medium {
+  font-size: 3.5rem;
+}
+
+.article-headline.large {
+  font-size: 4rem;
+}

@@ -1,0 +1,27 @@
+/*=========================================
+=============PROFILE INFO==========
+===============================================*/
+
+.profile-info {
+  margin: 2rem;
+  width: 600px;
+
+  place-items: center;
+}
+
+.profile-info .profile-info-details {
+  padding-right: 1rem;
+}
+
+.profile-info .profile-info-details .link-username {
+  margin-top: 0.5rem;
+}
+
+.profile-info .profile-info-details .decor-custom-div {
+  width: 50%;
+  height: 1px;
+
+  margin: 1rem 0;
+
+  background-color: var(--contrast);
+}

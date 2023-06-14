@@ -1,0 +1,28 @@
+/*=========================================
+=============MODAL CRUCIAL==========
+===============================================*/
+
+.modal-crucial {
+  box-shadow: -2px -1px 5px 1px grey;
+
+  padding: 2rem;
+}
+
+.modal-crucial .modal-text-container {
+  background-color: var(--accent);
+  padding: 3rem;
+}
+
+.modal-crucial-buttons {
+  justify-content: flex-end;
+  padding-top: 1rem;
+}
+
+.modal-crucial-buttons .button-standard.raised {
+  background-color: var(--accent);
+}
+
+.modal-crucial-buttons .button-standard.raised:hover {
+  color: var(--main);
+  box-shadow: -2px 2px 2px 0px black;
+}

@@ -1,0 +1,30 @@
+/*=========================================
+=============NAVLINK SUBNAV LIST ITEM==========
+===============================================*/
+.navlink.subnav-li,
+.navlink-subnav-li {
+  box-shadow: inset 0 0 0 0 var(--accent);
+  color: var(--contrast);
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out,
+    background-color 0.1s ease-in-out;
+}
+
+.navlink-subnav-li {
+  padding: 0.5rem 1rem;
+
+  font-family: "Amaranth", sans-serif;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.navlink-subnav-li:hover {
+  font-weight: bold;
+  border-left: 2px solid var(--contrast);
+}
+
+.navlink-subnav-li:active {
+  font-weight: bold;
+  background-color: var(--accent);
+  color: var(--main);
+  border-left: 2px solid var(--accent);
+}

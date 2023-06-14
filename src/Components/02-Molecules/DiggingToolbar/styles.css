@@ -1,0 +1,28 @@
+/*=========================================
+=============DIGGING TOOLBAR==========
+===============================================*/
+
+.digging-toolbar {
+  display: grid;
+  grid-template: 1fr / repeat(3, 1fr);
+  grid-template-areas: "category sort search";
+
+  place-content: center;
+  place-items: center;
+
+  padding: 1rem 0;
+
+  border-bottom: 1px solid var(--contrast);
+}
+
+.digging-toolbar .div-for-select-category {
+  grid-area: category;
+}
+
+.digging-toolbar .digging-toolbar-sort {
+  grid-area: sort;
+}
+
+.digging-toolbar .digging-toolbar-search {
+  grid-area: search;
+}

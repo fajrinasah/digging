@@ -1,0 +1,74 @@
+/*=========================================
+=============ARTICLE VIDEO==========
+===============================================*/
+
+/*---------------CONTAINER-----------*/
+.article-video-container {
+  display: flex;
+  place-content: center;
+  place-items: center;
+
+  background-color: var(--accent);
+}
+
+.article-video-container.small {
+  height: 250px;
+}
+
+.article-video-container.medium {
+  height: 300px;
+}
+
+.article-video-container.large {
+  height: 400px;
+}
+
+/*---------------VIDEO-----------*/
+.article-video {
+  margin: 0 3rem;
+}
+
+.article-video.small {
+  width: 300px;
+  height: 200px;
+}
+
+.article-video.medium {
+  width: 400px;
+  height: 250px;
+}
+
+.article-video.large {
+  width: 500px;
+  height: 300px;
+}
+
+/*---------------DECOR CUSTOM DIV-----------*/
+.decor-custom-div {
+  width: 2px;
+
+  background-color: var(--main);
+}
+
+.decor-custom-div:first-child {
+  align-self: start;
+}
+
+.decor-custom-div:last-child {
+  align-self: end;
+}
+
+.small .decor-custom-div {
+  height: calc(200px / 2);
+  margin: calc(125px - 100px) 0;
+}
+
+.medium .decor-custom-div {
+  height: calc(250px / 2);
+  margin: calc(150px - 125px) 0;
+}
+
+.large .decor-custom-div {
+  height: calc(300px / 2);
+  margin: calc(200px - 150px) 0;
+}

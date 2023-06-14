@@ -1,0 +1,35 @@
+/*=========================================
+=============BUTTON TO TOP==========
+===============================================*/
+#button-to-top {
+  width: 5rem;
+  height: 5rem;
+
+  border-radius: 50%;
+  border-width: 2px;
+  border-style: solid;
+
+  box-shadow: 1px 1px 3px 1px grey;
+
+  font-size: 3rem;
+
+  transition: color 0.2s ease-in-out, background-color 0.3s ease-in-out;
+
+  cursor: pointer;
+}
+
+#button-to-top {
+  border-color: var(--contrast);
+  color: var(--contrast);
+  background-color: transparent;
+}
+
+#button-to-top:hover {
+  border-color: var(--main);
+  color: var(--main);
+  background-color: var(--contrast);
+}
+
+#button-to-top:active {
+  transform: translateY(2px);
+}

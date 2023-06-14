@@ -1,0 +1,36 @@
+/*=========================================
+=============NEWSLETTER SIGNUP==========
+===============================================*/
+
+.newsletter-signup {
+  width: 500px;
+  padding: 0 1rem;
+  margin-right: 1rem;
+}
+
+.newsletter-signup p {
+  padding-bottom: 1rem;
+}
+
+.newsletter-signup .input-signup-email {
+  place-content: center;
+  place-items: center;
+}
+
+.newsletter-signup .input-for-newsletter-signup {
+  padding: 0.7rem;
+  margin-right: 1rem;
+  width: 70%;
+
+  font-family: "B612", sans-serif;
+  font-size: 1.7rem;
+
+  background-color: transparent;
+  color: var(--contrast);
+  border: 1px solid var(--contrast);
+}
+
+.newsletter-signup .button-standard {
+  width: 30%;
+  margin: 0;
+}

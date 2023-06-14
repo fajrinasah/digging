@@ -1,0 +1,15 @@
+/*=========================================
+=============TEXT ARTICLE'S BLOCKQUOTE==========
+===============================================*/
+.page-title {
+  font-family: "Amaranth", sans-serif;
+  font-size: 4.5rem;
+
+  border-bottom: 3px solid var(--contrast);
+  padding: 2rem;
+  margin: 0 3rem 3rem 3rem;
+
+  display: flex;
+  place-content: center;
+  place-items: center;
+}

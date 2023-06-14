@@ -1,0 +1,40 @@
+/*=========================================
+============={THIS COMPONENT'S NAME}==========
+===============================================*/
+
+.input-file-custom input[type="file"] {
+  display: none;
+}
+
+.input-file-custom {
+  cursor: pointer;
+
+  width: auto;
+
+  font-size: 1.6rem;
+  font-family: "B612", sans-serif;
+  font-weight: bold;
+
+  padding: 1rem 2rem;
+  margin: 0.5rem;
+
+  background-color: transparent;
+  border-color: var(--contrast);
+  color: var(--contrast);
+
+  border-radius: 2px;
+  border-width: 1px;
+  border-style: solid;
+
+  transition: background-color 0.2s ease-in-out;
+  transition: border 0.1s ease-in;
+}
+
+.input-file-custom:hover {
+  background-color: var();
+  box-shadow: -1px 1px 2px 0px grey;
+}
+
+.input-file-custom:active {
+  transform: scale(0.98);
+}

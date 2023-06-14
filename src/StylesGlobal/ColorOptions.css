@@ -1,0 +1,37 @@
+/*********************************************************
+=======================COLOR OPTIONS========================
+************************************************************/
+
+/*-----------------------------------
+BACKGROUND COLORS
+------------------------------------*/
+.bg-main {
+  background-color: var(--main);
+}
+
+.bg-contrast {
+  background-color: var(--contrast);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+/*-----------------------------------
+  FONT COLORS
+  ------------------------------------*/
+
+.color-main {
+  color: var(--main);
+}
+
+.color-contrast {
+  color: var(--contrast);
+}
+
+.color-accent {
+  color: var(--accent);
+}

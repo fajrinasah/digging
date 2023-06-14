@@ -1,0 +1,81 @@
+/*=========================================
+=============INSTRUCTION TITLE==========
+===============================================*/
+.section-title {
+  font-family: "Amaranth", sans-serif;
+
+  display: flex;
+  place-items: center;
+
+  padding: 1rem;
+
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+.section-title.color-main {
+  border-bottom-color: var(--main);
+}
+
+.section-title.color-contrast {
+  border-bottom-color: var(--contrast);
+}
+
+.section-title.color-accent {
+  border-bottom-color: var(--accent);
+}
+
+.section-title .decor-triangle-right {
+  margin-right: 1.5rem;
+
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-left-width: 20px;
+  border-left-style: solid;
+  border-bottom: 8px solid transparent;
+}
+
+.color-main .decor-triangle-right {
+  border-left-color: var(--main);
+}
+
+.color-contrast .decor-triangle-right {
+  border-left-color: var(--contrast);
+}
+
+.color-accent .decor-triangle-right {
+  border-left-color: var(--accent);
+}
+
+.section-title .decor-circle {
+  margin-right: 0.5rem;
+
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.color-main .decor-circle {
+  background-color: var(--main);
+}
+
+.color-contrast .decor-circle {
+  background-color: var(--contrast);
+}
+
+.color-accent .decor-circle {
+  background-color: var(--accent);
+}
+
+.section-title.small {
+  font-size: 2.2rem;
+}
+
+.section-title.medium {
+  font-size: 2.8rem;
+}
+
+.section-title.large {
+  font-size: 3.2rem;
+}

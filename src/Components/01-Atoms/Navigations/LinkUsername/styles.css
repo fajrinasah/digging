@@ -1,0 +1,21 @@
+/*=====================================
+=============LINK USERNAME==========
+====================================*/
+.link-of-username {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link-of-username.small {
+  font-size: 1.8rem;
+}
+
+.link-of-username.medium {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.link-of-username.large {
+  font-size: 2.2rem;
+  font-weight: bold;
+}

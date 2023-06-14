@@ -1,0 +1,12 @@
+/*=========================================
+=============ARTICLE FIGURE IMAGE==========
+===============================================*/
+.article-figure-image .img-container {
+  width: 500px;
+  height: 300px;
+  background-color: var(--accent);
+}
+
+.article-figure-image img {
+  object-fit: contain;
+}

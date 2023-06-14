@@ -1,0 +1,94 @@
+/*=========================================
+=============CARD ARTICLE==========
+===============================================*/
+
+.card-article {
+  cursor: pointer;
+
+  display: grid;
+  place-items: center;
+
+  padding: 2rem 1rem;
+
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  border-left: 2px solid var(--contrast);
+
+  margin-left: 1rem;
+}
+
+.card-article.horizontal {
+  width: 570px;
+  height: 275px;
+
+  grid-template: 1fr / 1fr 3fr;
+  grid-template-areas: "first-half second-half";
+}
+
+.card-article.vertical {
+  width: 275px;
+  height: 550px;
+
+  grid-template: 1fr 2fr / 1fr;
+  grid-template-areas:
+    "first-half"
+    "second-half";
+}
+
+.card-article .first-half {
+  grid-area: first-half;
+
+  width: 100%;
+  height: 100%;
+}
+
+.card-article .second-half {
+  grid-area: second-half;
+}
+
+.card-article .first-half,
+.card-article .second-half {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  place-content: center;
+  place-items: start;
+}
+
+/*--------------HOVER--------------*/
+.card-article:hover {
+  background-color: var(--contrast);
+}
+
+.card-article:hover .link-category {
+  border-color: var(--contrast);
+  background-color: var(--main);
+}
+
+.card-article:hover .link-category .link-of-category {
+  color: var(--contrast);
+}
+
+.card-article:hover .link-category .decor-circle {
+  background-color: var(--main);
+  border-color: var(--contrast);
+}
+
+.card-article:hover .article-mainshot {
+  border: 2px solid var(--main);
+}
+
+.card-article:hover .second-half * {
+  color: var(--main);
+  background-color: transparent;
+}
+
+.card-article:hover .article-byline {
+  border-bottom-color: var(--main);
+}
+
+/*--------------ACTIVE--------------*/
+.card-article:active {
+  transform: scale(0.99);
+}

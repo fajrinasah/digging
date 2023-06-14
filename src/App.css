@@ -1,0 +1,104 @@
+/* 
+font-family: 'Amaranth', sans-serif;
+font-family: 'B612', sans-serif;
+font-family: 'Caesar Dressing', cursive;
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=B612:ital,wght@0,400;0,700;1,400;1,700&family=Caesar+Dressing&display=swap");
+
+@import "./StylesGlobal/Animation.css";
+@import "./StylesGlobal/ColorOptions.css";
+@import "./StylesGlobal/CustomToolbar.css";
+@import "./StylesGlobal/DisplayFlexBase.css";
+@import "./StylesGlobal/FormTemplate.css";
+@import "./StylesGlobal//PageArticleViewing.css";
+@import "./StylesGlobal/SectionDigging.css";
+@import "./StylesGlobal/TextArticleBlockquote.css";
+@import "./StylesGlobal/Themes.css";
+
+:root {
+  --main: #eee3c4;
+  --contrast: #302314;
+  --accent: #7c1f1b;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "B612", sans-serif;
+  font-size: 1.8rem;
+}
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+
+/*========================LOGO FONT========================*/
+.logo {
+  font-family: "Caesar Dressing", serif;
+  padding: 0.5rem 1rem;
+  letter-spacing: 2px;
+}
+
+/*========================BOLD========================*/
+.bold {
+  font-weight: bold;
+}
+
+/*========================PLACEHOLDER========================*/
+*::placeholder {
+  color: var(--contrast);
+  opacity: 0.3;
+}
+
+/*=========================================
+=============PAGE PROFILE==========
+===============================================*/
+.page-profile {
+  place-items: center;
+}
+
+.page-profile .page-title,
+.page-profile .profile-subnav {
+  align-self: stretch;
+}
+
+/*=========================================
+=============SIMPLE PAGE==========
+===============================================*/
+
+.simple-page {
+  height: 58vh;
+}
+
+.simple-page p {
+  justify-self: center;
+  align-self: center;
+  padding: 10rem;
+  height: 100%;
+  font-size: 2.5rem;
+}
+
+/*=========================================
+=============INPUT FILE CUSTOM==========
+===============================================*/

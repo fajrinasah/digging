@@ -1,0 +1,32 @@
+/*=========================================
+=============PROFILE SECTION INFORMATION OWN==========
+===============================================*/
+.profile-section-information {
+  margin: 3rem;
+  width: 70vw;
+
+  display: grid;
+  grid-template: 1fr 1fr / 2fr 1fr;
+  grid-template-areas: "main side" "main buttons";
+}
+
+.profile-section-information .main-info {
+  grid-area: main;
+  border-right: 1px solid var(--contrast);
+  align-self: center;
+  height: 100%;
+}
+
+.profile-section-information .side-info {
+  grid-area: side;
+  padding: 2rem;
+}
+
+.profile-section-information .buttons-container {
+  grid-area: buttons;
+  width: 90%;
+  padding: 1rem 0;
+
+  justify-self: center;
+  align-self: end;
+}

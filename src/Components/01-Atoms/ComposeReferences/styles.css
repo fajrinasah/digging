@@ -1,0 +1,121 @@
+/*=====================================
+=============COMPOSE REFERENCES==========
+====================================*/
+.compose-references {
+  border: 1px solid var(--accent);
+}
+
+.compose-references .quill {
+  width: 800px;
+  height: 200px;
+}
+
+.compose-references .ql-editor.ql-blank::before {
+  color: var(--contrast);
+}
+
+.compose-references .ql-container.ql-bubble {
+  width: 100%;
+}
+
+.compose-references .ql-bubble .ql-tooltip:not(.ql-flip) .ql-tooltip-arrow {
+  border-bottom: 6px solid var(--accent);
+  top: -6px;
+}
+
+.compose-references .ql-bubble .ql-tooltip {
+  border-radius: 2px;
+  background-color: var(--accent);
+}
+
+.compose-references .ql-bubble .ql-formats {
+  border-radius: 5px;
+  background-color: var(--main);
+
+  padding: 10px;
+}
+
+.compose-references .ql-bubble .ql-formats button {
+  margin: 2px 0;
+}
+
+.compose-references .ql-bubble line.ql-stroke,
+.compose-references .ql-bubble path.ql-even.ql-stroke,
+.compose-references .ql-bubble button.ql-list {
+  stroke: var(--contrast);
+}
+
+.compose-references
+  .ql-bubble
+  .compose-references
+  .ql-bubble.ql-toolbar
+  button:hover
+  .ql-stroke,
+.compose-references .ql-bubble .ql-toolbar button:hover .ql-stroke,
+.compose-references .ql-bubble.ql-toolbar button:focus .ql-stroke,
+.compose-references .ql-bubble .ql-toolbar button:focus .ql-stroke,
+.compose-references .ql-bubble.ql-toolbar button.ql-active .ql-stroke,
+.compose-references .ql-bubble .ql-toolbar button.ql-active .ql-stroke,
+.compose-references .ql-bubble.ql-toolbar .ql-picker-label:hover .ql-stroke,
+.compose-references .ql-bubble .ql-toolbar .ql-picker-label:hover .ql-stroke,
+.compose-references .ql-bubble.ql-toolbar .ql-picker-label.ql-active .ql-stroke,
+.compose-references
+  .ql-bubble
+  .ql-toolbar
+  .ql-picker-label.ql-active
+  .ql-stroke,
+.compose-references .ql-bubble.ql-toolbar .ql-picker-item:hover .ql-stroke,
+.compose-references .ql-bubble .ql-toolbar .ql-picker-item:hover .ql-stroke,
+.compose-references
+  .ql-bubble.ql-toolbar
+  .ql-picker-item.ql-selected
+  .ql-stroke,
+.compose-references
+  .ql-bubble
+  .ql-toolbar
+  .ql-picker-item.ql-selected
+  .ql-stroke,
+.compose-references .ql-bubble.ql-toolbar button:hover .ql-stroke-miter,
+.compose-references .ql-bubble .ql-toolbar button:hover .ql-stroke-miter,
+.compose-references .ql-bubble.ql-toolbar button:focus .ql-stroke-miter,
+.compose-references .ql-bubble .ql-toolbar button:focus .ql-stroke-miter,
+.compose-references .ql-bubble.ql-toolbar button.ql-active .ql-stroke-miter,
+.compose-references .ql-bubble .ql-toolbar button.ql-active .ql-stroke-miter,
+.compose-references
+  .ql-bubble.ql-toolbar
+  .ql-picker-label:hover
+  .ql-stroke-miter,
+.compose-references
+  .ql-bubble
+  .ql-toolbar
+  .ql-picker-label:hover
+  .ql-stroke-miter,
+.compose-references
+  .ql-bubble.ql-toolbar
+  .ql-picker-label.ql-active
+  .ql-stroke-miter,
+.compose-references
+  .ql-bubble
+  .ql-toolbar
+  .ql-picker-label.ql-active
+  .ql-stroke-miter,
+.compose-references
+  .ql-bubble.ql-toolbar
+  .ql-picker-item:hover
+  .ql-stroke-miter,
+.compose-references
+  .ql-bubble
+  .ql-toolbar
+  .ql-picker-item:hover
+  .ql-stroke-miter,
+.compose-references
+  .ql-bubble.ql-toolbar
+  .ql-picker-item.ql-selected
+  .ql-stroke-miter,
+.compose-references
+  .ql-bubble
+  .ql-toolbar
+  .ql-picker-item.ql-selected
+  .ql-stroke-miter {
+  stroke: var(--accent);
+}

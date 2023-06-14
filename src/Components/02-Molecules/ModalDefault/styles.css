@@ -1,0 +1,21 @@
+/*=========================================
+=============MODAL DEFAULT==========
+===============================================*/
+
+.modal-default {
+  padding: 2rem;
+
+  box-shadow: -2px -1px 5px 1px grey;
+}
+
+.modal-default .modal-button-container {
+  background-color: var(--main);
+  padding-top: 2rem;
+  justify-content: flex-end;
+}
+
+.modal-default .button-standard.raised {
+  padding-right: 2rem;
+
+  background-color: var();
+}

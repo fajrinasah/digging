@@ -1,0 +1,33 @@
+/*=========================================
+=============NAV (set of navlinks)==========
+===============================================*/
+nav ul {
+  display: flex;
+
+  justify-content: space-between;
+
+  font-size: 1.6rem;
+  list-style: none;
+}
+
+nav.d-flex-row {
+  width: 450px;
+  height: 25px;
+}
+
+nav.d-flex-row ul {
+  flex-direction: row;
+}
+
+nav.d-flex-column ul {
+  flex-direction: column;
+}
+
+/*-------------DECOR CUSTOM DIV-----------*/
+
+.decor-custom-div {
+  background-color: var(--contrast);
+  width: 1px;
+
+  height: 100%;
+}

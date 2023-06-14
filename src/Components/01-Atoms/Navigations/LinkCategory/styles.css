@@ -1,0 +1,57 @@
+/*=====================================
+=============LINK CATEGORY==========
+====================================*/
+.link-category {
+  border-radius: 15px 0 15px 0;
+
+  display: flex;
+  align-items: center;
+
+  width: 200px;
+  height: 40px;
+
+  padding: 0 1rem;
+
+  font-family: "Amaranth", sans-serif;
+  font-size: 2rem;
+
+  border: 2px solid var(--contrast);
+  color: var(--main);
+  background-color: var(--contrast);
+
+  transition: background-color 0.2s ease-in-out;
+}
+
+.decor-circle {
+  width: 15px;
+  height: 15px;
+
+  margin-right: 1rem;
+
+  border-radius: 50%;
+
+  border: 2px solid var(--main);
+  background-color: var(--main);
+}
+
+.link-of-category {
+  text-decoration: none;
+  color: var(--main);
+
+  transition: color 0.2s ease-in-out;
+}
+
+.link-category:hover .link-of-category {
+  color: var(--contrast);
+}
+
+.link-category:hover {
+  border: 2px solid var(--contrast);
+  color: var(--contrast);
+  background-color: var(--main);
+}
+
+.link-category:hover .decor-circle {
+  border-color: var(--contrast);
+  background-color: var(--main);
+}

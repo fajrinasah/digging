@@ -1,0 +1,16 @@
+/*=====================================
+=============NAVLINK LIST ITEM==========
+====================================*/
+.nav-link-li {
+  font-family: "B612", sans-serif;
+  color: var(--contrast);
+  text-decoration: none;
+
+  padding: 0 1rem;
+}
+
+.nav-link-li:hover,
+.nav-link-li:active,
+.nav-link-li.active {
+  font-weight: bold;
+}

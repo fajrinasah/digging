@@ -1,0 +1,15 @@
+/*=========================================
+=============FORM PROFILE PRIVATE DATA==========
+===============================================*/
+.form-profile.private-data {
+  place-content: start;
+  place-items: start;
+
+  padding: 1rem;
+
+  border: none;
+}
+
+.form-profile.private-data legend {
+  width: 100%;
+}

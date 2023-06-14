@@ -1,0 +1,92 @@
+/*=========================================
+=============PAGE ARTICLE VIEWING==========
+===============================================*/
+.page-article-viewing {
+  margin: 3rem;
+
+  display: grid;
+  grid-template: auto auto auto auto auto 1fr auto / 1fr 1fr auto 1fr;
+  grid-template-areas:
+    "category category . ."
+    "date date . ."
+    "headline headline headline headline"
+    "subheadline subheadline subheadline subheadline"
+    ". figure figure figure"
+    "lede figure figure figure"
+    "textbody textbody textbody details";
+}
+
+.page-article-viewing .category {
+  grid-area: category;
+}
+
+.page-article-viewing .date {
+  padding-top: 1rem;
+
+  grid-area: date;
+}
+
+.page-article-viewing .date .article-date {
+  margin-right: 1rem;
+}
+
+.page-article-viewing .date .article-date:first-child {
+  border-right: 1px solid var(--contrast);
+  padding-right: 1rem;
+}
+
+.page-article-viewing .headline {
+  grid-area: headline;
+  padding: 1rem 0;
+}
+
+.page-article-viewing .subheadline {
+  grid-area: subheadline;
+  padding-bottom: 1rem;
+}
+
+.page-article-viewing .figure {
+  grid-area: figure;
+}
+
+/*
+  .page-article-viewing .article-figure .article-figure-caption {
+    grid-area: caption;
+  }
+  
+  .page-article-viewing .article-figure .article-figure-image {
+    grid-area: mainshot;
+  }
+  */
+
+.page-article-viewing .lede {
+  grid-area: lede;
+  align-self: end;
+  padding-bottom: 2rem;
+  padding-right: 3rem;
+}
+
+.page-article-viewing .textbody {
+  grid-area: textbody;
+  padding: 2rem 2rem 1rem 0;
+}
+
+.page-article-viewing .article-viewing-details-container {
+  grid-area: details;
+  padding: 30rem 0 0 2rem;
+
+  align-self: end;
+
+  border-left: 1px solid var(--contrast);
+}
+
+.page-article-viewing .button-container {
+  height: max-content;
+  padding-top: 2rem;
+}
+
+/*==================OWN: DELETE BUTTTON==========*/
+.page-article-viewing.own .button-standard {
+  border-color: var(--accent);
+  background-color: var(--accent);
+}

@@ -1,0 +1,24 @@
+/*=========================================
+=============TEXT ARTICLE'S LEDE==========
+===============================================*/
+.article-lede {
+  font-family: "B612", sans-serif;
+
+  text-align: justify;
+}
+
+.article-lede.bold {
+  font-weight: bold;
+}
+
+.article-lede.small {
+  font-size: 1.6rem;
+}
+
+.article-lede.medium {
+  font-size: 1.8rem;
+}
+
+.article-lede.large {
+  font-size: 2rem;
+}

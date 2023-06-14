@@ -1,0 +1,31 @@
+/*=========================================
+=============TEXT ARTICLE'S TEXTBODY==========
+===============================================*/
+.article-textbody {
+  font-family: "B612", sans-serif;
+
+  text-align: justify;
+  columns: 2 auto;
+  column-gap: 40px;
+}
+
+.article-textbody.small {
+  font-size: 1.6rem;
+}
+
+.article-textbody.medium {
+  font-size: 1.8rem;
+}
+
+.article-textbody.large {
+  font-size: 2rem;
+}
+
+.article-textbody p {
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.article-textbody p + p {
+  text-indent: 2rem;
+}

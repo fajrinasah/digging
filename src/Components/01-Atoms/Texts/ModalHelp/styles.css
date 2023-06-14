@@ -1,0 +1,9 @@
+/*=========================================
+=============MODAL HELP SHOW GUIDELINES==========
+===============================================*/
+.modal-help {
+  width: 250px;
+  padding: 1rem 1rem 1rem 3rem;
+
+  border: 1px solid var(--contrast);
+}

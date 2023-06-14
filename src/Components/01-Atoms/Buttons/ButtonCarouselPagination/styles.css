@@ -1,0 +1,17 @@
+/*=====================================
+=============BUTTON CAROUSEL PAGINATION==========
+====================================*/
+.button-carousel-pagination,
+.button-carousel-pagination.default {
+  width: 10px;
+  height: 10px;
+
+  border-radius: 10px;
+  border: 1px solid var(--contrast);
+
+  background-color: transparent;
+}
+
+.button-carousel-pagination.current {
+  background-color: var(--contrast);
+}
