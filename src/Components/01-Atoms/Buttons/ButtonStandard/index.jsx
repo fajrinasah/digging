@@ -16,12 +16,3 @@ export default function ButtonStandard({
     </button>
   );
 }
-
-/*
-Example:
-<ButtonStandard
-    story="button-raised"
-    title={"Button Test"}
-    buttonClicked={() => console.log("clicked!")}
-/>
-*/

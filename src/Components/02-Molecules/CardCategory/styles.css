@@ -3,8 +3,6 @@
 ===============================================*/
 
 .card-category {
-  cursor: pointer;
-
   padding: 2rem 2rem 0 2rem;
 
   display: grid;
@@ -39,6 +37,8 @@
   grid-area: details;
   padding-left: 1rem;
   margin: 0.5rem;
+
+  text-decoration: none;
 
   border-left: 1px solid var(--contrast);
 }

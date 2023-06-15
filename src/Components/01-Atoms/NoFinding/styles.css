@@ -1,0 +1,15 @@
+/*=========================================
+=============NO FINDING==========
+===============================================*/
+
+.no-finding {
+  color: var(--contrast);
+  font-size: 3rem;
+  padding: 1rem 0;
+
+  place-content: center;
+}
+
+.no-finding .no-finding-content {
+  margin-left: 2rem;
+}

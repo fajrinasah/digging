@@ -12,7 +12,7 @@
 
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 
-  border-left: 2px solid var(--contrast);
+  border-left: 3px solid var(--contrast);
 
   margin-left: 1rem;
 }
@@ -62,17 +62,7 @@
 }
 
 .card-article:hover .link-category {
-  border-color: var(--contrast);
-  background-color: var(--main);
-}
-
-.card-article:hover .link-category .link-of-category {
-  color: var(--contrast);
-}
-
-.card-article:hover .link-category .decor-circle {
-  background-color: var(--main);
-  border-color: var(--contrast);
+  border-color: var(--main);
 }
 
 .card-article:hover .article-mainshot {

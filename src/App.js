@@ -20,6 +20,8 @@ import PageRegisterVerification from "./Components/04-Pages/PageRegisterVerified
 import FormForgotReset from "./Components/02-Molecules/FormForgotReset";
 import PageRegister from "./Components/04-Pages/PageRegister";
 import PageProfileEdit from "./Components/04-Pages/PageProfileEdit";
+import Loader from "./Components/01-Atoms/Loader";
+import NoFinding from "./Components/01-Atoms/NoFinding";
 
 function App() {
   const root = document.querySelector(":root");
@@ -29,7 +31,8 @@ function App() {
     <div id="body-container" className="default-theme">
       <BrowserRouter>
         <Header />
-        <PageProfileEdit />
+        <NoFinding />
+        <Loader size="large" color="main" bgColor="accent" />
         <Routes>
           <Route path="/" element={<PageHome />} />
           <Route path="/digging" element={<PageDigging />} />

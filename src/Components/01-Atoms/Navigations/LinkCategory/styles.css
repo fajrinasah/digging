@@ -4,6 +4,8 @@
 .link-category {
   border-radius: 15px 0 15px 0;
 
+  cursor: pointer;
+
   display: flex;
   align-items: center;
 
