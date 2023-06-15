@@ -22,6 +22,7 @@ import PageRegister from "./Components/04-Pages/PageRegister";
 import PageProfileEdit from "./Components/04-Pages/PageProfileEdit";
 import Loader from "./Components/01-Atoms/Loader";
 import NoFinding from "./Components/01-Atoms/NoFinding";
+import Pagination from "./Components/01-Atoms/Pagination";
 
 function App() {
   const root = document.querySelector(":root");
@@ -31,8 +32,7 @@ function App() {
     <div id="body-container" className="default-theme">
       <BrowserRouter>
         <Header />
-        <NoFinding />
-        <Loader size="large" color="main" bgColor="accent" />
+        <Pagination />
         <Routes>
           <Route path="/" element={<PageHome />} />
           <Route path="/digging" element={<PageDigging />} />
@@ -40,9 +40,6 @@ function App() {
           <Route path="/profile" element={<PageProfileOwn />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
-        {/* 
-        <ButtonToTop />
-        */}
         <Footer />
       </BrowserRouter>
     </div>

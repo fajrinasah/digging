@@ -17,6 +17,9 @@ export default function InputPassword({
   maxLength = "",
   pattern = "",
   title = "",
+  value,
+  onChange,
+  onBlur,
 }) {
   return (
     <div className={`input-password label-and-input d-flex-${flexDirection}`}>
@@ -35,6 +38,9 @@ export default function InputPassword({
         maxLength={maxLength}
         pattern={pattern}
         title={title}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
       />
       <CheckboxShowPassword showClicked={showClicked} />
     </div>

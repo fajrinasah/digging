@@ -5,6 +5,9 @@ export default function InputSelect({
   inputId,
   labelText,
   placeholderOption = "",
+  value,
+  onChange,
+  onBlur,
 }) {
   const categories = [
     { value: "all", content: "All" },
@@ -28,7 +31,14 @@ export default function InputSelect({
       <label for={inputId} className="label-for-input">
         {labelText}
       </label>
-      <select className="input-for-label" name={inputId} id={inputId}>
+      <select
+        className="input-for-label"
+        name={inputId}
+        id={inputId}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
+      >
         <option className="placeholder-option" value="">
           {placeholderOption}
         </option>

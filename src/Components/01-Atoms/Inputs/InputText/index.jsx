@@ -13,6 +13,9 @@ export default function InputText({
   maxLength = "",
   pattern = "",
   title = "",
+  value,
+  onChange,
+  onBlur,
 }) {
   return (
     <div className={`label-and-input d-flex-${flexDirection}`}>
@@ -32,6 +35,9 @@ export default function InputText({
         maxLength={maxLength}
         pattern={pattern}
         title={title}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
       />
     </div>
   );

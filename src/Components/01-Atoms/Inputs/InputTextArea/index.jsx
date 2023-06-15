@@ -14,6 +14,9 @@ export default function InputTextArea({
   minLength = "",
   maxLength = "",
   title = "",
+  value,
+  onChange,
+  onBlur,
 }) {
   return (
     <div className={`label-and-textarea d-flex-${flexDirection}`}>
@@ -33,6 +36,9 @@ export default function InputTextArea({
         minLength={minLength}
         maxLength={maxLength}
         title={title}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
       ></textarea>
     </div>
   );

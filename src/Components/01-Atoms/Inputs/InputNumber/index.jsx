@@ -12,6 +12,9 @@ export default function InputNumber({
   max = "",
   step = "any",
   title = "",
+  value,
+  onChange,
+  onBlur,
 }) {
   return (
     <div className={`label-and-input d-flex-${flexDirection}`}>
@@ -30,6 +33,9 @@ export default function InputNumber({
         max={max}
         step={step}
         title={title}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
       />
     </div>
   );

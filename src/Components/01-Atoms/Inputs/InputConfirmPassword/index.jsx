@@ -15,6 +15,9 @@ export default function InputConfirmPassword({
   maxLength = "",
   pattern = "",
   title = "",
+  value,
+  onChange,
+  onBlur,
 }) {
   return (
     <div
@@ -34,6 +37,9 @@ export default function InputConfirmPassword({
         maxLength={maxLength}
         pattern={pattern}
         title={title}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
       />
       <CheckboxShowPassword showClicked={showClicked} />
     </div>
