@@ -21,7 +21,7 @@ export default function PageHome() {
       <Masthead />
 
       <div className="access-container">
-        {id ? <AccessLoginRegister /> : null}
+        {!id ? <AccessLoginRegister /> : null}
       </div>
 
       <div className="categories-container">

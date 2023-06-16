@@ -23,3 +23,14 @@ header {
 
   background-color: var(--main);
 }
+
+header .button-container {
+  justify-content: space-between;
+  align-items: center;
+  justify-self: flex-end;
+  width: max-content;
+}
+
+header .button-standard {
+  margin-right: 2rem;
+}

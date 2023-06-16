@@ -11,7 +11,7 @@ export const register = createAsyncThunk(
     try {
       // POST needed data for register
       // payload: {email, username, phone number, password}
-      const { data } = await api.post("/auth", payload);
+      const { data, token } = await api.post("/auth", payload);
 
       // set token (from data) in local storage
       localStorage.setItem("token", data?.token);
@@ -40,7 +40,7 @@ export const verifyAccount = createAsyncThunk(
       // show toast or snackbar if needed
       // ...
 
-      return null;
+      return;
     } catch (error) {
       return rejectWithValue(error.response ? error.response.data : error);
     }
