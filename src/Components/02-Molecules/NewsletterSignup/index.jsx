@@ -10,7 +10,7 @@ export default function NewsletterSignup({ emailPattern, signupClicked }) {
         Our weekly newsletter is ready to be delivered to you.
       </p>
       <div className="input-signup-email d-flex-row">
-        <label for="email-for-newsletter-signup d-flex-row">
+        <label htmlFor="email-for-newsletter-signup d-flex-row">
           <span className="sr-only">Enter your email address</span>
         </label>
         <input

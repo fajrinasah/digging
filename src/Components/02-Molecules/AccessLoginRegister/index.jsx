@@ -7,11 +7,11 @@ export default function AccessLoginRegister({}) {
     <div className="access-login-register-container">
       <div className="access-login-register">
         <p>
-          <Link to="" className="link-access-register">
+          <Link to="/register" className="link-access-register">
             Register
           </Link>{" "}
           or{" "}
-          <Link to="" className="link-access-login">
+          <Link to="/login" className="link-access-login">
             Login
           </Link>{" "}
           <br />

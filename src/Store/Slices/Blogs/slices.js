@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
-import api from "../../utils/api.instance";
+import api from "../../Utilities/api.instance";
 
 /*==========================================
 AsyncThunk: Get Articles

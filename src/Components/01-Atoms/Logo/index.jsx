@@ -1,7 +1,7 @@
 import "./styles.css";
 
 export default function Logo({ size = "large" }) {
-  return <p class={`logo ${size}`}>Digging</p>;
+  return <p className={`logo ${size}`}>Digging</p>;
 }
 
 /*

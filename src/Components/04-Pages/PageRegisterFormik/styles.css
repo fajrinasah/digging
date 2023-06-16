@@ -1,0 +1,51 @@
+/*=========================================
+=============PAGE REGISTER==========
+===============================================*/
+.page-register {
+  align-items: center;
+}
+
+.page-register .page-title {
+  align-self: stretch;
+}
+
+.page-register .nav-to-register-page {
+  justify-content: center;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.page-register .nav-to-register-page .link-to-register-page {
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid var(--contrast);
+  padding: 0.5rem 1rem;
+}
+
+.page-register .nav-to-register-page .link-to-register-page:hover,
+.page-register .nav-to-register-page .link-to-register-page:active {
+  background-color: var(--contrast);
+  color: var(--main);
+  font-weight: bold;
+}
+
+.page-register .form-register {
+  width: 50vw;
+}
+
+.page-register .guides-container {
+  position: relative;
+}
+
+.page-register .guides-container .modal-help {
+  display: block;
+  position: absolute;
+  bottom: 50px;
+  right: -25px;
+
+  z-index: 5;
+  border: none;
+  border-left: 5px solid var(--accent);
+
+  box-shadow: 1px 2px 5px var(--contrast);
+}

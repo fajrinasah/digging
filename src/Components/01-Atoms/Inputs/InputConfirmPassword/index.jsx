@@ -1,7 +1,7 @@
 import "../styles.css";
 import "./styles.css";
 
-import CheckboxShowPassword from "../Checkboxes/CheckboxShowPassword";
+import CheckboxShowPassword from "../CheckboxShowPassword";
 
 export default function InputConfirmPassword({
   flexDirection = "row",

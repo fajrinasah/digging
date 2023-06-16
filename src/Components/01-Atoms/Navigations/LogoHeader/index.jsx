@@ -4,7 +4,7 @@ import "./styles.css";
 
 export default function LogoHeader() {
   return (
-    <h1 class="logo small">
+    <h1 className="logo small">
       <NavLink to="/" end>
         Digging
       </NavLink>

@@ -2,7 +2,8 @@ import "../styles.css";
 import "./styles.css";
 
 import ButtonHelp from "../../Buttons/ButtonHelp";
-import CheckboxShowPassword from "../Checkboxes/CheckboxShowPassword";
+import ModalHelp from "../../Texts/ModalHelp";
+import CheckboxShowPassword from "../CheckboxShowPassword";
 
 export default function InputPassword({
   flexDirection = "row",
@@ -26,7 +27,10 @@ export default function InputPassword({
       <label for={inputId} className="label-for-input">
         {labelText}
       </label>
-      <ButtonHelp detail="See guides" onClick={helpClicked} />
+      <div className="guides-container">
+        <ModalHelp />
+        <ButtonHelp detail="See guides" onClick={helpClicked} />
+      </div>
       <input
         className="input-for-label"
         type="password"

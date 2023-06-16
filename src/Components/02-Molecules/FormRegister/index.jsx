@@ -7,13 +7,20 @@ import InputConfirmPassword from "../../01-Atoms/Inputs/InputConfirmPassword";
 import InputSubmit from "../../01-Atoms/Inputs/InputSubmit";
 
 export default function FormRegister({
-  pattern,
+  handleSubmit,
   helpClicked,
   passwordShowClicked,
   confirmShowClicked,
+  values,
+  handleChange,
+  handleBlur,
+  submitDisabled,
 }) {
   return (
-    <div className="form-template form-register d-flex-column">
+    <form
+      onSubmit={handleSubmit}
+      className="form-template form-register d-flex-column"
+    >
       <SectionTitle
         content="Complete your data below to register"
         size="small"
@@ -23,68 +30,73 @@ export default function FormRegister({
       <div className="container">
         <InputEmail
           flexDirection="column"
-          inputId=""
+          inputId="register-email"
           labelText="Email"
           required
-          inputName=""
-          inputPlaceholder=""
-          minLength=""
-          maxLength=""
-          title=""
+          inputName="register-email"
+          inputPlaceholder="example@mail.com"
+          title="Register your email address"
+          value={values.email}
+          onChange={handleChange}
+          onBlur={handleBlur}
         />
         <InputTel
           flexDirection="column"
-          inputId=""
+          inputId="register-phone-number"
           labelText="Phone Number"
           required
-          inputName=""
-          inputPlaceholder=""
-          minLength=""
-          maxLength=""
-          title=""
+          inputName="register-phone-number"
+          inputPlaceholder="621234567890"
+          title="Register your phone number"
+          value={values.phoneNumber}
+          onChange={handleChange}
+          onBlur={handleBlur}
         />
         <InputText
           flexDirection="column"
-          inputId=""
+          inputId="register-username"
           labelText="Username"
           required
-          inputName=""
-          inputPlaceholder=""
-          minLength=""
-          maxLength=""
-          pattern=""
-          title=""
+          inputName="register-username"
+          inputPlaceholder="yourUsername"
+          title="Register what will be your username"
+          value={values.username}
+          onChange={handleChange}
+          onBlur={handleBlur}
         />
         <InputPassword
           flexDirection="column"
-          inputId="password"
+          inputId="register-password"
           labelText="Password"
           helpClicked={helpClicked}
           showClicked={passwordShowClicked}
           required
-          inputName="password"
-          inputPlaceholder="password"
-          minLength="6"
-          pattern={pattern}
-          title="Password"
+          inputName="register-password"
+          title="Create a strong password"
+          value={values.password}
+          onChange={handleChange}
+          onBlur={handleBlur}
         />
         <InputConfirmPassword
           flexDirection="column"
-          inputId="confirm-password"
+          inputId="register-confirm-password"
           labelText="Confirm Password"
           showClicked={confirmShowClicked}
           required
-          inputName="confirm-password"
-          inputPlaceholder="password"
-          minLength="6"
-          pattern={pattern}
-          title="Confirm Password"
+          inputName="register-confirm-password"
+          title="Re-enter your password"
+          value={values.confirmPassword}
+          onChange={handleChange}
+          onBlur={handleBlur}
         />
       </div>
       <div className="form-button-container d-flex-column">
         <div className="decor-custom-div"></div>
-        <InputSubmit value="Send verification to email" />
+        <InputSubmit
+          value="Send verification to email"
+          disabled={submitDisabled}
+        />
       </div>
-    </div>
+    </form>
   );
 }

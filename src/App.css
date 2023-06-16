@@ -53,6 +53,13 @@ body {
   white-space: nowrap !important;
 }
 
+/*========================HEADER SPACE========================*/
+.header-space {
+  width: 100vw;
+  height: 45px;
+  background-color: transparent;
+}
+
 /*========================LOGO FONT========================*/
 .logo {
   font-family: "Caesar Dressing", serif;

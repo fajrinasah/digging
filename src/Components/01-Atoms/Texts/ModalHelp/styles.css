@@ -6,4 +6,9 @@
   padding: 1rem 1rem 1rem 3rem;
 
   border: 1px solid var(--contrast);
+  background-color: var(--main);
+}
+
+.modal-help li {
+  margin-bottom: 1rem;
 }

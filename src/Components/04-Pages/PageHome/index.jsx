@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+
 import "./styles.css";
 
 import Masthead from "../../02-Molecules/Masthead";
@@ -8,12 +10,18 @@ import HomeSectionTopTenList from "../../03-Organisms/HomeSectionTopTenList";
 import SectionDigging from "../../03-Organisms/SectionDigging";
 
 export default function PageHome() {
+  const { id } = useSelector((state) => {
+    return {
+      id: state.auth?.id,
+    };
+  });
+
   return (
     <div className="page-home">
       <Masthead />
 
       <div className="access-container">
-        <AccessLoginRegister />
+        {id ? <AccessLoginRegister /> : null}
       </div>
 
       <div className="categories-container">

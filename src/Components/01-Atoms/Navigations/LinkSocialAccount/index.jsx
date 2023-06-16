@@ -11,12 +11,12 @@ export default function LinkSocialAccount({
   bgColor = "accent",
 }) {
   return (
-    <div class={`link-social-account d-flex-row bg-${bgColor}`}>
+    <div className={`link-social-account d-flex-row bg-${bgColor}`}>
       <Link
         to={destination}
         className={`link-of-social-account color-${color} bg-${bgColor}`}
       >
-        <span class="sr-only">{srGuide}</span>
+        <span className="sr-only">{srGuide}</span>
         <FontAwesomeIcon icon={faIcon} />
       </Link>
     </div>

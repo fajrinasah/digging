@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import "./App.css";
 import PageHome from "../src/Components/04-Pages/PageHome";
@@ -18,7 +18,7 @@ import PageLogin from "./Components/04-Pages/PageLogin";
 import PageProfileOther from "./Components/04-Pages/PageProfileOther";
 import PageRegisterVerification from "./Components/04-Pages/PageRegisterVerified";
 import FormForgotReset from "./Components/02-Molecules/FormForgotReset";
-import PageRegister from "./Components/04-Pages/PageRegister";
+import PageRegister from "./Components/04-Pages/PageRegisterFormik";
 import PageProfileEdit from "./Components/04-Pages/PageProfileEdit";
 import Loader from "./Components/01-Atoms/Loader";
 import NoFinding from "./Components/01-Atoms/NoFinding";
@@ -30,18 +30,19 @@ function App() {
 
   return (
     <div id="body-container" className="default-theme">
-      <BrowserRouter>
-        <Header />
-        <Pagination />
-        <Routes>
-          <Route path="/" element={<PageHome />} />
-          <Route path="/digging" element={<PageDigging />} />
-          <Route path="/compose" element={<PageCompose />} />
-          <Route path="/profile" element={<PageProfileOwn />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      <Header />
+      <div className="header-space"></div>
+
+      <Routes>
+        <Route path="/" element={<PageHome />} />
+        <Route path="/register" element={<PageRegister />} />
+        <Route path="/login" element={<PageLogin />} />
+        <Route path="/digging" element={<PageDigging />} />
+        <Route path="/compose" element={<PageCompose />} />
+        <Route path="/profile" element={<PageProfileOwn />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
