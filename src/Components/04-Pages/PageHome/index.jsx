@@ -9,13 +9,13 @@ import HomeSectionCategoryCards from "../../03-Organisms/HomeSectionCategoryCard
 import HomeSectionTopTenList from "../../03-Organisms/HomeSectionTopTenList";
 import SectionDigging from "../../03-Organisms/SectionDigging";
 
-export default function PageHome() {
-  const { id } = useSelector((state) => {
-    return {
-      id: state.auth?.id,
-    };
-  });
+// const { id } = useSelector((state) => {
+//   return {
+//     id: state.auth?.id,
+//   };
+// });
 
+export default function PageHome({ id }) {
   return (
     <div className="page-home">
       <Masthead />

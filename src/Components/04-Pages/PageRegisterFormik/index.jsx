@@ -18,14 +18,14 @@ import "../../01-Atoms/Inputs/InputPassword/styles.css";
 import "../../01-Atoms/Inputs/InputConfirmPassword/styles.css";
 import "../../01-Atoms/Texts/ModalHelp/styles.css";
 
-export default function PageRegister() {
-  const dispatch = useDispatch();
-  const { isRegisterLoading, id } = useSelector((state) => {
-    return {
-      isRegisterLoading: state.auth?.isRegisterLoading,
-      id: state.auth?.id,
-    };
-  });
+export default function PageRegister({ dispatch, isRegisterLoading, id }) {
+  // const dispatch = useDispatch();
+  // const { isRegisterLoading, id } = useSelector((state) => {
+  //   return {
+  //     isRegisterLoading: state.auth?.isRegisterLoading,
+  //     id: state.auth?.id,
+  //   };
+  // });
 
   /*---------------Show Password Guides Toggle-------------*/
   const [guidesIsShown, setGuidesIsShown] = useState(false);
@@ -77,22 +77,32 @@ export default function PageRegister() {
           confirmPassword: "",
         }}
         validationSchema={registerValidationSchema}
-        /*
-        validate={(values) => {
+        // validate={(values) => {
+        //   try {
+        //     registerValidationSchema.validateSync(values);
+        //     return {};
+        //   } catch (error) {
+        //     console.log("error", error?.message);
+        //     return { message: error?.message };
+        //   }
+        // }}
+
+        onSubmit={(values, { setSubmitting }) => {
           try {
-            registerValidationSchema.validateSync(values);
-            return {};
+            dispatch(register(values));
+            console.log(`CLICKED: send verification to email`);
+            setSubmitting(false);
           } catch (error) {
             console.log("error", error?.message);
             return { message: error?.message };
+            // return (
+            //   <SnackbarNotification
+            //     color="main"
+            //     bgColor="accent"
+            //     content={error?.message}
+            //   />
+            // );
           }
-        }}
-        */
-
-        onSubmit={(values, { setSubmitting }) => {
-          dispatch(register(values));
-          console.log(`CLICKED: send verification to email`);
-          setSubmitting(false);
         }}
       >
         {({
@@ -102,6 +112,7 @@ export default function PageRegister() {
           handleChange,
           handleBlur,
           handleSubmit,
+          isSubmitting,
         }) => (
           <div className="container">
             <form

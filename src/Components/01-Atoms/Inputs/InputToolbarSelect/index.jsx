@@ -16,7 +16,7 @@ export default function InputToolbarSelect({
 
   return (
     <div className="input-toolbar-select d-flex-row">
-      <label for={`${forId}-select`} className="label-for-select">
+      <label htmlFor={`${forId}-select`} className="label-for-select">
         {label}
       </label>
 

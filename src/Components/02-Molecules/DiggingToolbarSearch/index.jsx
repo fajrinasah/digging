@@ -18,7 +18,7 @@ export default function DiggingToolbarSearch() {
   return (
     <div className="digging-toolbar-search d-flex-row">
       <div className="input-toolbar-select d-flex-row">
-        <label for="search-type" className="label-for-select">
+        <label htmlFor="search-type" className="label-for-select">
           Search
         </label>
 

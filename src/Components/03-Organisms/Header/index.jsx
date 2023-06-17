@@ -1,5 +1,3 @@
-import { useSelector } from "react-redux";
-
 import "./styles.css";
 
 import LogoHeader from "../../01-Atoms/Navigations/LogoHeader";
@@ -7,13 +5,7 @@ import Nav from "../../02-Molecules/Nav";
 import ButtonStandard from "../../01-Atoms/Buttons/ButtonStandard";
 import ButtonThemePicker from "../../01-Atoms/Buttons/ButtonThemePicker";
 
-export default function Header({ logoutClicked }) {
-  const { id } = useSelector((state) => {
-    return {
-      id: state.auth?.id,
-    };
-  });
-
+export default function Header({ logoutClicked, id }) {
   return (
     <div className="header-container">
       <header>

@@ -15,22 +15,14 @@ import "./styles.css";
 
 export default function LinkSeeCategory({ destination = "", category = "" }) {
   return (
-    <div class="link-see-category">
-      <Link to={destination} class="link-of-see-category">
+    <div className="link-see-category">
+      <Link to={destination} className="link-of-see-category">
         All {category} findings
         <span>
           {" "}
           <FontAwesomeIcon icon={faAnglesRight} aria-hidden="true" />
         </span>
       </Link>
-      {/*
-      <Link
-            to={destination}
-            className="link-see-category"
-          >
-          {content}
-      </Link> 
-       */}
     </div>
   );
 }

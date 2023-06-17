@@ -11,7 +11,7 @@ export const register = createAsyncThunk(
     try {
       // POST needed data for register
       // payload: {email, username, phone number, password}
-      const { data, token } = await api.post("/auth", payload);
+      const { data } = await api.post("/auth", payload);
 
       // set token (from data) in local storage
       localStorage.setItem("token", data?.token);

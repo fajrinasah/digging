@@ -9,6 +9,7 @@ export default function HomeSectionTopTenList({ data = [{}] }) {
     dataForList.map((article, index) => {
       return (
         <LinkTopArticleLi
+          key={index}
           rankNumber={index + 1}
           articleDestination={article.articlePage}
           profileDestination={article.authorProfile}

@@ -21,16 +21,18 @@ export default function LinkTopArticleLi({
   bgColorHover = "contrast",
 }) {
   return (
-    <div class="link-top-article-li">
-      <div class="rank-number">
+    <div className="link-top-article-li">
+      <div className="rank-number">
         <p>{rankNumber}</p>
       </div>
-      <div class={`article-details color-${color} hover-bg-${bgColorHover}`}>
-        <Link class="article-headline" to={articleDestination}>
+      <div
+        className={`article-details color-${color} hover-bg-${bgColorHover}`}
+      >
+        <Link className="article-headline" to={articleDestination}>
           {headline}
         </Link>
-        <div class="custom-div"></div>
-        <Link class="article-byline" to={profileDestination}>
+        <div className="custom-div"></div>
+        <Link className="article-byline" to={profileDestination}>
           {byline}
         </Link>
       </div>
