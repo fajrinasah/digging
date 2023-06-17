@@ -1,6 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { toast } from "react-hot-toast";
 
 import api from "../../Utilities/api.instance";
+import {
+  toastSuccess,
+  toastError,
+} from "../../../Components/01-Atoms/CustomToasts";
 
 /*==========================================
 AsyncThunk: Register
@@ -17,10 +22,11 @@ export const register = createAsyncThunk(
       localStorage.setItem("token", data?.token);
 
       // show toast or snackbar if needed
-      // ...
+      toastSuccess("Please check your email to verify your account");
 
       return data?.data;
     } catch (error) {
+      toastError(error.response ? error.response.data : error);
       return rejectWithValue(error.response ? error.response.data : error);
     }
   }
@@ -42,6 +48,7 @@ export const verifyAccount = createAsyncThunk(
 
       return;
     } catch (error) {
+      toastError(error.response ? error.response.data : error);
       return rejectWithValue(error.response ? error.response.data : error);
     }
   }
@@ -63,10 +70,12 @@ export const login = createAsyncThunk(
       localStorage.setItem("token", data?.token);
 
       // show toast or snackbar if needed
-      // ...
+      toastSuccess("Welcome back!");
 
       return data?.isAccountExist;
+      // return data;
     } catch (error) {
+      toastError(error.response ? error.response.data : error);
       return rejectWithValue(error.response ? error.response.data : error);
     }
   }
@@ -101,10 +110,11 @@ export const updatePhotoProfile = createAsyncThunk(
       const { data } = api.post("/profile/single-uploaded", payload);
 
       // show toast or snackbar if needed
-      // ...
+      toastSuccess("Profile successfully updated");
 
       return data?.imgProfile;
     } catch (error) {
+      toastError(error.response ? error.response.data : error);
       return rejectWithValue(error.response ? error.response.data : error);
     }
   }
@@ -123,6 +133,7 @@ export const logout = createAsyncThunk(
 
       return null;
     } catch (error) {
+      toastError(error.response ? error.response.data : error);
       return rejectWithValue(error.response ? error.response.data : error);
     }
   }

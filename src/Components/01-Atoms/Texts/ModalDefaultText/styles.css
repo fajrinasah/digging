@@ -4,7 +4,6 @@
 
 /*--------------CONTAINER-------------*/
 .modal-default-text {
-  display: flex;
   place-content: center;
   place-items: center;
 
@@ -29,10 +28,34 @@
   background-color: var(--accent);
 }
 
+/*--------------TYPE: TOAST-------------*/
+
+.modal-default-text.toast {
+  width: 40%;
+  box-shadow: 2px 1px 10px 0px black;
+}
+
+.modal-default-text.toast .modal-content {
+  place-content: center;
+  place-items: center;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.modal-default-text.toast .toast-icon {
+  margin-right: 1rem;
+  font-size: 2rem;
+}
+
 /*--------------CONTENT-------------*/
-.modal-content {
+.modal-default-text .modal-content {
   padding: 1.5rem;
   margin: 2rem;
+
+  place-content: center;
+  place-items: center;
+
+  text-align: center;
 }
 
 /*----------FRAME-----------*/

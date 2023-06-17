@@ -1,0 +1,54 @@
+/*=========================================
+=============PAGE LOGIN==========
+===============================================*/
+.page-login {
+  align-items: center;
+}
+
+.page-login .page-title {
+  align-self: stretch;
+}
+
+.page-login .nav-to-reset-password-page {
+  justify-content: right;
+  padding: 1rem 1rem 3rem 0;
+  margin-bottom: 2rem;
+}
+
+.page-login .nav-to-reset-password-page .link-to-reset-password-page {
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid var(--contrast);
+  padding: 0.5rem 1rem;
+}
+
+.page-login .nav-to-reset-password-page .link-to-reset-password-page:hover,
+.page-login .nav-to-reset-password-page .link-to-reset-password-page:active {
+  background-color: var(--contrast);
+  color: var(--main);
+  font-weight: bold;
+}
+
+.page-login .form-login {
+  width: 50vw;
+}
+
+fieldset.login-option-radios {
+  border: none;
+  margin: 2rem 0;
+}
+
+fieldset.login-option-radios {
+  padding: 0 1rem;
+}
+
+fieldset.login-option-radios .radio-container {
+  padding: 1rem 0;
+}
+
+fieldset.login-option-radios .radio-container input[type="radio"] {
+  width: 3rem;
+  height: 3rem;
+  accent-color: var(--accent);
+  margin-right: 1rem;
+}

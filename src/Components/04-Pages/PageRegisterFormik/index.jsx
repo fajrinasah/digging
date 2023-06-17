@@ -1,7 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { Formik } from "formik";
+
 import { register } from "../../../Store/Slices/Authorization/slices";
 import { registerValidationSchema } from "../../../ValidationSchemata/registerValidationSchema";
 
@@ -19,14 +19,6 @@ import "../../01-Atoms/Inputs/InputConfirmPassword/styles.css";
 import "../../01-Atoms/Texts/ModalHelp/styles.css";
 
 export default function PageRegister({ dispatch, isRegisterLoading, id }) {
-  // const dispatch = useDispatch();
-  // const { isRegisterLoading, id } = useSelector((state) => {
-  //   return {
-  //     isRegisterLoading: state.auth?.isRegisterLoading,
-  //     id: state.auth?.id,
-  //   };
-  // });
-
   /*---------------Show Password Guides Toggle-------------*/
   const [guidesIsShown, setGuidesIsShown] = useState(false);
 
@@ -77,16 +69,6 @@ export default function PageRegister({ dispatch, isRegisterLoading, id }) {
           confirmPassword: "",
         }}
         validationSchema={registerValidationSchema}
-        // validate={(values) => {
-        //   try {
-        //     registerValidationSchema.validateSync(values);
-        //     return {};
-        //   } catch (error) {
-        //     console.log("error", error?.message);
-        //     return { message: error?.message };
-        //   }
-        // }}
-
         onSubmit={(values, { setSubmitting }) => {
           try {
             dispatch(register(values));
@@ -95,13 +77,6 @@ export default function PageRegister({ dispatch, isRegisterLoading, id }) {
           } catch (error) {
             console.log("error", error?.message);
             return { message: error?.message };
-            // return (
-            //   <SnackbarNotification
-            //     color="main"
-            //     bgColor="accent"
-            //     content={error?.message}
-            //   />
-            // );
           }
         }}
       >
@@ -264,14 +239,14 @@ export default function PageRegister({ dispatch, isRegisterLoading, id }) {
                     bgColor="accent"
                   />
                 ) : null}
-              </div>
 
-              <div className="form-button-container d-flex-column">
-                <div className="decor-custom-div"></div>
-                <InputSubmit
-                  value="Send verification to email"
-                  disabled={isRegisterLoading}
-                />
+                <div className="form-button-container d-flex-column">
+                  <div className="decor-custom-div"></div>
+                  <InputSubmit
+                    value="Send verification to email"
+                    disabled={isRegisterLoading}
+                  />
+                </div>
               </div>
             </form>
           </div>

@@ -1,6 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
+import { toast, Toaster, ToastBar } from "react-hot-toast";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRectangleXmark } from "@fortawesome/free-solid-svg-icons";
 
 import { logout } from "./Store/Slices/Authorization/slices";
 import { keepLogin } from "./Store/Slices/Authorization/slices";
@@ -16,13 +19,17 @@ import PageDigging from "./Components/04-Pages/PageDigging";
 import PageCompose from "../src/Components/04-Pages/PageCompose";
 import PageProfileOwn from "./Components/04-Pages/PageProfileOwn";
 import PageNotFound from "./Components/04-Pages/PageNotFound";
-import PageLogin from "./Components/04-Pages/PageLogin";
+import PageLogin from "./Components/04-Pages/PageLoginFormik";
 import PageRegisterVerification from "./Components/04-Pages/PageRegisterVerification";
 import PageProfileOther from "./Components/04-Pages/PageProfileOther";
+import FormForgotVerification from "./Components/02-Molecules/FormForgotVerification";
 import FormForgotReset from "./Components/02-Molecules/FormForgotReset";
 import PageRegister from "./Components/04-Pages/PageRegisterFormik";
 import PageProfileEdit from "./Components/04-Pages/PageProfileEdit";
 import Loader from "./Components/01-Atoms/Loader";
+import SnackbarNotification from "./Components/02-Molecules/SnackbarNotification";
+import ButtonStandard from "./Components/01-Atoms/Buttons/ButtonStandard";
+import ModalDefaultText from "./Components/01-Atoms/Texts/ModalDefaultText";
 
 /*import ButtonToTop from "./Components/01-Atoms/Buttons/ButtonToTop";*/
 
@@ -34,14 +41,6 @@ function App() {
   useEffect(() => {
     dispatch(keepLogin());
   }, []);
-
-  // const { id, isKeepLoginLoading, isRegisterLoading } = useSelector((state) => {
-  //   return {
-  //     id: state.auth?.id,
-  //     isKeepLoginLoading: state.auth?.isKeepLoginLoading,
-  //     isRegisterLoading: state.auth?.isRegisterLoading,
-  //   };
-  // });
 
   const id = useSelector((state) => {
     return state.auth?.id;
@@ -71,7 +70,6 @@ function App() {
     <div id="body-container" className="default-theme">
       <Header logoutClicked={logoutClicked} id={id} />
       <div className="header-space"></div>
-
       <Routes>
         <Route path="/" element={<PageHome id={id} />} />
         <Route
@@ -88,7 +86,14 @@ function App() {
           path="/verification/:token"
           element={<PageRegisterVerification />}
         />
-        <Route path="/login" element={<PageLogin />} />
+        <Route
+          path="/login"
+          element={<PageLogin dispatch={dispatch} id={id} />}
+        />
+        <Route
+          path="/resetPasswordVerification"
+          element={<FormForgotVerification />}
+        />
         <Route path="/digging" element={<PageDigging />} />
         <Route
           path="/compose"
@@ -109,6 +114,46 @@ function App() {
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
+      <Toaster
+        toastOptions={{
+          loading: {
+            style: {
+              background: "var(--main)",
+            },
+          },
+        }}
+      >
+        {(t) => (
+          <ToastBar toast={t}>
+            {({ icon, message }) => (
+              <>
+                {icon}
+                {message}
+                {t.type !== "loading" && (
+                  <button onClick={() => toast.dismiss(t.id)}>
+                    <FontAwesomeIcon
+                      icon={faRectangleXmark}
+                      aria-hidden="true"
+                    />
+                    <span className="sr-only">Close</span>
+                  </button>
+                )}
+              </>
+            )}
+            {(t) => (
+              <ToastBar
+                toast={t}
+                style={{
+                  ...t.style,
+                  animation: t.visible
+                    ? "custom-enter 1s ease"
+                    : "custom-exit 1s ease",
+                }}
+              />
+            )}
+          </ToastBar>
+        )}
+      </Toaster>
     </div>
   );
 }
