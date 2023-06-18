@@ -41,7 +41,7 @@ export default function PageLogin({ dispatch, id }) {
   if (id) return <Navigate to="/" replace />;
 
   return (
-    <div className="page-login d-flex-column">
+    <div className="page-form-template page-login d-flex-column">
       <PageTitle content="Welcome Back!" />
       <Formik
         initialValues={{
@@ -162,7 +162,7 @@ export default function PageLogin({ dispatch, id }) {
                   <input
                     className="input-for-label"
                     type={optionData}
-                    htmlFor={
+                    id={
                       optionData == "email"
                         ? "inputEmail"
                         : optionData == "phone"
@@ -193,7 +193,7 @@ export default function PageLogin({ dispatch, id }) {
 
                 <div className="input-password label-and-input d-flex-column">
                   <label htmlFor="password" className="label-for-input">
-                    Confirm Password
+                    Password
                   </label>
                   <input
                     className="input-for-label"
@@ -219,7 +219,10 @@ export default function PageLogin({ dispatch, id }) {
                 ) : null}
 
                 <div className="nav-to-reset-password-page d-flex-row">
-                  <Link to="/login" className="link-to-reset-password-page">
+                  <Link
+                    to="/forgotPassword"
+                    className="link-to-reset-password-page"
+                  >
                     Forgot password?
                   </Link>
                 </div>

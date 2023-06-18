@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-hot-toast";
+import { Navigate } from "react-router-dom";
 
 import api from "../../Utilities/api.instance";
 import {
@@ -65,8 +66,13 @@ export const forgotPassword = createAsyncThunk(
       // payload: {email}
       const { data } = await api.put("/auth/forgotPass", payload);
 
+      // // set token (from data) in local storage
+      // localStorage.setItem("token", data?.data);
+
+      <Navigate to="/" replace />;
+
       // show toast or snackbar if needed
-      toastSuccess("Please check your email to reset password");
+      toastSuccess("Please check your email to verify");
 
       return data?.message;
     } catch (error) {
@@ -90,9 +96,13 @@ export const resetPassword = createAsyncThunk(
       // show toast or snackbar if needed
       toastSuccess("Password has been reset");
 
+      // //remove token from local storage
+      // localStorage.removeItem("token");
+
       return data?.message;
     } catch (error) {
-      toastError(error.response ? error.response.data : error);
+      // toastError(error.response ? error.response.data : error);
+      toastError("Something went wrong");
       return rejectWithValue(error.response ? error.response.data : error);
     }
   }

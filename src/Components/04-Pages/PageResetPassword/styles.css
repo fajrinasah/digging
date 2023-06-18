@@ -1,0 +1,23 @@
+/*=========================================
+=============PAGE RESET PASSWORD==========
+===============================================*/
+.page-reset-password > .container {
+  margin-top: 2rem;
+}
+
+.page-reset-password .guides-container {
+  position: relative;
+}
+
+.page-reset-password .guides-container .modal-help {
+  display: block;
+  position: absolute;
+  bottom: 50px;
+  right: -25px;
+
+  z-index: 5;
+  border: none;
+  border-left: 5px solid var(--accent);
+
+  box-shadow: 1px 2px 5px var(--contrast);
+}

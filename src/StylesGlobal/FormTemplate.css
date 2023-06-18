@@ -29,3 +29,18 @@
 
   background-color: var(--contrast);
 }
+
+/*=========================================
+=============PAGE FORM TEMPLATE==========
+===============================================*/
+.page-form-template {
+  align-items: center;
+}
+
+.page-form-template .page-title {
+  align-self: stretch;
+}
+
+.page-form-template > .container {
+  width: 50vw;
+}

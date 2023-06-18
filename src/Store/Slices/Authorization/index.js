@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toastBlank } from "../../../Components/01-Atoms/CustomToasts";
 
 // import created AsyncThunks
 import {
@@ -60,6 +61,7 @@ const authSlice = createSlice({
     // REGISTER
     builder.addCase(register.pending, (state, action) => {
       state.isRegisterLoading = true;
+      toastBlank("Sending request to server...");
     });
 
     // VERIFY ACCOUNT
@@ -74,11 +76,19 @@ const authSlice = createSlice({
     // FORGOT PASSSWORD
     builder.addCase(forgotPassword.pending, (state, action) => {
       state.isForgotPasswordLoading = true;
+      toastBlank("Sending request to server...");
+    });
+    builder.addCase(forgotPassword.fulfilled, (state, action) => {
+      state.isForgotPasswordLoading = false;
     });
 
     // RESET PASSSWORD
     builder.addCase(resetPassword.pending, (state, action) => {
       state.isResetPasswordLoading = true;
+      toastBlank("Sending request to server...");
+    });
+    builder.addCase(resetPassword.fulfilled, (state, action) => {
+      state.isResetPasswordLoading = false;
     });
 
     // LOGIN

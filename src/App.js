@@ -22,8 +22,8 @@ import PageNotFound from "./Components/04-Pages/PageNotFound";
 import PageLogin from "./Components/04-Pages/PageLoginFormik";
 import PageRegisterVerification from "./Components/04-Pages/PageRegisterVerification";
 import PageProfileOther from "./Components/04-Pages/PageProfileOther";
-import PageForgotVerification from "./Components/04-Pages/PageForgotVerification";
-import FormForgotReset from "./Components/02-Molecules/FormForgotReset";
+import PageForgotPassword from "./Components/04-Pages/PageForgotPassword";
+import PageResetPassword from "./Components/04-Pages/PageResetPassword";
 import PageRegister from "./Components/04-Pages/PageRegisterFormik";
 import PageProfileEdit from "./Components/04-Pages/PageProfileEdit";
 import Loader from "./Components/01-Atoms/Loader";
@@ -88,7 +88,14 @@ function App() {
           path="/login"
           element={<PageLogin dispatch={dispatch} id={id} />}
         />
-        <Route path="/forgotPassword" element={<PageForgotVerification />} />
+        <Route
+          path="/forgotPassword"
+          element={<PageForgotPassword dispatch={dispatch} />}
+        />
+        <Route
+          path="reset-password/:token"
+          element={<PageResetPassword dispatch={dispatch} />}
+        />
         <Route path="/digging" element={<PageDigging />} />
         <Route
           path="/compose"

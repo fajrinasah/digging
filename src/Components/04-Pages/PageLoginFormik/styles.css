@@ -1,13 +1,6 @@
 /*=========================================
 =============PAGE LOGIN==========
 ===============================================*/
-.page-login {
-  align-items: center;
-}
-
-.page-login .page-title {
-  align-self: stretch;
-}
 
 .page-login .nav-to-reset-password-page {
   justify-content: right;
@@ -29,10 +22,7 @@
   font-weight: bold;
 }
 
-.page-login .form-login {
-  width: 50vw;
-}
-
+/*--------------RADIOS-------------------*/
 fieldset.login-option-radios {
   border: none;
   margin: 2rem 0;

@@ -41,7 +41,7 @@ export default function PageRegister() {
   if (id) return <Navigate to="/" replace />;
 
   return (
-    <div className="page-register d-flex-column">
+    <div className="page-form-template page-register d-flex-column">
       <PageTitle content="Hello, Felow History Enthusiast!" />
       <div className="nav-to-register-page">
         <p>

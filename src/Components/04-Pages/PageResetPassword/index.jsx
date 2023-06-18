@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
-import { useSelector } from "react-redux";
 
-import { register } from "../../../Store/Slices/Authorization/slices";
-import { registerValidationSchema } from "../../../ValidationSchemata/registerValidationSchema";
+import { resetPassword } from "../../../Store/Slices/Authorization/slices";
+import { resetPasswordValidationSchema } from "../../../ValidationSchemata/resetPasswordValidationSchema";
 
 import PageTitle from "../../01-Atoms/Texts/PageTitle";
 import SectionTitle from "../../01-Atoms/Texts/SectionTitle";
@@ -19,10 +18,9 @@ import "../../01-Atoms/Inputs/InputPassword/styles.css";
 import "../../01-Atoms/Inputs/InputConfirmPassword/styles.css";
 import "../../01-Atoms/Texts/ModalHelp/styles.css";
 
-export default function PageRegister({ dispatch, id }) {
-  const isRegisterLoading = useSelector((state) => {
-    return state.auth?.isRegisterLoading;
-  });
+export default function PageResetPassword({ dispatch }) {
+  const navigate = useNavigate();
+
   /*---------------Show Password Guides Toggle-------------*/
   const [guidesIsShown, setGuidesIsShown] = useState(false);
 
@@ -45,39 +43,21 @@ export default function PageRegister({ dispatch, id }) {
     );
   };
 
-  /*------------------------------*/
-
-  // if user is already verified
-  // (which means they already got their id
-  // and we can get that id from state),
-  // redirect to home page
-  if (id) return <Navigate to="/" replace />;
-
   return (
-    <div className="page-form-template page-register d-flex-column">
-      <PageTitle content="Hello, Felow History Enthusiast!" />
-      <div className="nav-to-register-page d-flex-row">
-        <p>
-          Already have an account?{" "}
-          <Link to="/login" className="link-to-register-page">
-            Login
-          </Link>
-        </p>
-      </div>
+    <div className="page-form-template page-reset-password d-flex-column">
+      <PageTitle content="Reset Password" />
       <Formik
         initialValues={{
-          email: "",
-          phone: "",
-          username: "",
           password: "",
           confirmPassword: "",
         }}
-        validationSchema={registerValidationSchema}
+        validationSchema={resetPasswordValidationSchema}
         onSubmit={(values, { setSubmitting }) => {
           try {
-            dispatch(register(values));
-            console.log(`CLICKED: send verification to email`);
+            dispatch(resetPassword(values));
+            console.log(`CLICKED: reset password`);
             setSubmitting(false);
+            navigate("/");
           } catch (error) {
             console.log("error", error?.message);
             return { message: error?.message };
@@ -96,7 +76,7 @@ export default function PageRegister({ dispatch, id }) {
           <div className="container">
             <form
               onSubmit={handleSubmit}
-              className="form-template form-register d-flex-column"
+              className="form-template form-reset-password d-flex-column"
             >
               <SectionTitle
                 content="Complete your data below to register"
@@ -105,78 +85,6 @@ export default function PageRegister({ dispatch, id }) {
                 bgColor="main"
               />
               <div className="container">
-                <div className={`label-and-input d-flex-column`}>
-                  <label htmlFor="email" className="label-for-input">
-                    Email
-                  </label>
-                  <input
-                    className="input-for-label"
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="example@mail.com"
-                    title="Register your email address"
-                    value={values.email}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                </div>
-                {touched.email && errors.email ? (
-                  <SnackbarNotification
-                    content={errors.email}
-                    color="main"
-                    bgColor="accent"
-                  />
-                ) : null}
-
-                <div className={`label-and-input d-flex-column`}>
-                  <label htmlFor="phone" className="label-for-input">
-                    Phone Number
-                  </label>
-                  <input
-                    className="input-for-label"
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    placeholder="62123456789"
-                    title="Register your phone number"
-                    value={values.phone}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                </div>
-                {touched.phone && errors.phone ? (
-                  <SnackbarNotification
-                    content={errors.phone}
-                    color="main"
-                    bgColor="accent"
-                  />
-                ) : null}
-
-                <div className={`label-and-input d-flex-column`}>
-                  <label htmlFor="username" className="label-for-input">
-                    Username
-                  </label>
-                  <input
-                    className="input-for-label"
-                    type="text"
-                    id="username"
-                    name="username"
-                    placeholder="yourUsername"
-                    title="Register what will be your username"
-                    value={values.username}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                  />
-                </div>
-                {touched.username && errors.username ? (
-                  <SnackbarNotification
-                    content={errors.username}
-                    color="main"
-                    bgColor="accent"
-                  />
-                ) : null}
-
                 <div className="input-password label-and-input d-flex-column">
                   <label htmlFor="password" className="label-for-input">
                     Password
@@ -246,10 +154,7 @@ export default function PageRegister({ dispatch, id }) {
 
                 <div className="form-button-container d-flex-column">
                   <div className="decor-custom-div"></div>
-                  <InputSubmit
-                    value="Send verification to email"
-                    disabled={isRegisterLoading}
-                  />
+                  <InputSubmit value="Reset password" disabled={isSubmitting} />
                 </div>
               </div>
             </form>
