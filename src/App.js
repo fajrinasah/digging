@@ -22,7 +22,7 @@ import PageNotFound from "./Components/04-Pages/PageNotFound";
 import PageLogin from "./Components/04-Pages/PageLoginFormik";
 import PageRegisterVerification from "./Components/04-Pages/PageRegisterVerification";
 import PageProfileOther from "./Components/04-Pages/PageProfileOther";
-import FormForgotVerification from "./Components/02-Molecules/FormForgotVerification";
+import PageForgotVerification from "./Components/04-Pages/PageForgotVerification";
 import FormForgotReset from "./Components/02-Molecules/FormForgotReset";
 import PageRegister from "./Components/04-Pages/PageRegisterFormik";
 import PageProfileEdit from "./Components/04-Pages/PageProfileEdit";
@@ -42,17 +42,20 @@ function App() {
     dispatch(keepLogin());
   }, []);
 
-  const id = useSelector((state) => {
-    return state.auth?.id;
-  });
+  // const id = useSelector((state) => {
+  //   return state.auth?.id;
+  // });
 
   const isKeepLoginLoading = useSelector((state) => {
     return state.auth?.isKeepLoginLoading;
   });
-
-  const isRegisterLoading = useSelector((state) => {
-    return state.auth?.isRegisterLoading;
+  const id = useSelector((state) => {
+    return state.auth?.id;
   });
+
+  // const isRegisterLoading = useSelector((state) => {
+  //   return state.auth?.isRegisterLoading;
+  // });
 
   const logoutClicked = () => {
     dispatch(logout());
@@ -70,17 +73,12 @@ function App() {
     <div id="body-container" className="default-theme">
       <Header logoutClicked={logoutClicked} id={id} />
       <div className="header-space"></div>
+
       <Routes>
         <Route path="/" element={<PageHome id={id} />} />
         <Route
           path="/register"
-          element={
-            <PageRegister
-              dispatch={dispatch}
-              isRegisterLoading={isRegisterLoading}
-              id={id}
-            />
-          }
+          element={<PageRegister dispatch={dispatch} id={id} />}
         />
         <Route
           path="/verification/:token"
@@ -90,10 +88,7 @@ function App() {
           path="/login"
           element={<PageLogin dispatch={dispatch} id={id} />}
         />
-        <Route
-          path="/resetPasswordVerification"
-          element={<FormForgotVerification />}
-        />
+        <Route path="/forgotPassword" element={<PageForgotVerification />} />
         <Route path="/digging" element={<PageDigging />} />
         <Route
           path="/compose"

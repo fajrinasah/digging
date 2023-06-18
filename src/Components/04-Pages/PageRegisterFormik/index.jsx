@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { Formik } from "formik";
+import { useSelector } from "react-redux";
 
 import { register } from "../../../Store/Slices/Authorization/slices";
 import { registerValidationSchema } from "../../../ValidationSchemata/registerValidationSchema";
@@ -18,7 +19,10 @@ import "../../01-Atoms/Inputs/InputPassword/styles.css";
 import "../../01-Atoms/Inputs/InputConfirmPassword/styles.css";
 import "../../01-Atoms/Texts/ModalHelp/styles.css";
 
-export default function PageRegister({ dispatch, isRegisterLoading, id }) {
+export default function PageRegister({ dispatch, id }) {
+  const isRegisterLoading = useSelector((state) => {
+    return state.auth?.isRegisterLoading;
+  });
   /*---------------Show Password Guides Toggle-------------*/
   const [guidesIsShown, setGuidesIsShown] = useState(false);
 

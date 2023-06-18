@@ -1,5 +1,3 @@
-import { useSelector } from "react-redux";
-
 import "./styles.css";
 
 import Masthead from "../../02-Molecules/Masthead";

@@ -55,6 +55,50 @@ export const verifyAccount = createAsyncThunk(
 );
 
 /*==========================================
+AsyncThunk: Forgot Password
+===========================================*/
+export const forgotPassword = createAsyncThunk(
+  "auth/forgotPassword",
+  async (payload, { rejectWithValue }) => {
+    try {
+      // PUT data to verify
+      // payload: {email}
+      const { data } = await api.put("/auth/forgotPass", payload);
+
+      // show toast or snackbar if needed
+      toastSuccess("Please check your email to reset password");
+
+      return data?.message;
+    } catch (error) {
+      toastError(error.response ? error.response.data : error);
+      return rejectWithValue(error.response ? error.response.data : error);
+    }
+  }
+);
+
+/*==========================================
+AsyncThunk: Reset Password
+===========================================*/
+export const resetPassword = createAsyncThunk(
+  "auth/resetPassword",
+  async (payload, { rejectWithValue }) => {
+    try {
+      // PATCH data to reset password
+      // payload: {password, confirmPassword}
+      const { data } = await api.patch("/auth/resetPass", payload);
+
+      // show toast or snackbar if needed
+      toastSuccess("Password has been reset");
+
+      return data?.message;
+    } catch (error) {
+      toastError(error.response ? error.response.data : error);
+      return rejectWithValue(error.response ? error.response.data : error);
+    }
+  }
+);
+
+/*==========================================
 AsyncThunk: Login
 ===========================================*/
 
@@ -100,6 +144,94 @@ export const keepLogin = createAsyncThunk(
 );
 
 /*==========================================
+AsyncThunk: Change Password
+===========================================*/
+export const changePassword = createAsyncThunk(
+  "auth/changePassword",
+  async (payload, { rejectWithValue }) => {
+    try {
+      // PATCH data to change password
+      // payload : {currentPassword, password, confirmPassword}
+      const { data } = await api.patch("/auth/changePass", payload);
+
+      // show toast or snackbar if needed
+      toastSuccess("Password has been changed");
+
+      return data?.message;
+    } catch (error) {
+      toastError(error.response ? error.response.data : error);
+      return rejectWithValue(error.response ? error.response.data : error);
+    }
+  }
+);
+
+/*==========================================
+AsyncThunk: Change Username
+===========================================*/
+export const changeUsername = createAsyncThunk(
+  "auth/changeUsername",
+  async (payload, { rejectWithValue }) => {
+    try {
+      // PATCH data to change username
+      // payload : {currentUsername, newUsername}
+      const { data } = await api.patch("/auth/changeUsername", payload);
+
+      // show toast or snackbar if needed
+      toastSuccess("Username has been changed");
+
+      return data;
+    } catch (error) {
+      toastError(error.response ? error.response.data : error);
+      return rejectWithValue(error.response ? error.response.data : error);
+    }
+  }
+);
+
+/*==========================================
+AsyncThunk: Change Phone Number
+===========================================*/
+export const changePhone = createAsyncThunk(
+  "auth/changePhone",
+  async (payload, { rejectWithValue }) => {
+    try {
+      // PATCH data to change phone number
+      // payload : {currentPhone, newPhone}
+      const { data } = await api.patch("/auth/changePhone", payload);
+
+      // show toast or snackbar if needed
+      toastSuccess("Phone number has been changed");
+
+      return data;
+    } catch (error) {
+      toastError(error.response ? error.response.data : error);
+      return rejectWithValue(error.response ? error.response.data : error);
+    }
+  }
+);
+
+/*==========================================
+AsyncThunk: Change Email
+===========================================*/
+export const changeEmail = createAsyncThunk(
+  "auth/changeEmail",
+  async (payload, { rejectWithValue }) => {
+    try {
+      // PATCH data to change phone number
+      // payload : {currentEmail, newEmail}
+      const { data } = await api.patch("/auth/changeEmail", payload);
+
+      // show toast or snackbar if needed
+      toastSuccess("Email has been changed");
+
+      return data;
+    } catch (error) {
+      toastError(error.response ? error.response.data : error);
+      return rejectWithValue(error.response ? error.response.data : error);
+    }
+  }
+);
+
+/*==========================================
 AsyncThunk: Update Photo Profile
 ===========================================*/
 export const updatePhotoProfile = createAsyncThunk(
@@ -110,7 +242,7 @@ export const updatePhotoProfile = createAsyncThunk(
       const { data } = api.post("/profile/single-uploaded", payload);
 
       // show toast or snackbar if needed
-      toastSuccess("Profile successfully updated");
+      toastSuccess("Photo profile has been changed");
 
       return data?.imgProfile;
     } catch (error) {

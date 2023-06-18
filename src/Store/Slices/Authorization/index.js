@@ -4,8 +4,14 @@ import { createSlice } from "@reduxjs/toolkit";
 import {
   register,
   verifyAccount,
+  forgotPassword,
+  resetPassword,
   login,
   keepLogin,
+  changePassword,
+  changeUsername,
+  changePhone,
+  changeEmail,
   updatePhotoProfile,
   logout,
 } from "./slices";
@@ -13,8 +19,14 @@ import {
 // make initial state
 const INITIAL_STATE = {
   isRegisterLoading: false,
+  isForgotPasswordLoading: false,
+  isResetPasswordLoading: false,
   isLoginLoading: false,
   isKeepLoginLoading: false,
+  isChangePasswordLoading: false,
+  isChangeUsernameLoading: false,
+  isChangPhoneLoading: false,
+  isChangeEmailLoading: false,
   isUploadPhotoProfileLoading: false,
   isLogoutLoading: false,
   id: null,
@@ -45,10 +57,12 @@ const authSlice = createSlice({
   name: "auth",
   initialState: INITIAL_STATE,
   extraReducers: (builder) => {
+    // REGISTER
     builder.addCase(register.pending, (state, action) => {
       state.isRegisterLoading = true;
     });
 
+    // VERIFY ACCOUNT
     builder.addCase(verifyAccount.pending, (state, action) => {
       state.isRegisterLoading = true;
     });
@@ -57,14 +71,62 @@ const authSlice = createSlice({
       state.isVerified = true;
     });
 
+    // FORGOT PASSSWORD
+    builder.addCase(forgotPassword.pending, (state, action) => {
+      state.isForgotPasswordLoading = true;
+    });
+
+    // RESET PASSSWORD
+    builder.addCase(resetPassword.pending, (state, action) => {
+      state.isResetPasswordLoading = true;
+    });
+
+    // LOGIN
     builder.addCase(login.pending, (state, action) => {
       state.isLoginLoading = true;
     });
 
+    // KEEP LOGIN
     builder.addCase(keepLogin.pending, (state, action) => {
       state.isKeepLoginLoading = true;
     });
 
+    // CHANGE PASSWORD
+    builder.addCase(changePassword.pending, (state, action) => {
+      state.isChangePasswordLoading = true;
+    });
+    builder.addCase(changePassword.fulfilled, (state, action) => {
+      state.isChangePasswordLoading = false;
+    });
+
+    // CHANGE USERNAME
+    builder.addCase(changeUsername.pending, (state, action) => {
+      state.isChangeUsernameLoading = true;
+    });
+    builder.addCase(changeUsername.fulfilled, (state, action) => {
+      state.isChangeUsernameLoading = false;
+      state.username = action.payload;
+    });
+
+    // CHANGE PHONE NUMBER
+    builder.addCase(changePhone.pending, (state, action) => {
+      state.isChangPhoneLoading = true;
+    });
+    builder.addCase(changePhone.fulfilled, (state, action) => {
+      state.isChangPhoneLoading = false;
+      state.phone = action.payload;
+    });
+
+    // CHANGE EMAIL
+    builder.addCase(changeEmail.pending, (state, action) => {
+      state.isChangeEmailLoading = true;
+    });
+    builder.addCase(changeEmail.fulfilled, (state, action) => {
+      state.isChangeEmailLoading = false;
+      state.email = action.payload;
+    });
+
+    // CHANGE PHOTO PROFILE
     builder.addCase(updatePhotoProfile.pending, (state, action) => {
       state.isUploadPhotoProfileLoading = true;
     });
@@ -73,6 +135,7 @@ const authSlice = createSlice({
       state.imgProfile = action.payload;
     });
 
+    // LOGOUT
     builder.addCase(logout.pending, (state, action) => {
       state.isLogoutLoading = true;
     });
@@ -80,11 +143,18 @@ const authSlice = createSlice({
       state = Object.assign(state, INITIAL_STATE);
     });
 
+    /*===================================================*/
+
     // error handler
     builder.addMatcher(isErrorOccured, (state, action) => {
       state.isRegisterLoading = false;
+      state.isForgotPasswordLoading = false;
       state.isLoginLoading = false;
       state.isKeepLoginLoading = false;
+      state.isChangePasswordLoading = false;
+      state.isChangeUsernameLoading = false;
+      state.isChangPhoneLoading = false;
+      state.isChangeEmailLoading = false;
       state.isUploadPhotoProfileLoading = false;
       state.isLogoutLoading = false;
 

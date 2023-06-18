@@ -9,6 +9,7 @@ import PageTitle from "../../01-Atoms/Texts/PageTitle";
 import SectionTitle from "../../01-Atoms/Texts/SectionTitle";
 import InputSubmit from "../../01-Atoms/Inputs/InputSubmit";
 import CheckboxShowPassword from "../../01-Atoms/Inputs/CheckboxShowPassword";
+import SnackbarNotification from "../../02-Molecules/SnackbarNotification";
 
 import "./styles.css";
 import "../../01-Atoms/Inputs/styles.css";
@@ -49,6 +50,7 @@ export default function PageLogin({ dispatch, id }) {
           username: "",
           password: "",
         }}
+        validationSchema={loginValidationSchema}
         onSubmit={(values, { setSubmitting }) => {
           try {
             dispatch(
@@ -67,7 +69,15 @@ export default function PageLogin({ dispatch, id }) {
           }
         }}
       >
-        {({ values, handleChange, handleBlur, handleSubmit, isSubmitting }) => (
+        {({
+          values,
+          touched,
+          errors,
+          handleChange,
+          handleBlur,
+          handleSubmit,
+          isSubmitting,
+        }) => (
           <div className="container">
             <form
               onSubmit={handleSubmit}
@@ -173,6 +183,13 @@ export default function PageLogin({ dispatch, id }) {
                     onBlur={handleBlur}
                   />
                 </div>
+                {errors.email || errors.phone || errors.username ? (
+                  <SnackbarNotification
+                    content={errors.email || errors.phone || errors.username}
+                    color="main"
+                    bgColor="accent"
+                  />
+                ) : null}
 
                 <div className="input-password label-and-input d-flex-column">
                   <label htmlFor="password" className="label-for-input">
@@ -193,6 +210,13 @@ export default function PageLogin({ dispatch, id }) {
                     id="checkbox-show-confirm-password"
                   />
                 </div>
+                {touched.password && errors.password ? (
+                  <SnackbarNotification
+                    content={errors.password}
+                    color="main"
+                    bgColor="accent"
+                  />
+                ) : null}
 
                 <div className="nav-to-reset-password-page d-flex-row">
                   <Link to="/login" className="link-to-reset-password-page">
