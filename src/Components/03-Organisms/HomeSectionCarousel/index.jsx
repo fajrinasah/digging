@@ -27,7 +27,11 @@ export default function Carousel({ carouselArticles = [], navigate }) {
             byline={article?.User?.username}
             mainshotSource={article?.imageURL}
             headline={article?.title}
-            onClick={() => navigate(`/articleViewing/${article?.id}`)}
+            onClick={() =>
+              navigate(`/articleViewing/${article?.id}`, {
+                state: { id: article?.id },
+              })
+            }
           />
         </div>
       );

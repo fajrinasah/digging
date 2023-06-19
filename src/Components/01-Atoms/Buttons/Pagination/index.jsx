@@ -28,18 +28,23 @@ export default function Pagination({
 
   return (
     <div className="pagination d-flex-row">
-      <button className="previous" disabled={disabledPrevious}>
+      <button
+        className="previous"
+        disabled={disabledPrevious}
+        onClick={() => onChangePagination(`previous`)}
+      >
         <FontAwesomeIcon icon={faCircleChevronLeft} /> {"  "} Previous
       </button>
 
       <div className="button-page-container d-flex-row">
         <RenderButtonPage />
-        <button className="button-page">1</button>
-        <button className="button-page">2</button>
-        <button className="button-page">3</button>
       </div>
 
-      <button className="next" disabled={disabledNext}>
+      <button
+        className="next"
+        disabled={disabledNext}
+        onClick={() => onChangePagination(`next`)}
+      >
         Next {"  "}
         <FontAwesomeIcon icon={faCircleChevronRight} />
       </button>

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 import {
@@ -16,13 +16,13 @@ import AccessLoginRegister from "../../02-Molecules/AccessLoginRegister";
 import HomeSectionCarousel from "../../03-Organisms/HomeSectionCarousel";
 import HomeSectionCategoryCards from "../../03-Organisms/HomeSectionCategoryCards";
 import HomeSectionTopTenList from "../../03-Organisms/HomeSectionTopTenList";
-import SectionDigging from "../../03-Organisms/SectionDigging";
+import SectionDigging from "../../03-Organisms/SectionDiggingFormik";
 
-// const { id } = useSelector((state) => {
-//   return {
-//     id: state.auth?.id,
-//   };
-// });
+import {
+  generatePayload,
+  generateCurrentQuery,
+  generateFilteredResults,
+} from "./utilityFunctions";
 
 export default function PageHome({ id, dispatch }) {
   const navigate = useNavigate();
@@ -33,6 +33,9 @@ export default function PageHome({ id, dispatch }) {
     dispatch(getMostConserved());
     dispatch(getCategories());
   }, []);
+
+  const [currentQuery, setCurrentQuery] = useState(`?sort=DESC`);
+  const [filteredArticles, setFilteredArticles] = useState([]);
 
   // const {
   //   categories,
@@ -82,22 +85,20 @@ export default function PageHome({ id, dispatch }) {
     return state.blogs?.isLoading;
   });
 
-  /*===============FUNCTIONS================*/
-  const onChangeCategory = () => {};
+  /*===============PAGINATION FUNCTIONS================*/
 
-  const onChangeSortFromNewest = () => {};
+  const disabledPrevious = currentPage === 1;
+  const disabledNext = currentPage >= totalPage;
 
-  const onChangeSortFromOldest = () => {};
-
-  const onChangeSelectSearch = () => {};
-
-  const onChangeInputSearch = () => {};
-
-  const disabledPrevious = false;
-
-  const disabledNext = false;
-
-  const onChangePagination = () => {};
+  const onChangePagination = (page) => {
+    if (page == "previous") {
+      dispatch(getArticles(`${currentQuery}&page=${currentPage - 1}`));
+    } else if (page == "next") {
+      dispatch(getArticles(`${currentQuery}&page=${currentPage + 1}`));
+    } else {
+      dispatch(getArticles(`${currentQuery}&page=${page}`));
+    }
+  };
 
   return (
     <div className="page-home">
@@ -125,12 +126,16 @@ export default function PageHome({ id, dispatch }) {
       <div className="digging-container d-flex-row">
         <SectionDigging
           articles={articles}
-          optionsForCategory={categories}
-          onChangeCategory={onChangeCategory}
-          onChangeSortFromNewest={onChangeSortFromNewest}
-          onChangeSortFromOldest={onChangeSortFromOldest}
-          onChangeSelectSearch={onChangeSelectSearch}
-          onChangeInputSearch={onChangeInputSearch}
+          filteredArticles={filteredArticles}
+          categories={categories}
+          isLoading={isLoading}
+          generateCurrentQuery={generateCurrentQuery}
+          setCurrentQuery={setCurrentQuery}
+          generatePayload={generatePayload}
+          dispatch={dispatch}
+          getArticles={getArticles}
+          generateFilteredResults={generateFilteredResults}
+          setFilteredArticles={setFilteredArticles}
           totalPage={totalPage}
           disabledPrevious={disabledPrevious}
           disabledNext={disabledNext}

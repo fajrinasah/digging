@@ -1,67 +1,23 @@
 import { Formik, Form } from "formik";
-import { useState } from "react";
 
 import "./styles.css";
-
-import InputToolbarSelect from "../../01-Atoms/Inputs/InputToolbarSelect";
-import DiggingToolbarSort from "../DiggingToolbarSortRadios";
-import DiggingToolbarSearch from "../DiggingToolbarSearch";
 
 import DiggingToolbarSearchFormik from "./DiggingToolbarElementsFormik/DiggingToolbarSearchFormik";
 import DiggingToolbarSortRadiosFormik from "./DiggingToolbarElementsFormik/DiggingToolbarSortRadiosFormik";
 import InputToolbarSelectCategoryFormik from "./DiggingToolbarElementsFormik/InputToolbarSelectCategoryFormik";
 import InputSubmit from "../../01-Atoms/Inputs/InputSubmit";
-import { getArticles } from "../../../Store/Slices/Blogs/slices";
 
-const generatePayload = (categoryId = "", sortValue = "DESC") => {
-  let payload = `?`;
-
-  if (!categoryId) {
-    payload = `${payload}sort=${sortValue}&page=1`;
-  } else {
-    payload = `${payload}id_cat=${categoryId}&sort=${sortValue}&page=1`;
-  }
-
-  return payload;
-};
-
-const generateCurrentQuery = (categoryId = "", sortValue = "DESC") => {
-  let query = `?`;
-
-  if (!categoryId) {
-    query = `${query}sort=${sortValue}`;
-  } else {
-    query = `${query}id_cat=${categoryId}&sort=${sortValue}`;
-  }
-
-  return query;
-};
-
-const generateFilteredResults = (
-  unfilteredResults = [],
-  searchOption = "title",
-  searchInput = ""
-) => {
-  let filteredResults = [];
-
-  if (searchOption == "title") {
-    filteredResults = unfilteredResults.filter((article) =>
-      article.title.includes(searchInput)
-    );
-  } else {
-    filteredResults = unfilteredResults.filter((article) =>
-      article.CategoryId.includes(searchInput)
-    );
-  }
-
-  return filteredResults;
-};
-
-export default function DiggingToolbarFormik({ articles = [] }) {
-  // const PARAMETER = `?id_cat=${id_cat}&sort=${sort}&page=${page}`;
-  const [currentQuery, setCurrentQuery] = useState(`?sort=DESC`);
-  const [filteredArticles, setFilteredArticles] = useState([]);
-
+export default function DiggingToolbarFormik({
+  articles = [],
+  categories = [],
+  generateCurrentQuery = () => {},
+  setCurrentQuery = () => {},
+  generatePayload = () => {},
+  dispatch = () => {},
+  getArticles = () => {},
+  generateFilteredResults = () => {},
+  setFilteredArticles = () => {},
+}) {
   return (
     <Formik
       initialValues={{
@@ -94,7 +50,7 @@ export default function DiggingToolbarFormik({ articles = [] }) {
 
           setFilteredArticles(articles);
 
-          console.log(`CLICKED: send login request`);
+          console.log(`CLICKED: do filter`);
           setSubmitting(false);
         } catch (error) {
           console.log("error", error?.message);
