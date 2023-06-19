@@ -1,0 +1,382 @@
+{
+  "page": 7,
+  "rows": 54,
+  "blogPage": 1,
+  "listLimit": 8,
+  "result": [
+    {
+      "id": 180,
+      "title": "My Update Stories",
+      "imageURL": "Public/Blog-1687098172550858896.jpeg",
+      "content": "My Update Stories",
+      "videoURL": "",
+      "country": null,
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-06-18T14:22:52.000Z",
+      "updatedAt": "2023-06-18T14:22:52.000Z",
+      "UserId": 188,
+      "CategoryId": 2,
+      "User": {
+        "username": "edokusmayuda",
+        "imgProfile": "Public/Avatar-188.jpeg"
+      },
+      "Category": {
+        "id": 2,
+        "name": "Ekonomi"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 309,
+          "BlogId": 180,
+          "KeywordId": 87,
+          "createdAt": "2023-06-18T14:22:52.000Z",
+          "updatedAt": "2023-06-18T14:22:52.000Z",
+          "Keyword": {
+            "id": 87,
+            "name": "My",
+            "createdAt": "2023-06-18T14:22:52.000Z",
+            "updatedAt": "2023-06-18T14:22:52.000Z"
+          }
+        },
+        {
+          "id": 308,
+          "BlogId": 180,
+          "KeywordId": 83,
+          "createdAt": "2023-06-18T14:22:52.000Z",
+          "updatedAt": "2023-06-18T14:22:52.000Z",
+          "Keyword": {
+            "id": 83,
+            "name": "stories",
+            "createdAt": "2023-06-18T04:26:19.000Z",
+            "updatedAt": "2023-06-18T04:26:19.000Z"
+          }
+        },
+        {
+          "id": 307,
+          "BlogId": 180,
+          "KeywordId": 78,
+          "createdAt": "2023-06-18T14:22:52.000Z",
+          "updatedAt": "2023-06-18T14:22:52.000Z",
+          "Keyword": {
+            "id": 78,
+            "name": "Update",
+            "createdAt": "2023-06-17T09:12:29.000Z",
+            "updatedAt": "2023-06-17T09:12:29.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": 179,
+      "title": "My Stories",
+      "imageURL": "Public/Blog-1687097422632260898.png",
+      "content": "<p>This is about global economic</p>",
+      "videoURL": "",
+      "country": "MAL",
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-06-18T14:10:22.000Z",
+      "updatedAt": "2023-06-18T14:10:22.000Z",
+      "UserId": 188,
+      "CategoryId": 2,
+      "User": {
+        "username": "edokusmayuda",
+        "imgProfile": "Public/Avatar-188.jpeg"
+      },
+      "Category": {
+        "id": 2,
+        "name": "Ekonomi"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 306,
+          "BlogId": 179,
+          "KeywordId": 86,
+          "createdAt": "2023-06-18T14:10:22.000Z",
+          "updatedAt": "2023-06-18T14:10:22.000Z",
+          "Keyword": {
+            "id": 86,
+            "name": "economic",
+            "createdAt": "2023-06-18T14:10:22.000Z",
+            "updatedAt": "2023-06-18T14:10:22.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": 173,
+      "title": "Dummy Use",
+      "imageURL": "Public/Blog-1687074753545536155.png",
+      "content": "<p>this created by user dummy \t</p>",
+      "videoURL": "",
+      "country": "USA",
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-06-18T07:52:33.000Z",
+      "updatedAt": "2023-06-18T07:52:33.000Z",
+      "UserId": 254,
+      "CategoryId": 7,
+      "User": {
+        "username": "userdummyUpdate",
+        "imgProfile": "Public/Avatar-254.jpeg"
+      },
+      "Category": {
+        "id": 7,
+        "name": "Fiksi"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 300,
+          "BlogId": 173,
+          "KeywordId": 76,
+          "createdAt": "2023-06-18T07:52:33.000Z",
+          "updatedAt": "2023-06-18T07:52:33.000Z",
+          "Keyword": {
+            "id": 76,
+            "name": "blogs",
+            "createdAt": "2023-06-16T16:36:27.000Z",
+            "updatedAt": "2023-06-16T16:36:27.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": 172,
+      "title": "Bajakasd",
+      "imageURL": "Public/Blog-1687074473419363241.png",
+      "content": "asd",
+      "videoURL": "",
+      "country": "Indonesia",
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-06-18T07:47:53.000Z",
+      "updatedAt": "2023-06-18T07:47:53.000Z",
+      "UserId": 250,
+      "CategoryId": 3,
+      "User": {
+        "username": "admin123",
+        "imgProfile": "Public/Avatar-250.png"
+      },
+      "Category": {
+        "id": 3,
+        "name": "Teknologi"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 299,
+          "BlogId": 172,
+          "KeywordId": 63,
+          "createdAt": "2023-06-18T07:47:53.000Z",
+          "updatedAt": "2023-06-18T07:47:53.000Z",
+          "Keyword": {
+            "id": 63,
+            "name": "asd",
+            "createdAt": "2023-05-28T22:35:48.000Z",
+            "updatedAt": "2023-05-28T22:35:48.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": 171,
+      "title": "Write A Stories",
+      "imageURL": "Public/Blog-1687062379674329495.png",
+      "content": "<p>This is a stories that i write throug my blogs</p>",
+      "videoURL": "",
+      "country": "USA",
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-06-18T04:26:19.000Z",
+      "updatedAt": "2023-06-18T04:26:19.000Z",
+      "UserId": 241,
+      "CategoryId": 1,
+      "User": {
+        "username": "dummyuser123",
+        "imgProfile": "Public/Avatar-241.jpeg"
+      },
+      "Category": {
+        "id": 1,
+        "name": "Bisnis"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 298,
+          "BlogId": 171,
+          "KeywordId": 83,
+          "createdAt": "2023-06-18T04:26:19.000Z",
+          "updatedAt": "2023-06-18T04:26:19.000Z",
+          "Keyword": {
+            "id": 83,
+            "name": "stories",
+            "createdAt": "2023-06-18T04:26:19.000Z",
+            "updatedAt": "2023-06-18T04:26:19.000Z"
+          }
+        },
+        {
+          "id": 297,
+          "BlogId": 171,
+          "KeywordId": 30,
+          "createdAt": "2023-06-18T04:26:19.000Z",
+          "updatedAt": "2023-06-18T04:26:19.000Z",
+          "Keyword": {
+            "id": 30,
+            "name": "",
+            "createdAt": "2023-05-27T01:17:32.000Z",
+            "updatedAt": "2023-05-27T01:17:32.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": 162,
+      "title": "geprek",
+      "imageURL": "Public/Blog-1686973571116287403.png",
+      "content": "ayam geprek dulu gaes",
+      "videoURL": "",
+      "country": "Indonesia",
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-06-17T03:46:11.000Z",
+      "updatedAt": "2023-06-17T03:46:11.000Z",
+      "UserId": 224,
+      "CategoryId": 5,
+      "User": {
+        "username": "Bagas888",
+        "imgProfile": "Public/Avatar-224.png"
+      },
+      "Category": {
+        "id": 5,
+        "name": "Kuliner"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 287,
+          "BlogId": 162,
+          "KeywordId": 71,
+          "createdAt": "2023-06-17T03:46:11.000Z",
+          "updatedAt": "2023-06-17T03:46:11.000Z",
+          "Keyword": {
+            "id": 71,
+            "name": "asda",
+            "createdAt": "2023-06-16T13:53:04.000Z",
+            "updatedAt": "2023-06-16T13:53:04.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": 156,
+      "title": "Testing for delete",
+      "imageURL": "Public/Blog-1686929186944370935.jpeg",
+      "content": "Hello",
+      "videoURL": "",
+      "country": "ID",
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-06-16T15:26:26.000Z",
+      "updatedAt": "2023-06-16T15:26:26.000Z",
+      "UserId": 194,
+      "CategoryId": 1,
+      "User": {
+        "username": "vsebas7",
+        "imgProfile": "Public/Avatar-194.jpeg"
+      },
+      "Category": {
+        "id": 1,
+        "name": "Bisnis"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 281,
+          "BlogId": 156,
+          "KeywordId": 73,
+          "createdAt": "2023-06-16T15:26:27.000Z",
+          "updatedAt": "2023-06-16T15:26:27.000Z",
+          "Keyword": {
+            "id": 73,
+            "name": "dasd",
+            "createdAt": "2023-06-16T15:26:27.000Z",
+            "updatedAt": "2023-06-16T15:26:27.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": 152,
+      "title": "Tesla teases new Cybertruck accessory: a tool rack",
+      "imageURL": "Public/Blog-1686926577029824099.png",
+      "content": "Tesla has teased a new Cybertruck accessory, a rugged-looking tool rack that fits on the bed of the electric pickup truck.\r\nWhen Tesla first unveiled the Cybertruck back in 2019, the automaker talked… [+731 chars]",
+      "videoURL": "",
+      "country": "USA",
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-06-16T14:42:57.000Z",
+      "updatedAt": "2023-06-16T14:42:57.000Z",
+      "UserId": 215,
+      "CategoryId": 3,
+      "User": {
+        "username": "adminadmin106",
+        "imgProfile": null
+      },
+      "Category": {
+        "id": 3,
+        "name": "Teknologi"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 276,
+          "BlogId": 152,
+          "KeywordId": 6,
+          "createdAt": "2023-06-16T14:42:57.000Z",
+          "updatedAt": "2023-06-16T14:42:57.000Z",
+          "Keyword": {
+            "id": 6,
+            "name": "Inovation",
+            "createdAt": "2023-05-08T21:39:47.000Z",
+            "updatedAt": "2023-05-08T21:39:47.000Z"
+          }
+        },
+        {
+          "id": 275,
+          "BlogId": 152,
+          "KeywordId": 5,
+          "createdAt": "2023-06-16T14:42:57.000Z",
+          "updatedAt": "2023-06-16T14:42:57.000Z",
+          "Keyword": {
+            "id": 5,
+            "name": "White_House",
+            "createdAt": "2023-05-05T03:42:04.000Z",
+            "updatedAt": "2023-05-05T03:42:04.000Z"
+          }
+        },
+        {
+          "id": 274,
+          "BlogId": 152,
+          "KeywordId": 4,
+          "createdAt": "2023-06-16T14:42:57.000Z",
+          "updatedAt": "2023-06-16T14:42:57.000Z",
+          "Keyword": {
+            "id": 4,
+            "name": "AI",
+            "createdAt": "2023-05-05T03:42:04.000Z",
+            "updatedAt": "2023-05-05T03:42:04.000Z"
+          }
+        },
+        {
+          "id": 273,
+          "BlogId": 152,
+          "KeywordId": 3,
+          "createdAt": "2023-06-16T14:42:57.000Z",
+          "updatedAt": "2023-06-16T14:42:57.000Z",
+          "Keyword": {
+            "id": 3,
+            "name": "USA",
+            "createdAt": "2023-05-05T03:18:05.000Z",
+            "updatedAt": "2023-05-05T03:18:05.000Z"
+          }
+        }
+      ]
+    }
+  ]
+}

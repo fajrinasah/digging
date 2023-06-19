@@ -7,7 +7,7 @@ import "./styles.css";
 import CarouselTitle from "../../01-Atoms/Texts/CarouselTitle";
 import CarouselSlide from "../../02-Molecules/CarouselSlide";
 
-export default function Carousel() {
+export default function Carousel({ carouselArticles = [], navigate }) {
   const settings = {
     dots: true,
     infinite: true,
@@ -16,26 +16,30 @@ export default function Carousel() {
     slidesToScroll: 1,
   };
 
+  const RenderCarouselSlides = () => {
+    return carouselArticles.map((article) => {
+      return (
+        <div>
+          <CarouselSlide
+            key={article?.id}
+            category={article?.Category?.name}
+            date={article?.createdAt}
+            byline={article?.User?.username}
+            mainshotSource={article?.imageURL}
+            headline={article?.title}
+            onClick={() => navigate(`/articleViewing/${article?.id}`)}
+          />
+        </div>
+      );
+    });
+  };
+
   return (
     <div className="carousel d-flex-column">
       <CarouselTitle />
       <div className="slider-container">
         <Slider {...settings}>
-          <div>
-            <CarouselSlide />
-          </div>
-          <div>
-            <CarouselSlide />
-          </div>
-          <div>
-            <CarouselSlide />
-          </div>
-          <div>
-            <CarouselSlide />
-          </div>
-          <div>
-            <CarouselSlide />
-          </div>
+          <RenderCarouselSlides />
         </Slider>
       </div>
     </div>

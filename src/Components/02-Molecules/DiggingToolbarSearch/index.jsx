@@ -1,10 +1,13 @@
 import "./styles.css";
 import "../../01-Atoms/Inputs/InputToolbarSelect/styles.css";
 
-export default function DiggingToolbarSearch() {
+export default function DiggingToolbarSearch({
+  onChangeSelectSearch = {},
+  onChangeInputSearch = {},
+}) {
   const searchTypes = [
     { value: "title", content: "Title" },
-    { value: "keywords", content: "Keywords" },
+    { value: "keyword", content: "Keyword" },
   ];
 
   const RenderOptions = () =>
@@ -26,6 +29,7 @@ export default function DiggingToolbarSearch() {
           name="search-type"
           id="search-type"
           className="select-for-label"
+          onChange={onChangeSelectSearch}
         >
           <RenderOptions />
         </select>
@@ -38,6 +42,7 @@ export default function DiggingToolbarSearch() {
         name="searchInput"
         placeholder="type here"
         title="Search Input"
+        onChange={onChangeInputSearch}
       />
     </div>
   );

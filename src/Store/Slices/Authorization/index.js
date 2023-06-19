@@ -13,7 +13,7 @@ import {
   changeUsername,
   changePhone,
   changeEmail,
-  updatePhotoProfile,
+  changePhotoProfile,
   logout,
 } from "./slices";
 
@@ -61,7 +61,7 @@ const authSlice = createSlice({
     // REGISTER
     builder.addCase(register.pending, (state, action) => {
       state.isRegisterLoading = true;
-      toastBlank("Sending request to server...");
+      toastBlank("Loading...");
     });
 
     // VERIFY ACCOUNT
@@ -76,7 +76,7 @@ const authSlice = createSlice({
     // FORGOT PASSSWORD
     builder.addCase(forgotPassword.pending, (state, action) => {
       state.isForgotPasswordLoading = true;
-      toastBlank("Sending request to server...");
+      toastBlank("Loading...");
     });
     builder.addCase(forgotPassword.fulfilled, (state, action) => {
       state.isForgotPasswordLoading = false;
@@ -85,7 +85,7 @@ const authSlice = createSlice({
     // RESET PASSSWORD
     builder.addCase(resetPassword.pending, (state, action) => {
       state.isResetPasswordLoading = true;
-      toastBlank("Sending request to server...");
+      toastBlank("Loading...");
     });
     builder.addCase(resetPassword.fulfilled, (state, action) => {
       state.isResetPasswordLoading = false;
@@ -137,10 +137,10 @@ const authSlice = createSlice({
     });
 
     // CHANGE PHOTO PROFILE
-    builder.addCase(updatePhotoProfile.pending, (state, action) => {
+    builder.addCase(changePhotoProfile.pending, (state, action) => {
       state.isUploadPhotoProfileLoading = true;
     });
-    builder.addCase(updatePhotoProfile.fulfilled, (state, action) => {
+    builder.addCase(changePhotoProfile.fulfilled, (state, action) => {
       state.isUploadPhotoProfileLoading = false;
       state.imgProfile = action.payload;
     });

@@ -1,20 +1,20 @@
 import "./styles.css";
-import { dataForList } from "./dataModel";
+// import { dataForList } from "./dataModel";
 
 import SectionTitle from "../../01-Atoms/Texts/SectionTitle";
 import LinkTopArticleLi from "../../02-Molecules/LinkTopArticleLi";
 
-export default function HomeSectionTopTenList({ data = [{}] }) {
+export default function HomeSectionTopTenList({ mostConservedArticles = [] }) {
   const RenderList = () =>
-    dataForList.map((article, index) => {
+    mostConservedArticles.map((article, index) => {
       return (
         <LinkTopArticleLi
-          key={index}
+          key={article?.id}
           rankNumber={index + 1}
-          articleDestination={article.articlePage}
-          profileDestination={article.authorProfile}
-          headline={article.headline}
-          byline={article.byline}
+          articleDestination={`/articleViewing/${article?.id}`}
+          profileDestination={`/profile/${article?.User?.username}`}
+          headline={article?.title}
+          byline={article?.User?.username}
           color="contrast"
           bgColorHover="contrast"
         />

@@ -184,12 +184,14 @@ export const changeUsername = createAsyncThunk(
     try {
       // PATCH data to change username
       // payload : {currentUsername, newUsername}
-      const { data } = await api.patch("/auth/changeUsername", payload);
+      // WRONG API PATH!!! it's for changing email hm
+      // const { data } = await api.patch("/auth/changeUsername", payload);
 
       // show toast or snackbar if needed
       toastSuccess("Username has been changed");
 
-      return data;
+      // return data;
+      return null;
     } catch (error) {
       toastError(error.response ? error.response.data : error);
       return rejectWithValue(error.response ? error.response.data : error);
@@ -242,10 +244,10 @@ export const changeEmail = createAsyncThunk(
 );
 
 /*==========================================
-AsyncThunk: Update Photo Profile
+AsyncThunk: Change Photo Profile
 ===========================================*/
-export const updatePhotoProfile = createAsyncThunk(
-  "auth/updatePhotoProfile",
+export const changePhotoProfile = createAsyncThunk(
+  "auth/changePhotoProfile",
   async (payload, { rejectWithValue }) => {
     try {
       // POST new uploaded photo profile

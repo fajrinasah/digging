@@ -3,13 +3,16 @@ import "./styles.css";
 export default function InputToolbarSelect({
   forId = "",
   label = "Choose an option",
-  optionsArrObj = [{}],
+  options = [{ id: 0, name: "" }],
+  value = {},
+  onBlur = {},
+  onChange = {},
 }) {
   const RenderOptions = () =>
-    optionsArrObj.map((option, index) => {
+    options.map((option) => {
       return (
-        <option key={index} value={option.value}>
-          {option.content}
+        <option key={option.id} value={option.id}>
+          {option.name}
         </option>
       );
     });
@@ -24,6 +27,9 @@ export default function InputToolbarSelect({
         name={`${forId}-select`}
         id={`${forId}-select`}
         className="select-for-label"
+        value={value}
+        onBlur={onBlur}
+        onChange={onChange}
       >
         <RenderOptions />
       </select>

@@ -1,0 +1,32 @@
+/*=========================================
+=============NAV KEYWORD==========
+===============================================*/
+
+.nav-keyword {
+  text-decoration: none;
+}
+
+.nav-keyword .link-to-keyword-page {
+  height: max-content;
+  width: max-content;
+
+  padding: 0.5rem;
+  margin: 1rem;
+
+  background-color: var(--main);
+  border-radius: 5px;
+  color: var(--contrast);
+}
+
+.nav-keyword .link-to-keyword-page:hover,
+.nav-keyword .link-to-keyword-page:active {
+  font-weight: bold;
+}
+
+.nav-keyword .link-to-keyword-page:active {
+  transform: scale(0.97);
+}
+
+.nav-keyword p {
+  text-align: center;
+}

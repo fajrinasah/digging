@@ -19,6 +19,10 @@
   padding-bottom: 2rem;
 }
 
+.this-article-details details .keywords-container {
+  flex-wrap: wrap;
+}
+
 .author-details {
   padding: 1rem 0;
 }

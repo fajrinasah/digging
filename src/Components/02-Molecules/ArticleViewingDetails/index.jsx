@@ -27,7 +27,7 @@ export default function ArticleViewingDetails({
           <summary>
             <strong>Keywords</strong>
           </summary>
-          {keywords}
+          <div className="keywords-container d-flex-row">{keywords}</div>
         </details>
         <details>
           <summary>

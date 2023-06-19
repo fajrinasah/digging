@@ -14,7 +14,7 @@ import "./App.css";
 
 import Header from "./Components/03-Organisms/Header";
 import Footer from "./Components/03-Organisms/Footer";
-import PageHome from "../src/Components/04-Pages/PageHome";
+import PageHome from "../src/Components/04-Pages/PageHome2";
 import PageDigging from "./Components/04-Pages/PageDigging";
 import PageCompose from "../src/Components/04-Pages/PageCompose";
 import PageProfileOwn from "./Components/04-Pages/PageProfileOwn";
@@ -30,6 +30,8 @@ import Loader from "./Components/01-Atoms/Loader";
 import SnackbarNotification from "./Components/02-Molecules/SnackbarNotification";
 import ButtonStandard from "./Components/01-Atoms/Buttons/ButtonStandard";
 import ModalDefaultText from "./Components/01-Atoms/Texts/ModalDefaultText";
+import NavKeyword from "./Components/01-Atoms/Navigations/NavKeyword";
+import PageArticleViewingOther from "./Components/04-Pages/PageArticleViewingOther";
 
 /*import ButtonToTop from "./Components/01-Atoms/Buttons/ButtonToTop";*/
 
@@ -75,7 +77,7 @@ function App() {
       <div className="header-space"></div>
 
       <Routes>
-        <Route path="/" element={<PageHome id={id} />} />
+        <Route path="/" element={<PageHome id={id} dispatch={dispatch} />} />
         <Route
           path="/register"
           element={<PageRegister dispatch={dispatch} id={id} />}
@@ -97,6 +99,11 @@ function App() {
           element={<PageResetPassword dispatch={dispatch} />}
         />
         <Route path="/digging" element={<PageDigging />} />
+        <Route
+          path="/articleViewing/:id"
+          element={<PageArticleViewingOther />}
+        />
+        <Route path="/profile/:username" element={<PageProfileOther />} />
         <Route
           path="/compose"
           element={

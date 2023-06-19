@@ -1,0 +1,382 @@
+{
+  "page": 3,
+  "rows": 17,
+  "blogPage": 1,
+  "listLimit": 8,
+  "result": [
+    {
+      "id": 4,
+      "title": "Tesla teases new Cybertruck accessory: a tool rack",
+      "imageURL": "Public/Blog-1684748301356413511.png",
+      "content": "Tesla has teased a new Cybertruck accessory, a rugged-looking tool rack that fits on the bed of the electric pickup truck.\r\nWhen Tesla first unveiled the Cybertruck back in 2019, the automaker talked… [+731 chars]",
+      "videoURL": "",
+      "country": "USA",
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-05-22T09:38:21.000Z",
+      "updatedAt": "2023-05-22T09:38:21.000Z",
+      "UserId": 1,
+      "CategoryId": 3,
+      "User": {
+        "username": "rawap52",
+        "imgProfile": "Public/PIMG-168190662836066279.png"
+      },
+      "Category": {
+        "id": 3,
+        "name": "Teknologi"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 14,
+          "BlogId": 4,
+          "KeywordId": 6,
+          "createdAt": "2023-05-22T09:38:21.000Z",
+          "updatedAt": "2023-05-22T09:38:21.000Z",
+          "Keyword": {
+            "id": 6,
+            "name": "Inovation",
+            "createdAt": "2023-05-08T21:39:47.000Z",
+            "updatedAt": "2023-05-08T21:39:47.000Z"
+          }
+        },
+        {
+          "id": 13,
+          "BlogId": 4,
+          "KeywordId": 5,
+          "createdAt": "2023-05-22T09:38:21.000Z",
+          "updatedAt": "2023-05-22T09:38:21.000Z",
+          "Keyword": {
+            "id": 5,
+            "name": "White_House",
+            "createdAt": "2023-05-05T03:42:04.000Z",
+            "updatedAt": "2023-05-05T03:42:04.000Z"
+          }
+        },
+        {
+          "id": 12,
+          "BlogId": 4,
+          "KeywordId": 4,
+          "createdAt": "2023-05-22T09:38:21.000Z",
+          "updatedAt": "2023-05-22T09:38:21.000Z",
+          "Keyword": {
+            "id": 4,
+            "name": "AI",
+            "createdAt": "2023-05-05T03:42:04.000Z",
+            "updatedAt": "2023-05-05T03:42:04.000Z"
+          }
+        },
+        {
+          "id": 11,
+          "BlogId": 4,
+          "KeywordId": 3,
+          "createdAt": "2023-05-22T09:38:21.000Z",
+          "updatedAt": "2023-05-22T09:38:21.000Z",
+          "Keyword": {
+            "id": 3,
+            "name": "USA",
+            "createdAt": "2023-05-05T03:18:05.000Z",
+            "updatedAt": "2023-05-05T03:18:05.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Semangat semangat",
+      "imageURL": "Public/Blog-1684983380334548638.jpeg",
+      "content": "Tesla has teased a new Cybertruck accessory, a rugged-looking tool rack that fits on the bed of the electric pickup truck.\r\nWhen Tesla first unveiled the Cybertruck back in 2019, the automaker talked… [+731 chars]",
+      "videoURL": "",
+      "country": "USA",
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-05-25T02:56:20.000Z",
+      "updatedAt": "2023-05-25T02:56:20.000Z",
+      "UserId": 8,
+      "CategoryId": 3,
+      "User": {
+        "username": "vanessaa",
+        "imgProfile": "Public/Avatar-8.jpeg"
+      },
+      "Category": {
+        "id": 3,
+        "name": "Teknologi"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 38,
+          "BlogId": 11,
+          "KeywordId": 6,
+          "createdAt": "2023-05-25T02:56:20.000Z",
+          "updatedAt": "2023-05-25T02:56:20.000Z",
+          "Keyword": {
+            "id": 6,
+            "name": "Inovation",
+            "createdAt": "2023-05-08T21:39:47.000Z",
+            "updatedAt": "2023-05-08T21:39:47.000Z"
+          }
+        },
+        {
+          "id": 37,
+          "BlogId": 11,
+          "KeywordId": 5,
+          "createdAt": "2023-05-25T02:56:20.000Z",
+          "updatedAt": "2023-05-25T02:56:20.000Z",
+          "Keyword": {
+            "id": 5,
+            "name": "White_House",
+            "createdAt": "2023-05-05T03:42:04.000Z",
+            "updatedAt": "2023-05-05T03:42:04.000Z"
+          }
+        },
+        {
+          "id": 36,
+          "BlogId": 11,
+          "KeywordId": 4,
+          "createdAt": "2023-05-25T02:56:20.000Z",
+          "updatedAt": "2023-05-25T02:56:20.000Z",
+          "Keyword": {
+            "id": 4,
+            "name": "AI",
+            "createdAt": "2023-05-05T03:42:04.000Z",
+            "updatedAt": "2023-05-05T03:42:04.000Z"
+          }
+        },
+        {
+          "id": 35,
+          "BlogId": 11,
+          "KeywordId": 3,
+          "createdAt": "2023-05-25T02:56:20.000Z",
+          "updatedAt": "2023-05-25T02:56:20.000Z",
+          "Keyword": {
+            "id": 3,
+            "name": "USA",
+            "createdAt": "2023-05-05T03:18:05.000Z",
+            "updatedAt": "2023-05-05T03:18:05.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "title": "Hi",
+      "imageURL": "Public/Blog-168506883457811051.jpeg",
+      "content": "test",
+      "videoURL": "",
+      "country": "test",
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-05-26T02:40:34.000Z",
+      "updatedAt": "2023-05-26T02:40:34.000Z",
+      "UserId": 13,
+      "CategoryId": 3,
+      "User": {
+        "username": "daviddavid",
+        "imgProfile": "Public/Avatar-13.jpeg"
+      },
+      "Category": {
+        "id": 3,
+        "name": "Teknologi"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 98,
+          "BlogId": 37,
+          "KeywordId": 19,
+          "createdAt": "2023-05-26T02:40:34.000Z",
+          "updatedAt": "2023-05-26T02:40:34.000Z",
+          "Keyword": {
+            "id": 19,
+            "name": "test",
+            "createdAt": "2023-05-26T02:40:34.000Z",
+            "updatedAt": "2023-05-26T02:40:34.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "title": "asdasda",
+      "imageURL": "Public/Blog-1685091000594610941.png",
+      "content": "asdadsad",
+      "videoURL": null,
+      "country": "asdasd",
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-05-26T08:50:00.000Z",
+      "updatedAt": "2023-05-26T08:50:00.000Z",
+      "UserId": 86,
+      "CategoryId": 3,
+      "User": {
+        "username": "fabian+1",
+        "imgProfile": null
+      },
+      "Category": {
+        "id": 3,
+        "name": "Teknologi"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 106,
+          "BlogId": 43,
+          "KeywordId": 26,
+          "createdAt": "2023-05-26T08:50:00.000Z",
+          "updatedAt": "2023-05-26T08:50:00.000Z",
+          "Keyword": {
+            "id": 26,
+            "name": "asdasdasd",
+            "createdAt": "2023-05-26T08:50:00.000Z",
+            "updatedAt": "2023-05-26T08:50:00.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "title": "asdasda",
+      "imageURL": "Public/Blog-1685091001569940556.png",
+      "content": "asdadsad",
+      "videoURL": null,
+      "country": "asdasd",
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-05-26T08:50:01.000Z",
+      "updatedAt": "2023-05-26T08:50:01.000Z",
+      "UserId": 86,
+      "CategoryId": 3,
+      "User": {
+        "username": "fabian+1",
+        "imgProfile": null
+      },
+      "Category": {
+        "id": 3,
+        "name": "Teknologi"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 107,
+          "BlogId": 44,
+          "KeywordId": 26,
+          "createdAt": "2023-05-26T08:50:01.000Z",
+          "updatedAt": "2023-05-26T08:50:01.000Z",
+          "Keyword": {
+            "id": 26,
+            "name": "asdasdasd",
+            "createdAt": "2023-05-26T08:50:00.000Z",
+            "updatedAt": "2023-05-26T08:50:00.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "title": "asdasda",
+      "imageURL": "Public/Blog-1685091002053724855.png",
+      "content": "asdadsad",
+      "videoURL": null,
+      "country": "asdasd",
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-05-26T08:50:02.000Z",
+      "updatedAt": "2023-05-26T08:50:02.000Z",
+      "UserId": 86,
+      "CategoryId": 3,
+      "User": {
+        "username": "fabian+1",
+        "imgProfile": null
+      },
+      "Category": {
+        "id": 3,
+        "name": "Teknologi"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 109,
+          "BlogId": 46,
+          "KeywordId": 26,
+          "createdAt": "2023-05-26T08:50:02.000Z",
+          "updatedAt": "2023-05-26T08:50:02.000Z",
+          "Keyword": {
+            "id": 26,
+            "name": "asdasdasd",
+            "createdAt": "2023-05-26T08:50:00.000Z",
+            "updatedAt": "2023-05-26T08:50:00.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "title": "asdasda",
+      "imageURL": "Public/Blog-1685091007635889610.png",
+      "content": "asdadsad",
+      "videoURL": null,
+      "country": "asdasd",
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-05-26T08:50:07.000Z",
+      "updatedAt": "2023-05-26T08:50:07.000Z",
+      "UserId": 86,
+      "CategoryId": 3,
+      "User": {
+        "username": "fabian+1",
+        "imgProfile": null
+      },
+      "Category": {
+        "id": 3,
+        "name": "Teknologi"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 111,
+          "BlogId": 48,
+          "KeywordId": 26,
+          "createdAt": "2023-05-26T08:50:07.000Z",
+          "updatedAt": "2023-05-26T08:50:07.000Z",
+          "Keyword": {
+            "id": 26,
+            "name": "asdasdasd",
+            "createdAt": "2023-05-26T08:50:00.000Z",
+            "updatedAt": "2023-05-26T08:50:00.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "title": "aaa",
+      "imageURL": "Public/Blog-1685093991877233021.png",
+      "content": "aaa",
+      "videoURL": null,
+      "country": "aaa",
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-05-26T09:39:51.000Z",
+      "updatedAt": "2023-05-26T09:39:51.000Z",
+      "UserId": 86,
+      "CategoryId": 3,
+      "User": {
+        "username": "fabian+1",
+        "imgProfile": null
+      },
+      "Category": {
+        "id": 3,
+        "name": "Teknologi"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 118,
+          "BlogId": 55,
+          "KeywordId": 27,
+          "createdAt": "2023-05-26T09:39:51.000Z",
+          "updatedAt": "2023-05-26T09:39:51.000Z",
+          "Keyword": {
+            "id": 27,
+            "name": "aaa",
+            "createdAt": "2023-05-26T09:39:51.000Z",
+            "updatedAt": "2023-05-26T09:39:51.000Z"
+          }
+        }
+      ]
+    }
+  ]
+}

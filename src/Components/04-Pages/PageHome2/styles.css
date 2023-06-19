@@ -1,0 +1,63 @@
+/*=========================================
+=============PAGE HOME==========
+===============================================*/
+
+.page-home {
+  display: grid;
+  grid-template: auto auto auto auto auto / 3fr 1fr;
+  grid-template-areas:
+    "masthead access"
+    "masthead top-ten"
+    "categories top-ten"
+    "carousel top-ten"
+    "digging digging";
+}
+
+.page-home .masthead,
+.page-home .access-container {
+  width: max-content;
+  height: max-content;
+}
+
+.page-home .masthead {
+  grid-area: masthead;
+  justify-self: center;
+  align-self: center;
+}
+
+.page-home .access-container {
+  grid-area: access;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.page-home .carousel-container {
+  grid-area: carousel;
+  align-self: start;
+  justify-content: center;
+}
+
+.page-home .carousel {
+  margin-left: 1rem;
+}
+
+.page-home .categories-container {
+  grid-area: categories;
+  align-self: start;
+  padding: 0 3rem;
+}
+
+.page-home .top-ten-container {
+  grid-area: top-ten;
+  padding-right: 1rem;
+}
+
+.page-home .digging-container {
+  grid-area: digging;
+  justify-self: center;
+  margin-top: 3rem;
+}
+
+.page-home .section-digging {
+  width: 100%;
+}

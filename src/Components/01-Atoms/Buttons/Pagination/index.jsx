@@ -6,14 +6,29 @@ import {
 
 import "./styles.css";
 
-export default function Pagination({ buttonPage }) {
+export default function Pagination({
+  totalPage,
+  disabledPrevious = false,
+  disabledNext = false,
+  onChangePagination = (page = "1") => {},
+}) {
   const RenderButtonPage = () => {
-    return <button className="button-page">{buttonPage}</button>;
+    for (let i = 1; i <= totalPage; i++) {
+      return (
+        <button
+          key={i}
+          className="button-page"
+          onClick={() => onChangePagination(`${i}`)}
+        >
+          {i}
+        </button>
+      );
+    }
   };
 
   return (
     <div className="pagination d-flex-row">
-      <button className="previous">
+      <button className="previous" disabled={disabledPrevious}>
         <FontAwesomeIcon icon={faCircleChevronLeft} /> {"  "} Previous
       </button>
 
@@ -24,7 +39,7 @@ export default function Pagination({ buttonPage }) {
         <button className="button-page">3</button>
       </div>
 
-      <button className="next">
+      <button className="next" disabled={disabledNext}>
         Next {"  "}
         <FontAwesomeIcon icon={faCircleChevronRight} />
       </button>

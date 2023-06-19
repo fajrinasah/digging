@@ -1,12 +1,15 @@
 import "./styles.css";
 import InputToolbarSelect from "../../01-Atoms/Inputs/InputToolbarSelect";
-import DiggingToolbarSort from "../DiggingToolbarSort";
+import DiggingToolbarSort from "../DiggingToolbarSortRadios";
 import DiggingToolbarSearch from "../DiggingToolbarSearch";
 
 export default function DiggingToolbar({
   optionsForCategory,
-  sortFromNewest,
-  sortFromOldest,
+  onChangeCategory,
+  onChangeSortFromNewest,
+  onChangeSortFromOldest,
+  onChangeSelectSearch,
+  onChangeInputSearch,
 }) {
   return (
     <div className="digging-toolbar">
@@ -15,13 +18,17 @@ export default function DiggingToolbar({
           forId="selectCategory"
           label="Category"
           optionsArr={optionsForCategory}
+          onChange={onChangeCategory}
         />
       </div>
       <DiggingToolbarSort
-        newestClicked={sortFromNewest}
-        oldestClicked={sortFromOldest}
+        onChangeSortFromNewest={onChangeSortFromNewest}
+        onChangeSortFromOldest={onChangeSortFromOldest}
       />
-      <DiggingToolbarSearch />
+      <DiggingToolbarSearch
+        onChangeSelectSearch={onChangeSelectSearch}
+        onChangeInputSearch={onChangeInputSearch}
+      />
     </div>
   );
 }
