@@ -34,7 +34,7 @@ export default function SectionDigging({
             category={article?.Category?.name}
             articlePage={`/articleViewing/${article?.id}`}
             stateAboutArticle={{ id: article?.id }}
-            mainshotSource={article?.imgURL}
+            mainshotSource={article?.imageURL}
             headline={article?.title}
             byline={article?.User?.username}
             subheadline={
@@ -54,7 +54,7 @@ export default function SectionDigging({
             category={article?.Category?.name}
             articlePage={`/articleViewing/${article?.id}`}
             stateAboutArticle={{ id: article?.id }}
-            mainshotSource={article?.imgURL}
+            mainshotSource={article?.imageURL}
             headline={article?.title}
             byline={article?.User?.username}
             subheadline={
