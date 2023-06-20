@@ -8,7 +8,6 @@ import ArticleLede from "../../01-Atoms/Texts/ArticleLede";
 import ButtonStandard from "../../01-Atoms/Buttons/ButtonStandard";
 
 export default function CarouselSlide({
-  key = {},
   category = "Category",
   categoryPage,
   date = "1995/10/30",

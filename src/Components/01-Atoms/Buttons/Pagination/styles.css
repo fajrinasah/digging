@@ -5,6 +5,8 @@
 .pagination {
   place-content: center;
   place-items: center;
+
+  margin-top: 5rem;
 }
 
 .pagination button {
@@ -16,6 +18,14 @@
   color: var(--contrast);
   font-family: "B612", sans-serif;
   font-size: 1.8rem;
+}
+
+.pagination button:disabled,
+.pagination button:disabled:hover {
+  opacity: 0.5;
+  cursor: default;
+  background-color: transparent;
+  color: var(--contrast);
 }
 
 .pagination .previous,
@@ -44,6 +54,7 @@
 }
 
 /*-------------------HOVER------------*/
+.pagination .button-page.active,
 .pagination button:hover,
 .pagination button:active {
   background-color: var(--accent);

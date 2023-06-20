@@ -4,6 +4,8 @@ import Pagination from "../../01-Atoms/Buttons/Pagination";
 import Loader from "../../01-Atoms/Loader";
 
 export default function SectionDigging({
+  searchState = false,
+  setSearchState = () => {},
   articles = [],
   filteredArticles = [],
   categories = [],
@@ -13,7 +15,9 @@ export default function SectionDigging({
   generatePayload = () => {},
   dispatch = () => {},
   getArticles = () => {},
-  generateFilteredResults = () => {},
+  // searchArticles = () => {},
+  searchArticlesTitle = () => {},
+  searchArticlesKeyword = () => {},
   setFilteredArticles = () => {},
   totalPage,
   disabledPrevious,
@@ -21,38 +25,65 @@ export default function SectionDigging({
   onChangePagination = (page = "1") => {},
 }) {
   const RenderCardArticle = () => {
-    return filteredArticles.map((article) => {
-      return (
-        <CardArticle
-          direction="vertical"
-          category={article?.Category?.name}
-          articlePage={`/articleViewing/${article?.id}`}
-          stateAboutArticle={{ id: article?.id }}
-          mainshotSource={article?.imgURL}
-          headline={article?.title}
-          byline={article?.User?.username}
-          subheadline={
-            article?.content?.length > 100
-              ? article?.content.slice(0, 101).concat("...")
-              : article?.content
-          }
-        />
-      );
-    });
+    if (!searchState) {
+      return articles.map((article) => {
+        return (
+          <CardArticle
+            key={article?.id}
+            direction="vertical"
+            category={article?.Category?.name}
+            articlePage={`/articleViewing/${article?.id}`}
+            stateAboutArticle={{ id: article?.id }}
+            mainshotSource={article?.imgURL}
+            headline={article?.title}
+            byline={article?.User?.username}
+            subheadline={
+              article?.content?.length > 100
+                ? article?.content.slice(0, 101).concat("...")
+                : article?.content
+            }
+          />
+        );
+      });
+    } else {
+      return filteredArticles.map((article) => {
+        return (
+          <CardArticle
+            key={article?.id}
+            direction="vertical"
+            category={article?.Category?.name}
+            articlePage={`/articleViewing/${article?.id}`}
+            stateAboutArticle={{ id: article?.id }}
+            mainshotSource={article?.imgURL}
+            headline={article?.title}
+            byline={article?.User?.username}
+            subheadline={
+              article?.content?.length > 100
+                ? article?.content.slice(0, 101).concat("...")
+                : article?.content
+            }
+          />
+        );
+      });
+    }
   };
 
   return (
-    <div className="section-digging">
+    <div className="section-digging d-flex-column">
       <DiggingToolbar
-        articles={articles}
+        setSearchState={setSearchState}
+        // articles={articles}
         categories={categories}
         generateCurrentQuery={generateCurrentQuery}
         setCurrentQuery={setCurrentQuery}
         generatePayload={generatePayload}
         dispatch={dispatch}
         getArticles={getArticles}
-        generateFilteredResults={generateFilteredResults}
+        // searchArticles={searchArticles}
+        searchArticlesTitle={searchArticlesTitle}
+        searchArticlesKeyword={searchArticlesKeyword}
         setFilteredArticles={setFilteredArticles}
+        // filteredArticles={filteredArticles}
       />
       <div className="cards-display d-flex-row">
         {isLoading ? <Loader color="main" bgColor="accent" /> : null}

@@ -6,6 +6,8 @@
   background-color: var(--accent);
 
   padding: 1rem;
+  place-content: center;
+  place-items: center;
 }
 
 .article-mainshot.flex {
@@ -29,5 +31,8 @@
 }
 
 .article-mainshot img {
-  object-fit: contain;
+  /* object-fit: contain; */
+  /* width: 80%; */
+  max-width: 95%;
+  max-height: 95%;
 }

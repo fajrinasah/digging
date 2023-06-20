@@ -17,17 +17,23 @@
 /*--------------RADIOS-------------------*/
 fieldset.digging-toolbar-sort {
   border: none;
-  margin: 2rem 0;
-  padding: 0 1rem;
+  padding: 1rem 0 1rem 2rem;
+  border-left: 1px solid var(--accent);
+}
+
+fieldset.digging-toolbar-sort .legend-container {
+  padding-right: 1rem;
 }
 
 fieldset.digging-toolbar-sort .radio-container {
-  padding: 1rem 0;
+  padding: 0.5rem 0 0.5rem 1rem;
+  place-content: center;
+  place-items: center;
 }
 
 fieldset.digging-toolbar-sort .radio-container input[type="radio"] {
-  width: 3rem;
-  height: 3rem;
+  width: 2.2rem;
+  height: 2.2rem;
   accent-color: var(--accent);
   margin-right: 1rem;
 }

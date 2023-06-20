@@ -18,45 +18,19 @@ import HomeSectionCategoryCards from "../../03-Organisms/HomeSectionCategoryCard
 import HomeSectionTopTenList from "../../03-Organisms/HomeSectionTopTenList";
 import SectionDigging from "../../03-Organisms/SectionDiggingFormik";
 
+import { generatePayload, generateCurrentQuery } from "./utilityFunctions";
 import {
-  generatePayload,
-  generateCurrentQuery,
-  generateFilteredResults,
-} from "./utilityFunctions";
+  setFilteredArticles,
+  searchArticlesTitle,
+  searchArticlesKeyword,
+} from "../../../Store/Slices/Blogs";
+
+// const buttonPageArray = document.getElementsByClassName("button-page");
 
 export default function PageHome({ id, dispatch }) {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    dispatch(getArticles({ id_cat: 1, page: 1, sort: "ASC" }));
-    dispatch(getCarouselArticles());
-    dispatch(getMostConserved());
-    dispatch(getCategories());
-  }, []);
-
-  const [currentQuery, setCurrentQuery] = useState(`?sort=DESC`);
-  const [filteredArticles, setFilteredArticles] = useState([]);
-
-  // const {
-  //   categories,
-  //   carouselArticles,
-  //   mostConservedArticles,
-  //   articles,
-  //   totalPage,
-  //   currentPage,
-  //   isLoading,
-  // } = useSelector((state) => {
-  //   return {
-  //     categories: state.blogs.categories,
-  //     carouselArticles: state.blogs.carouselArticles,
-  //     mostConservedArticles: state.blogs.mostConservedArticles,
-  //     articles: state.blogs.articles,
-  //     totalPage: state.blogs.totalPage,
-  //     currentPage: state.blogs.currentPage,
-  //     isLoading: state.blogs.isLoading,
-  //   };
-  // });
-
+  /*===============GLOBAL STATES================*/
   const categories = useSelector((state) => {
     return state.blogs?.categories;
   });
@@ -73,6 +47,10 @@ export default function PageHome({ id, dispatch }) {
     return state.blogs?.articles;
   });
 
+  const filteredArticles = useSelector((state) => {
+    return state.blogs?.filteredArticles;
+  });
+
   const totalPage = useSelector((state) => {
     return state.blogs?.totalPage;
   });
@@ -85,20 +63,48 @@ export default function PageHome({ id, dispatch }) {
     return state.blogs?.isLoading;
   });
 
-  /*===============PAGINATION FUNCTIONS================*/
+  /*===============LOCAL STATES================*/
+
+  const [currentQuery, setCurrentQuery] = useState(`?sort=DESC`);
+  const [searchState, setSearchState] = useState(false);
+
+  /*===============USE EFFECT================*/
+  useEffect(() => {
+    dispatch(getArticles(`?sort=DESC&page=1`));
+    dispatch(getCarouselArticles());
+    dispatch(getMostConserved());
+    dispatch(getCategories());
+  }, []);
+
+  /*===============PAGINATION CONFIGURATIONS================*/
 
   const disabledPrevious = currentPage === 1;
   const disabledNext = currentPage >= totalPage;
 
   const onChangePagination = (page) => {
     if (page == "previous") {
+      console.log(
+        `DISPATCHED: getArticles(${currentQuery}&page=${currentPage - 1})`
+      );
       dispatch(getArticles(`${currentQuery}&page=${currentPage - 1}`));
     } else if (page == "next") {
+      console.log(
+        `DISPATCHED: getArticles(${currentQuery}&page=${currentPage + 1})`
+      );
       dispatch(getArticles(`${currentQuery}&page=${currentPage + 1}`));
     } else {
+      console.log(`DISPATCHED: getArticles(${currentQuery}&page=${page})`);
       dispatch(getArticles(`${currentQuery}&page=${page}`));
     }
   };
+
+  /*===============ACTIVE PAGE STYLE================*/
+
+  // for (let i = 1; i < totalPage; i++) {
+  //   buttonPageArray[i] == `button#${currentPage}.button-page`
+  //     ? (document.getElementById(currentPage).className == "button-page active" ? document.getElementById(currentPage).class)
+  //     : (document.getElementById(`${i}`).className = "button-page");
+  // }
 
   return (
     <div className="page-home">
@@ -109,7 +115,7 @@ export default function PageHome({ id, dispatch }) {
       </div>
 
       <div className="categories-container">
-        <HomeSectionCategoryCards flexDirection="row" />
+        <HomeSectionCategoryCards flexDirection="row" categories={categories} />
       </div>
 
       <div className="carousel-container d-flex-row">
@@ -125,6 +131,8 @@ export default function PageHome({ id, dispatch }) {
 
       <div className="digging-container d-flex-row">
         <SectionDigging
+          searchState={searchState}
+          setSearchState={setSearchState}
           articles={articles}
           filteredArticles={filteredArticles}
           categories={categories}
@@ -134,7 +142,10 @@ export default function PageHome({ id, dispatch }) {
           generatePayload={generatePayload}
           dispatch={dispatch}
           getArticles={getArticles}
-          generateFilteredResults={generateFilteredResults}
+          // generateFilteredResults={generateFilteredResults}
+          // searchArticles={searchArticles}
+          searchArticlesTitle={searchArticlesTitle}
+          searchArticlesKeyword={searchArticlesKeyword}
           setFilteredArticles={setFilteredArticles}
           totalPage={totalPage}
           disabledPrevious={disabledPrevious}

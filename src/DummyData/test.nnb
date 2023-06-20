@@ -1,0 +1,35 @@
+{
+    "cells": [
+        {
+            "language": "typescript",
+            "source": [
+                "let jsonData = [\r\n    {\r\n      id: 180,\r\n      title: \"My Update Stories\",\r\n      Blog_Keywords: [\r\n        {\r\n          id: 309,\r\n          BlogId: 180,\r\n          KeywordId: 87,\r\n          Keyword: {\r\n            id: 87,\r\n            name: \"My\",\r\n          }\r\n        },\r\n        {\r\n            id: 308,\r\n            BlogId: 180,\r\n            KeywordId: 83,\r\n            Keyword: {\r\n              id: 83,\r\n              name: \"stories\",\r\n            }\r\n          },\r\n      ]\r\n    },\r\n    {\r\n        id: 179,\r\n        title: \"My Stories\",\r\n        Blog_Keywords: [\r\n          {\r\n            id: 306,\r\n            BlogId: 179,\r\n            KeywordId: 87,\r\n            Keyword: {\r\n              id: 87,\r\n              name: \"My\",\r\n            }\r\n          },\r\n          {\r\n              id: 308,\r\n              BlogId: 180,\r\n              KeywordId: 86,\r\n              Keyword: {\r\n                id: 86,\r\n                name: \"economic\",\r\n              }\r\n            },\r\n        ]\r\n      },\r\n    ]\r\n\r\n    let regex = new RegExp(\"My\", \"i\");\r\n    let filteredResults = [];\r\n    filteredResults = jsonData.filter(\r\n        (article) =>\r\n          article.Blog_Keywords.filter((keywordObj) =>\r\n            regex.test(keywordObj.Keyword.name)\r\n          )\r\n        // regex.test(article.Blog_Keywords[].{}.Keyword.name)\r\n        // article.CategoryId.includes(searchInput)\r\n      );\r\n\r\n      console.log(filteredResults)\r\n"
+            ],
+            "outputs": [
+                {
+                    "items": [
+                        {
+                            "mime": "application/vnd.code.notebook.stdout",
+                            "value": [
+                                "[",
+                                "  {",
+                                "    id: 180,",
+                                "    title: 'My Update Stories',",
+                                "    Blog_Keywords: [ [Object], [Object] ]",
+                                "  },",
+                                "  {",
+                                "    id: 179,",
+                                "    title: 'My Stories',",
+                                "    Blog_Keywords: [ [Object], [Object] ]",
+                                "  }",
+                                "]",
+                                "",
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

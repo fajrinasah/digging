@@ -8,6 +8,7 @@ import {
   doConserveArticle,
   getConservedArticles,
   getMostConserved,
+  // setFilteredArticles,
 } from "./slices";
 import { isErrorOccured } from "../Authorization";
 
@@ -16,6 +17,7 @@ const INITIAL_STATE = {
   carouselArticles: [],
   mostConservedArticles: [],
   articles: [],
+  filteredArticles: [],
   totalPage: 1,
   currentPage: 1,
   isLoading: false,
@@ -32,6 +34,60 @@ const isBlogsSucceed = (action) => {
 const blogsSlice = createSlice({
   name: "blogs",
   initialState: INITIAL_STATE,
+  reducers: {
+    setFilteredArticles: (state, action) => {
+      state.filteredArticles = state.articles;
+      console.log("DONE: setFilteredArticles");
+    },
+    getFilteredArticles: (state, action) => {
+      const getResult = () => {
+        let filteredArticlesResult = [...state.filteredArticles];
+        return filteredArticlesResult;
+      };
+      getResult();
+    },
+    searchArticles: (state, action) => {
+      const { searchOption, searchInput } = action.payload;
+      let regex = new RegExp(`${searchInput}`, "i");
+
+      if (searchOption == "title") {
+        state.filteredArticles = state.filteredArticles.filter((article) =>
+          regex.test(article.title)
+        );
+      } else if (searchOption == "keyword") {
+        state.filteredArticles = state.filteredArticles.filter((article) =>
+          article.Blog_Keywords.filter((keywordObj) =>
+            regex.test(keywordObj.Keyword.name)
+          )
+        );
+      }
+      console.log("DONE: searchArticles");
+    },
+    searchArticlesTitle: (state, action) => {
+      let regex = new RegExp(action?.payload, "i");
+      // state.filteredArticles = state.articles;
+      state.filteredArticles = state.articles.filter((article) =>
+        regex.test(article.title)
+      );
+      // state.articles = state.articles.filter((article) =>
+      //   regex.test(article.title)
+      // );
+    },
+    searchArticlesKeyword: (state, action) => {
+      let regex = new RegExp(action?.payload, "i");
+      // state.filteredArticles = state.articles;
+      state.filteredArticles = state.articles.filter((article) =>
+        article.Blog_Keywords.filter((keywordObj) =>
+          regex.test(keywordObj.Keyword.name)
+        )
+      );
+      // state.articles = state.articles.filter((article) =>
+      //   article.Blog_Keywords.filter((keywordObj) =>
+      //     regex.test(keywordObj.Keyword.name)
+      //   )
+      // );
+    },
+  },
   extraReducers: (builder) => {
     // GET ARTICLES
     builder.addCase(getArticles.pending, (state, action) => {
@@ -82,6 +138,7 @@ const blogsSlice = createSlice({
       state = Object.assign(state, {
         isLoading: false,
         articles: action.payload?.result,
+        // filteredArticles: action.payload?.result,
         totalPage: action.payload?.page,
         currentPage: action.payload?.blogPage,
       });
@@ -97,3 +154,12 @@ const blogsSlice = createSlice({
 });
 
 export default blogsSlice.reducer;
+
+// export actions
+export const {
+  setFilteredArticles,
+  getFilteredArticles,
+  searchArticles,
+  searchArticlesTitle,
+  searchArticlesKeyword,
+} = blogsSlice.actions;

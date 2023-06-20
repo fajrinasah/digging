@@ -5,7 +5,7 @@
 export const generatePayload = (categoryId = "", sortValue = "DESC") => {
   let payload = `?`;
 
-  if (!categoryId) {
+  if (categoryId == 0) {
     payload = `${payload}sort=${sortValue}&page=1`;
   } else {
     payload = `${payload}id_cat=${categoryId}&sort=${sortValue}&page=1`;
@@ -30,26 +30,29 @@ export const generateCurrentQuery = (categoryId = "", sortValue = "DESC") => {
   return query;
 };
 
-/*===========================================
-===============GENERATE FILTERED RESULTS==============
-(if searchInput is not blank)
-=============================================*/
-export const generateFilteredResults = (
-  unfilteredResults = [],
-  searchOption = "title",
-  searchInput = ""
-) => {
-  let filteredResults = [];
+// /*===========================================
+// ===============GENERATE FILTERED RESULTS==============
+// (if searchInput is not blank)
+// =============================================*/
+// export const generateFilteredResults = (
+//   unfilteredResults = [],
+//   searchOption = "title",
+//   searchInput = ""
+// ) => {
+//   let filteredResults = [];
+//   let regex = new RegExp(`${searchInput}`, "i");
 
-  if (searchOption == "title") {
-    filteredResults = unfilteredResults.filter((article) =>
-      article.title.includes(searchInput)
-    );
-  } else {
-    filteredResults = unfilteredResults.filter((article) =>
-      article.CategoryId.includes(searchInput)
-    );
-  }
-
-  return filteredResults;
-};
+//   if (searchOption == "title") {
+//     filteredResults = unfilteredResults.filter((article) =>
+//       regex.test(article.title)
+//     );
+//   } else {
+//     filteredResults = unfilteredResults.filter((article) =>
+//       article.Blog_Keywords.filter((keywordObj) =>
+//         regex.test(keywordObj.Keyword.name)
+//       )
+//     );
+//   }
+//   console.log(`filtered result (searched): ${filteredResults}`);
+//   return filteredResults;
+// };

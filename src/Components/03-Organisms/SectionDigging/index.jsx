@@ -1,4 +1,4 @@
-import DiggingToolbar from "../../02-Molecules/DiggingToolbar";
+import DiggingToolbar from "../../02-Molecules/DiggingToolbarFormik";
 import CardArticle from "../CardArticle";
 import Pagination from "../../01-Atoms/Buttons/Pagination";
 

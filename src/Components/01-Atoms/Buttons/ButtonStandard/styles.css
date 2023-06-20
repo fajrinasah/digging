@@ -25,6 +25,10 @@
   transform: scale(0.98);
 }
 
+.button-standard:disabled {
+  opacity: 0.6;
+}
+
 .button-standard.raised {
   background-color: var(--contrast);
   border-color: var(--contrast);

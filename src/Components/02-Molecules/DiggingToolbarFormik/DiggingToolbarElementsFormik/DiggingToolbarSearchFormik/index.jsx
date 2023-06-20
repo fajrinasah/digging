@@ -1,7 +1,7 @@
 import { Field } from "formik";
 
 import "./styles.css";
-import "../../01-Atoms/Inputs/InputToolbarSelect/styles.css";
+import "../InputToolbarSelectCategoryFormik/styles.css";
 
 export default function DiggingToolbarSearchFormik() {
   return (

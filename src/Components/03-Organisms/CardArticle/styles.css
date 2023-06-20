@@ -44,6 +44,7 @@
 
 .card-article .second-half {
   grid-area: second-half;
+  justify-items: start;
 }
 
 .card-article .first-half,
@@ -52,8 +53,17 @@
   height: 100%;
 
   display: flex;
-  place-content: center;
+
+  /* justify-content: flex-start; */
   place-items: start;
+}
+
+.card-article .first-half {
+  place-content: center;
+}
+
+.card-article .second-half {
+  justify-content: flex-start;
 }
 
 /*--------------HOVER--------------*/

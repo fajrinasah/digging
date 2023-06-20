@@ -5,7 +5,9 @@ import "./styles.css";
 export default function DiggingToolbarSortFormik() {
   return (
     <fieldset className="digging-toolbar-sort d-flex-row">
-      <legend className="bold">Sort from</legend>
+      <div className="legend-container">
+        <legend className="bold">Sort from</legend>
+      </div>
       <div className="radios-container d-flex-row">
         <div className="radio-container d-flex-row">
           <Field

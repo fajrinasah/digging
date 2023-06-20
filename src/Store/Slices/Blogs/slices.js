@@ -12,10 +12,11 @@ export const getArticles = createAsyncThunk(
       // parameter
       // const { id_cat, page, sort } = payload;
       // const PARAMETER = `?id_cat=${id_cat}&sort=${sort}&page=${page}`;
-      const PARAMETER = payload;
+      // const PARAMETER = payload;
 
       // GET articles
-      const { data } = await api.get("/blog" + encodeURI(PARAMETER));
+      // const { data } = await api.get("/blog" + encodeURI(PARAMETER));
+      const { data } = await api.get(`/blog${payload}`);
 
       return data;
     } catch (error) {
@@ -23,6 +24,16 @@ export const getArticles = createAsyncThunk(
     }
   }
 );
+
+// /*==========================================
+// Get Filtered Articles
+// ===========================================*/
+// export const setFilteredArticles = (articles = []) => {
+//   return {
+//     type: "setFilteredArticles",
+//     articles,
+//   };
+// };
 
 // export const getArticles = createAsyncThunk(
 //   "blogs/getArticles",
@@ -53,7 +64,7 @@ export const getCarouselArticles = createAsyncThunk(
       const { data } = await api.get("/blog");
 
       // 5 most recent articles
-      const carouselArticlesArray = data.result.slice(0, 6);
+      const carouselArticlesArray = data.result.slice(0, 5);
 
       return carouselArticlesArray;
     } catch (error) {

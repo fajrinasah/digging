@@ -4,3 +4,16 @@
 .home-section-category-cards .section-title {
   margin-bottom: 1rem;
 }
+
+.home-section-category-cards .container {
+  justify-content: center;
+}
+.home-section-category-cards .category-cards-container {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 755px;
+}
+
+.home-section-category-cards .category-cards-container .card-category {
+  width: 250px;
+}

@@ -1,3 +1,5 @@
+import Moment from "react-moment";
+
 import "./styles.css";
 
 export default function ArticleDate({
@@ -8,7 +10,11 @@ export default function ArticleDate({
   return (
     <div className={`article-date ${bold}`}>
       <span className="sr-only">{srGuide}</span>
-      <p>{date}</p>
+      <p>
+        <Moment format="YYYY/MM/DD" withTitle>
+          {date}
+        </Moment>
+      </p>
     </div>
   );
 }

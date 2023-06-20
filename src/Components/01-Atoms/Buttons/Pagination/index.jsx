@@ -7,24 +7,44 @@ import {
 import "./styles.css";
 
 export default function Pagination({
-  totalPage,
+  totalPage = 0,
   disabledPrevious = false,
   disabledNext = false,
   onChangePagination = (page = "1") => {},
 }) {
+  const pagesArray = [];
+  for (let i = 1; i <= totalPage; i++) {
+    pagesArray.push(i);
+  }
+
   const RenderButtonPage = () => {
-    for (let i = 1; i <= totalPage; i++) {
+    return pagesArray.map((page) => {
       return (
         <button
-          key={i}
+          key={page}
           className="button-page"
-          onClick={() => onChangePagination(`${i}`)}
+          id={page}
+          onClick={() => onChangePagination(`${page}`)}
         >
-          {i}
+          {page}
         </button>
       );
-    }
+    });
   };
+
+  // const RenderButtonPage = () => {
+  //   for (let i = 1; i <= 3; i++) {
+  //     return (
+  //       <button
+  //         key={i}
+  //         className="button-page"
+  //         onClick={() => onChangePagination(`${i}`)}
+  //       >
+  //         {i}
+  //       </button>
+  //     );
+  //   }
+  // };
 
   return (
     <div className="pagination d-flex-row">
