@@ -23,7 +23,7 @@ export default function SectionDiggingMyProfile({
             byline={article?.User?.username}
             subheadline={
               article?.content?.length > 100
-                ? article?.content.slice(0, 101).concat("...")
+                ? article?.content?.slice(0, 101).concat("...")
                 : article?.content
             }
           />
@@ -43,9 +43,9 @@ export default function SectionDiggingMyProfile({
             headline={article?.Blog?.title}
             byline={article?.User?.username}
             subheadline={
-              article?.Blog?.content?.length > 100
-                ? article?.content.slice(0, 101).concat("...")
-                : article?.content
+              article?.Blog?.content.length > 100
+                ? article?.Blog?.content?.slice(0, 101).concat("...")
+                : article?.Blog?.content
             }
           />
         );
