@@ -1,6 +1,10 @@
 /*=====================================
 =============LINK DISPLAY NAME==========
 ====================================*/
+.link-display-name:hover {
+  font-weight: bold;
+}
+
 .link-of-display-name {
   font-family: "Amaranth", sans-serif;
   text-decoration: none;

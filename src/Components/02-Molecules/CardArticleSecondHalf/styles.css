@@ -1,7 +1,11 @@
 /*=========================================
 =============CARD ARTICLE SECOND HALF==========
 ===============================================*/
+.link-to-article-page-container {
+  height: 100%;
+}
 .link-to-article-page {
+  height: 100%;
   text-decoration: none;
   border: none;
   padding: 1rem;

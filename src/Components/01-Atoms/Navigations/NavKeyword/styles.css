@@ -21,6 +21,7 @@
 .nav-keyword .link-to-keyword-page:hover,
 .nav-keyword .link-to-keyword-page:active {
   font-weight: bold;
+  color: var(--accent);
 }
 
 .nav-keyword .link-to-keyword-page:active {

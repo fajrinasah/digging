@@ -7,7 +7,12 @@ import "./styles.css";
 import CarouselTitle from "../../01-Atoms/Texts/CarouselTitle";
 import CarouselSlide from "../../02-Molecules/CarouselSlide";
 
-export default function Carousel({ carouselArticles = [], navigate }) {
+export default function Carousel({
+  carouselArticles = [],
+  navigate,
+  dispatch,
+  setArticleData,
+}) {
   const settings = {
     dots: true,
     infinite: true,
@@ -31,7 +36,7 @@ export default function Carousel({ carouselArticles = [], navigate }) {
               headline={carouselArticles[0]?.title}
               onClick={() =>
                 navigate(`/articleViewing/${carouselArticles[0]?.id}`, {
-                  state: { id: carouselArticles[0]?.id },
+                  state: { articleId: carouselArticles[0]?.id },
                 })
               }
             />

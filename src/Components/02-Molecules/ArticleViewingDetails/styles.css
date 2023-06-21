@@ -23,8 +23,23 @@
   flex-wrap: wrap;
 }
 
+.this-article-details .references-list {
+  padding: 1rem 3rem;
+}
+
+.this-article-details .references-list li {
+  padding-bottom: 1.5rem;
+}
+
 .author-details {
   padding: 1rem 0;
+}
+
+.author-details .user-photo img {
+  max-width: 90%;
+  max-height: 90%;
+
+  /* object-fit: cover; */
 }
 
 .to-author-page {

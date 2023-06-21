@@ -25,7 +25,7 @@ import PageProfileOther from "./Components/04-Pages/PageProfileOther";
 import PageForgotPassword from "./Components/04-Pages/PageForgotPassword";
 import PageResetPassword from "./Components/04-Pages/PageResetPassword";
 import PageRegister from "./Components/04-Pages/PageRegisterFormik";
-import PageProfileEdit from "./Components/04-Pages/PageProfileEdit";
+import PageProfileEdit from "./Components/04-Pages/PageProfileEditFormik";
 import Loader from "./Components/01-Atoms/Loader";
 import SnackbarNotification from "./Components/02-Molecules/SnackbarNotification";
 import ButtonStandard from "./Components/01-Atoms/Buttons/ButtonStandard";
@@ -101,9 +101,9 @@ function App() {
         <Route path="/digging" element={<PageDigging />} />
         <Route
           path="/articleViewing/:id"
-          element={<PageArticleViewingOther />}
+          element={<PageArticleViewingOther authId={id} dispatch={dispatch} />}
         />
-        <Route path="/profile/:username" element={<PageProfileOther />} />
+        <Route path="/profile/:UserId" element={<PageProfileOther />} />
         <Route
           path="/compose"
           element={
@@ -113,7 +113,7 @@ function App() {
           }
         />
         <Route
-          path="/profile"
+          path="/myProfile"
           element={
             <ProtectedRoute>
               <PageProfileOwn />

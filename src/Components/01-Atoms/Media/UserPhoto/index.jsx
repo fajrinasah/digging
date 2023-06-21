@@ -6,8 +6,8 @@ export default function UserPhoto({
   alt = "",
 }) {
   return (
-    <div className={`user-photo ${size}`}>
-      <img src={imgSource} alt={alt} />
+    <div className={`user-photo ${size} d-flex-row`}>
+      <img src={process.env.REACT_APP_IMAGE_URL + imgSource} alt={alt} />
     </div>
   );
 }

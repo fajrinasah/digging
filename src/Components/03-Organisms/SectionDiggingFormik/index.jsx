@@ -33,7 +33,7 @@ export default function SectionDigging({
             direction="vertical"
             category={article?.Category?.name}
             articlePage={`/articleViewing/${article?.id}`}
-            stateAboutArticle={{ id: article?.id }}
+            articleId={article?.id}
             mainshotSource={article?.imageURL}
             headline={article?.title}
             byline={article?.User?.username}
@@ -53,7 +53,7 @@ export default function SectionDigging({
             direction="vertical"
             category={article?.Category?.name}
             articlePage={`/articleViewing/${article?.id}`}
-            stateAboutArticle={{ id: article?.id }}
+            articleId={article?.id}
             mainshotSource={article?.imageURL}
             headline={article?.title}
             byline={article?.User?.username}

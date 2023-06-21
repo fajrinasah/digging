@@ -4,6 +4,8 @@
 
 .user-photo {
   background-color: var(--accent);
+  place-content: center;
+  place-items: center;
 }
 
 .user-photo.small {

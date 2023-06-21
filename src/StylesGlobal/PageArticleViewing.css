@@ -77,7 +77,7 @@
 
   align-self: end;
 
-  border-left: 1px solid var(--contrast);
+  border-left: 2px solid var(--accent);
 }
 
 .page-article-viewing .button-container {

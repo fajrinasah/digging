@@ -7,7 +7,7 @@ export default function CardArticle({
   category = "Category",
   categoryPage,
   articlePage,
-  stateAboutArticle = { id: 0 },
+  articleId,
   mainshotSource,
   headline,
   byline,
@@ -25,7 +25,7 @@ export default function CardArticle({
       <div className="second-half">
         <CardArticleSecondHalf
           articlePage={articlePage}
-          stateAboutArticle={stateAboutArticle}
+          articleId={articleId}
           headline={headline}
           byline={byline}
           subheadline={subheadline}

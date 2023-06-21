@@ -10,27 +10,21 @@ import "./styles.css";
 
 export default function LinkUsername({
   destination = "",
+  userId = 0,
   username = "@username",
   color = "contrast",
   bgColor = "transparent",
   size = "medium",
 }) {
   return (
-    <div class={`link-username color-${color} bg-${bgColor}`}>
+    <div className={`link-username color-${color} bg-${bgColor}`}>
       <Link
         to={destination}
+        state={{ userId: userId }}
         className={`link-of-username ${size} click-to-get-down hvr-underline-from-center`}
       >
         {username}
       </Link>
-      {/* 
-      <Navigate
-        to={destination}
-        className={`link-of-username ${size} ${color} ${bgColor} click-to-get-down hvr-underline-from-center`}
-      >
-        {username}
-      </Navigate>
-      */}
     </div>
   );
 }

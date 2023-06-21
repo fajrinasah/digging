@@ -23,6 +23,7 @@ import {
   setFilteredArticles,
   searchArticlesTitle,
   searchArticlesKeyword,
+  setArticleData,
 } from "../../../Store/Slices/Blogs";
 
 // const buttonPageArray = document.getElementsByClassName("button-page");
@@ -122,6 +123,8 @@ export default function PageHome({ id, dispatch }) {
         <HomeSectionCarousel
           carouselArticles={carouselArticles}
           navigate={navigate}
+          dispatch={dispatch}
+          setArticleData={setArticleData}
         />
       </div>
 

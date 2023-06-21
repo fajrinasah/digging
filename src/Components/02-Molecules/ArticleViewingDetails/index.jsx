@@ -4,16 +4,37 @@ import InstructionTitle from "../../01-Atoms/Texts/SectionTitle";
 import UserPhoto from "../../01-Atoms/Media/UserPhoto";
 import LinkDisplayName from "../../01-Atoms/Navigations/LinkDisplayName";
 import LinkUsername from "../../01-Atoms/Navigations/LinkUsername";
+import NavKeyword from "../../01-Atoms/Navigations/NavKeyword";
 
 export default function ArticleViewingDetails({
-  keywords,
-  references,
+  articleKeywords = [],
+  references = [{ listNumber: 0, listContent: "" }],
   authorPhoto,
   authorPhotoAlt,
   authorDisplayName = "Author's Display Name",
   authorUsername = "@author_username",
   authorProfilePage,
+  userId = 0,
 }) {
+  const RenderKeywords = () => {
+    return articleKeywords.map((keyword) => {
+      return (
+        <NavKeyword
+          key={keyword.id}
+          keywordName={keyword.name}
+          keywordId={keyword.id}
+          keywordDestination=""
+        />
+      );
+    });
+  };
+
+  const RenderReferences = () => {
+    return references.map((reference) => {
+      return <li key={reference.listNumber}>{reference.listContent}</li>;
+    });
+  };
+
   return (
     <div className="article-viewing-details">
       <InstructionTitle
@@ -27,13 +48,17 @@ export default function ArticleViewingDetails({
           <summary>
             <strong>Keywords</strong>
           </summary>
-          <div className="keywords-container d-flex-row">{keywords}</div>
+          <div className="keywords-container d-flex-row">
+            <RenderKeywords />
+          </div>
         </details>
         <details>
           <summary>
             <strong>References</strong>
           </summary>
-          {references}
+          <ol className="references-list">
+            <RenderReferences />
+          </ol>
         </details>
       </div>
       <div className="author-details d-flex-row">
@@ -41,6 +66,7 @@ export default function ArticleViewingDetails({
         <div className="to-author-page d-flex-col as-end">
           <LinkDisplayName
             destination={authorProfilePage}
+            userId={userId}
             displayName={authorDisplayName}
             color="main"
             bgColor="contrast"
@@ -48,6 +74,7 @@ export default function ArticleViewingDetails({
           />
           <LinkUsername
             destination={authorProfilePage}
+            userId={userId}
             username={authorUsername}
             color="main"
             bgColor="contrast"

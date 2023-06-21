@@ -1,5 +1,6 @@
 import { Formik } from "formik";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import { changeProfileValidationSchema } from "../../../ValidationSchemata/changeProfileValidationSchema";
 
@@ -11,8 +12,12 @@ import InputFileCustom from "../../01-Atoms/Inputs/InputFileCustom";
 import FormProfilePublicData from "../../02-Molecules/FormProfilePublicData";
 import FormProfilePrivateData from "../../02-Molecules/FormProfilePrivateData";
 import ButtonStandard from "../../01-Atoms/Buttons/ButtonStandard";
+import InputSubmit from "../../01-Atoms/Inputs/InputSubmit";
+import SnackbarNotification from "../../02-Molecules/SnackbarNotification";
 
-export default function PageProfileEdit({ dispatch }) {
+export default function PageProfileEdit({ dispatch, resetPassword }) {
+  const navigate = useNavigate();
+
   const imgProfile = useSelector((state) => {
     return state.auth?.imgProfile;
   });

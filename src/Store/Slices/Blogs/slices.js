@@ -99,6 +99,8 @@ export const doConserveArticle = createAsyncThunk(
   "blogs/doConserveArticle",
   async (payload, { rejectWithValue }) => {
     try {
+      // POST data to conserve an article
+      // payload: {BlogId: id}
       await api.post("/blog/like", payload);
 
       return null;

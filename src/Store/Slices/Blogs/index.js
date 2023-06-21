@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+import { toastSuccess } from "../../../Components/01-Atoms/CustomToasts";
+
 // created AsyncThunks
 import {
   getArticles,
@@ -21,6 +23,8 @@ const INITIAL_STATE = {
   totalPage: 1,
   currentPage: 1,
   isLoading: false,
+  articleData: [],
+  articleKeywords: [],
 };
 
 // make a global success handler, define when is the authorization success
@@ -76,16 +80,29 @@ const blogsSlice = createSlice({
     searchArticlesKeyword: (state, action) => {
       let regex = new RegExp(action?.payload, "i");
       // state.filteredArticles = state.articles;
+
       state.filteredArticles = state.articles.filter((article) =>
         article.Blog_Keywords.filter((keywordObj) =>
           regex.test(keywordObj.Keyword.name)
         )
       );
-      // state.articles = state.articles.filter((article) =>
-      //   article.Blog_Keywords.filter((keywordObj) =>
-      //     regex.test(keywordObj.Keyword.name)
-      //   )
-      // );
+    },
+    setArticleData: (state, action) => {
+      state.articleData = state.articles.filter(
+        (article) => article.id == action?.payload
+      );
+      state.articleKeywords = state.articleData?.Blog_Keywords;
+    },
+    setArticleKeywords: (state, action) => {
+      let articleKeywords = [];
+      state.articleData[0]?.Blog_Keywords.forEach((element) => {
+        articleKeywords.push({
+          id: element.Keyword?.id,
+          name: element.Keyword?.name,
+        });
+      });
+
+      state.articleKeywords = [...articleKeywords];
     },
   },
   extraReducers: (builder) => {
@@ -118,6 +135,7 @@ const blogsSlice = createSlice({
     });
     builder.addCase(doConserveArticle.fulfilled, (state, action) => {
       state.isLoading = false;
+      toastSuccess("Successfully conserved!");
     });
 
     // GET CONSERVED ARTICLES
@@ -162,4 +180,6 @@ export const {
   searchArticles,
   searchArticlesTitle,
   searchArticlesKeyword,
+  setArticleData,
+  setArticleKeywords,
 } = blogsSlice.actions;
