@@ -145,3 +145,21 @@ export const getMostConserved = createAsyncThunk(
     }
   }
 );
+
+/*==========================================
+AsyncThunk: DELETE ONE'S OWN FINDING (ARTICLE)
+===========================================*/
+export const deleteArticle = createAsyncThunk(
+  "blogs/deleteArticle",
+  async (payload, { rejectWithValue }) => {
+    try {
+      // PATCH
+      // payload = id
+      const { data } = await api.patch(`/blog/remove/${payload}`);
+
+      return null;
+    } catch (error) {
+      return rejectWithValue(error.response ? error.response.data : error);
+    }
+  }
+);

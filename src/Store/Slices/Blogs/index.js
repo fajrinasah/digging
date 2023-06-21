@@ -10,7 +10,7 @@ import {
   doConserveArticle,
   getConservedArticles,
   getMostConserved,
-  // setFilteredArticles,
+  deleteArticle,
 } from "./slices";
 import { isErrorOccured } from "../Authorization";
 
@@ -25,6 +25,9 @@ const INITIAL_STATE = {
   isLoading: false,
   articleData: [],
   articleKeywords: [],
+  myInformation: [],
+  myArticles: [],
+  myConservedArticles: [],
 };
 
 // make a global success handler, define when is the authorization success
@@ -104,6 +107,20 @@ const blogsSlice = createSlice({
 
       state.articleKeywords = [...articleKeywords];
     },
+    setMyInformation: (state, action) => {
+      const myUsername = state.myArticles[0].User.username;
+      const myPhotoProfile = state.myArticles[0].User.imgProfile;
+      state.myInformation.push({
+        myUsername: myUsername,
+        myPhotoProfile: myPhotoProfile,
+      });
+    },
+    setMyArticles: (state, action) => {
+      // payload: userId
+      state.myArticles = state.articles.filter(
+        (article) => article?.UserId == action.payload
+      );
+    },
   },
   extraReducers: (builder) => {
     // GET ARTICLES
@@ -142,6 +159,10 @@ const blogsSlice = createSlice({
     builder.addCase(getConservedArticles.pending, (state, action) => {
       state.isLoading = true;
     });
+    builder.addCase(getConservedArticles.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.myConservedArticles = action.payload?.result;
+    });
 
     // GET MOST CONSERVED ARTICLES
     builder.addCase(getMostConserved.pending, (state, action) => {
@@ -149,6 +170,15 @@ const blogsSlice = createSlice({
     });
     builder.addCase(getMostConserved.fulfilled, (state, action) => {
       state.mostConservedArticles = action.payload?.result;
+    });
+
+    // PATCH DELETE ARTICLE
+    builder.addCase(deleteArticle.pending, (state, action) => {
+      state.isLoading = true;
+    });
+    builder.addCase(deleteArticle.fulfilled, (state, action) => {
+      state.isLoading = false;
+      toastSuccess("Successfully deleted");
     });
 
     // success handler

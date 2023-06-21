@@ -15,7 +15,6 @@ export default function SectionDigging({
   generatePayload = () => {},
   dispatch = () => {},
   getArticles = () => {},
-  // searchArticles = () => {},
   searchArticlesTitle = () => {},
   searchArticlesKeyword = () => {},
   setFilteredArticles = () => {},
@@ -34,6 +33,7 @@ export default function SectionDigging({
             category={article?.Category?.name}
             articlePage={`/articleViewing/${article?.id}`}
             articleId={article?.id}
+            userId={article?.UserId}
             mainshotSource={article?.imageURL}
             headline={article?.title}
             byline={article?.User?.username}
@@ -54,6 +54,7 @@ export default function SectionDigging({
             category={article?.Category?.name}
             articlePage={`/articleViewing/${article?.id}`}
             articleId={article?.id}
+            userId={article?.UserId}
             mainshotSource={article?.imageURL}
             headline={article?.title}
             byline={article?.User?.username}
@@ -72,29 +73,19 @@ export default function SectionDigging({
     <div className="section-digging d-flex-column">
       <DiggingToolbar
         setSearchState={setSearchState}
-        // articles={articles}
         categories={categories}
         generateCurrentQuery={generateCurrentQuery}
         setCurrentQuery={setCurrentQuery}
         generatePayload={generatePayload}
         dispatch={dispatch}
         getArticles={getArticles}
-        // searchArticles={searchArticles}
         searchArticlesTitle={searchArticlesTitle}
         searchArticlesKeyword={searchArticlesKeyword}
         setFilteredArticles={setFilteredArticles}
-        // filteredArticles={filteredArticles}
       />
       <div className="cards-display d-flex-row">
         {isLoading ? <Loader color="main" bgColor="accent" /> : null}
         <RenderCardArticle />
-        {/* <CardArticle direction="vertical" />
-        <CardArticle direction="vertical" />
-        <CardArticle direction="vertical" />
-        <CardArticle direction="vertical" />
-        <CardArticle direction="vertical" />
-        <CardArticle direction="vertical" />
-        <CardArticle direction="vertical" /> */}
       </div>
       <Pagination
         totalPage={totalPage}

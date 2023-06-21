@@ -1,6 +1,17 @@
 import { useLocation, useNavigate, Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+
+import { toastError } from "../../01-Atoms/CustomToasts";
+import {
+  getArticles,
+  doConserveArticle,
+  deleteArticle,
+} from "../../../Store/Slices/Blogs/slices";
+import {
+  setArticleData,
+  setArticleKeywords,
+} from "../../../Store/Slices/Blogs";
 
 import LinkCategory from "../../01-Atoms/Navigations/LinkCategory";
 import ArticleDate from "../../01-Atoms/Texts/ArticleDate";
@@ -14,15 +25,7 @@ import DummyArticleTextbody from "../../../DummyData/DummyArticleTextbody";
 import ArticleViewingDetails from "../../02-Molecules/ArticleViewingDetails";
 import ButtonStandard from "../../01-Atoms/Buttons/ButtonStandard";
 import NavKeyword from "../../01-Atoms/Navigations/NavKeyword";
-import { toastError } from "../../01-Atoms/CustomToasts";
-import {
-  getArticles,
-  doConserveArticle,
-} from "../../../Store/Slices/Blogs/slices";
-import {
-  setArticleData,
-  setArticleKeywords,
-} from "../../../Store/Slices/Blogs";
+import ModalCrucial from "../../02-Molecules/ModalCrucial";
 
 export default function PageArticleViewingOther({
   authId,
@@ -36,6 +39,7 @@ export default function PageArticleViewingOther({
   const navigate = useNavigate();
   const location = useLocation();
   const articleId = location.state.articleId;
+  const userId = location.state.userId;
 
   const articleData = useSelector((state) => {
     return state.blogs?.articleData[0];
@@ -44,6 +48,10 @@ export default function PageArticleViewingOther({
   const articleKeywords = useSelector((state) => {
     return state.blogs?.articleKeywords;
   });
+
+  /*===============LOCAL STATES================*/
+  const [deleteConfirmationModal, showDeleteConfirmationModal] =
+    useState(false);
 
   /*===============USE EFFECT================*/
   useEffect(() => {
@@ -54,19 +62,6 @@ export default function PageArticleViewingOther({
   }, [location]);
 
   /*===============RENDER FUNCTIONS================*/
-
-  // const RenderKeywords = () => {
-  //   articleKeywords.map((keyword, index) => {
-  //     return (
-  //       <NavKeyword
-  //         key={keyword.id}
-  //         keywordName={keyword.name}
-  //         keywordId={keyword.id}
-  //         keywordDestination=""
-  //       />
-  //     );
-  //   });
-  // };
 
   const references = [
     {
@@ -80,6 +75,21 @@ export default function PageArticleViewingOther({
     },
   ];
 
+  /*===============UTILITY FUNCTIONS================*/
+  const cancelDelete = () => {
+    showDeleteConfirmationModal(false);
+  };
+
+  const confirmDelete = () => {
+    // dispatch(deleteArticle(articleId));
+    console.log(`DISPATCHED: deleteArticle(${articleId})`);
+    navigate("/myProfile", { replace: true });
+  };
+
+  const deleteClicked = () => {
+    showDeleteConfirmationModal(true);
+  };
+
   const conserveClicked = () => {
     if (!authId) {
       console.log("redirected to register page");
@@ -87,7 +97,7 @@ export default function PageArticleViewingOther({
       navigate("/register", { replace: true });
     }
 
-    dispatch(doConserveArticle({ BlogId: articleData?.id }));
+    // dispatch(doConserveArticle({ BlogId: articleData?.id }));
     console.log(
       `DISPATCHED: doConserveArticle(${{ BlogId: articleData?.id }})`
     );
@@ -149,12 +159,30 @@ export default function PageArticleViewingOther({
           userId={articleData?.UserId}
         />
         <div className="button-container">
-          <ButtonStandard
-            story="raised"
-            bold="bold"
-            content="Conserve it!"
-            onClick={() => conserveClicked()}
-          />
+          {userId && userId == authId ? (
+            <ButtonStandard
+              story="ghost-warning"
+              bold="bold"
+              content="Delete"
+              onClick={() => deleteClicked()}
+            />
+          ) : (
+            <ButtonStandard
+              story="raised"
+              bold="bold"
+              content="Conserve it!"
+              onClick={() => conserveClicked()}
+            />
+          )}
+          {deleteConfirmationModal ? (
+            <ModalCrucial
+              crucialType="danger"
+              content="Are you sure want to delete this finding?"
+              confirmCrucial="Delete"
+              cancelClicked={() => cancelDelete()}
+              confirmClicked={() => confirmDelete()}
+            />
+          ) : null}
         </div>
       </div>
     </div>

@@ -7,7 +7,8 @@ export default function CardArticle({
   category = "Category",
   categoryPage,
   articlePage,
-  articleId,
+  articleId = 0,
+  userId = 0,
   mainshotSource,
   headline,
   byline,
@@ -26,6 +27,7 @@ export default function CardArticle({
         <CardArticleSecondHalf
           articlePage={articlePage}
           articleId={articleId}
+          userId={userId}
           headline={headline}
           byline={byline}
           subheadline={subheadline}

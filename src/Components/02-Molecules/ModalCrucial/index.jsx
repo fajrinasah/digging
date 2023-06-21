@@ -4,6 +4,7 @@ import ModalDefaultText from "../../01-Atoms/Texts/ModalDefaultText";
 import ButtonStandard from "../../01-Atoms/Buttons/ButtonStandard";
 
 export default function ModalCrucial({
+  crucialType = "danger",
   content = "Are you sure you want to {do something crucial}?",
   confirmCrucial = "Confirm",
   cancelClicked,
@@ -26,12 +27,21 @@ export default function ModalCrucial({
           content="Cancel"
           onClick={cancelClicked}
         />
-        <ButtonStandard
-          story="raised"
-          bold="bold"
-          content={confirmCrucial}
-          onClick={confirmClicked}
-        />
+        {crucialType == "danger" ? (
+          <ButtonStandard
+            story="raised-warning"
+            bold="bold"
+            content={confirmCrucial}
+            onClick={confirmClicked}
+          />
+        ) : (
+          <ButtonStandard
+            story="raised"
+            bold="bold"
+            content={confirmCrucial}
+            onClick={confirmClicked}
+          />
+        )}
       </div>
     </div>
   );

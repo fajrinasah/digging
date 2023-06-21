@@ -7,6 +7,7 @@ import ArticleSubheadline from "../../01-Atoms/Texts/ArticleSubheadline";
 export default function CardArticleSecondHalf({
   articlePage,
   articleId = 0,
+  userId = 0,
   headline,
   byline = "byline",
   subheadline,
@@ -15,7 +16,7 @@ export default function CardArticleSecondHalf({
     <div className="link-to-article-page-container d-flex-column">
       <Link
         to={articlePage}
-        state={{ articleId: articleId }}
+        state={{ articleId: articleId, userId: userId }}
         className="link-to-article-page"
       >
         <ArticleHeadline headline={headline} color="contrast" size="smaller" />

@@ -145,8 +145,6 @@ export default function PageHome({ id, dispatch }) {
           generatePayload={generatePayload}
           dispatch={dispatch}
           getArticles={getArticles}
-          // generateFilteredResults={generateFilteredResults}
-          // searchArticles={searchArticles}
           searchArticlesTitle={searchArticlesTitle}
           searchArticlesKeyword={searchArticlesKeyword}
           setFilteredArticles={setFilteredArticles}

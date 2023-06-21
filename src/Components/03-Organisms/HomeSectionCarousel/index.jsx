@@ -36,7 +36,10 @@ export default function Carousel({
               headline={carouselArticles[0]?.title}
               onClick={() =>
                 navigate(`/articleViewing/${carouselArticles[0]?.id}`, {
-                  state: { articleId: carouselArticles[0]?.id },
+                  state: {
+                    articleId: carouselArticles[0]?.id,
+                    userId: carouselArticles[0]?.UserId,
+                  },
                 })
               }
             />
@@ -50,7 +53,10 @@ export default function Carousel({
               headline={carouselArticles[1]?.title}
               onClick={() =>
                 navigate(`/articleViewing/${carouselArticles[1]?.id}`, {
-                  state: { id: carouselArticles[1]?.id },
+                  state: {
+                    articleId: carouselArticles[1]?.id,
+                    userId: carouselArticles[1]?.UserId,
+                  },
                 })
               }
             />
@@ -64,7 +70,10 @@ export default function Carousel({
               headline={carouselArticles[2]?.title}
               onClick={() =>
                 navigate(`/articleViewing/${carouselArticles[2]?.id}`, {
-                  state: { id: carouselArticles[2]?.id },
+                  state: {
+                    articleId: carouselArticles[2]?.id,
+                    userId: carouselArticles[2]?.UserId,
+                  },
                 })
               }
             />
@@ -78,7 +87,10 @@ export default function Carousel({
               headline={carouselArticles[3]?.title}
               onClick={() =>
                 navigate(`/articleViewing/${carouselArticles[3]?.id}`, {
-                  state: { id: carouselArticles[3]?.id },
+                  state: {
+                    articleId: carouselArticles[3]?.id,
+                    userId: carouselArticles[3]?.UserId,
+                  },
                 })
               }
             />
@@ -92,7 +104,10 @@ export default function Carousel({
               headline={carouselArticles[4]?.title}
               onClick={() =>
                 navigate(`/articleViewing/${carouselArticles[4]?.id}`, {
-                  state: { id: carouselArticles[4]?.id },
+                  state: {
+                    articleId: carouselArticles[4]?.id,
+                    userId: carouselArticles[4]?.UserId,
+                  },
                 })
               }
             />
