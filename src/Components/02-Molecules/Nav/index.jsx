@@ -6,7 +6,7 @@ export default function Nav({ flexDirection = "row" }) {
     <nav className={`nav d-flex-${flexDirection}`}>
       <ul>
         <li>
-          <NavLinkLi destination="/digging" content="Start Digging" />
+          <NavLinkLi destination="/" content="Start Digging" />
         </li>
         <div className="decor-custom-div"></div>
         <li>

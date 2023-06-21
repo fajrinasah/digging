@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import "./styles.css";
 import PageTitle from "../../01-Atoms/Texts/PageTitle";
 
-export default function PageRegisterVerification() {
+export default function PageVerification() {
   const dispatch = useDispatch();
   const { isRegisterLoading, isVerified } = useSelector((state) => {
     return {

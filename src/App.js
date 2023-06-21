@@ -12,27 +12,26 @@ import ProtectedRoute from "./protected.routes";
 
 import "./App.css";
 
+import Loader from "./Components/01-Atoms/Loader";
 import Header from "./Components/03-Organisms/Header";
 import Footer from "./Components/03-Organisms/Footer";
 import PageHome from "./Components/04-Pages/PageHome";
 import PageDigging from "./Components/04-Pages/PageDigging";
-import PageCompose from "../src/Components/04-Pages/PageCompose";
-import PageProfileOwn from "./Components/04-Pages/PageProfileOwn";
-import PageNotFound from "./Components/04-Pages/PageNotFound";
-import PageLogin from "./Components/04-Pages/PageLoginFormik";
-import PageRegisterVerification from "./Components/04-Pages/PageRegisterVerification";
-import PageProfileOther from "./Components/04-Pages/PageProfileOther";
+
+import PageRegister from "./Components/04-Pages/PageRegister";
+import PageVerification from "./Components/04-Pages/PageVerification";
 import PageForgotPassword from "./Components/04-Pages/PageForgotPassword";
 import PageResetPassword from "./Components/04-Pages/PageResetPassword";
-import PageRegister from "./Components/04-Pages/PageRegisterFormik";
+import PageLogin from "./Components/04-Pages/PageLogin";
+
+import PageArticleViewing from "./Components/04-Pages/PageArticleViewing";
+import PageProfileOther from "./Components/04-Pages/PageProfileOther";
+import PageProfileOwn from "./Components/04-Pages/PageProfileOwn";
+import PageCompose from "../src/Components/04-Pages/PageCompose";
 import PageProfileEdit from "./Components/04-Pages/PageProfileEdit";
 import PageChangePassword from "./Components/04-Pages/PageChangePassword";
-import Loader from "./Components/01-Atoms/Loader";
-import SnackbarNotification from "./Components/02-Molecules/SnackbarNotification";
-import ButtonStandard from "./Components/01-Atoms/Buttons/ButtonStandard";
-import ModalDefaultText from "./Components/01-Atoms/Texts/ModalDefaultText";
-import NavKeyword from "./Components/01-Atoms/Navigations/NavKeyword";
-import PageArticleViewing from "./Components/04-Pages/PageArticleViewing";
+
+import PageNotFound from "./Components/04-Pages/PageNotFound";
 
 /*import ButtonToTop from "./Components/01-Atoms/Buttons/ButtonToTop";*/
 
@@ -83,13 +82,10 @@ function App() {
           path="/register"
           element={<PageRegister dispatch={dispatch} id={id} />}
         />
-        <Route
-          path="/verification/:token"
-          element={<PageRegisterVerification />}
-        />
+        <Route path="/verification/:token" element={<PageVerification />} />
         <Route
           path="/verification-change-email/:token"
-          element={<PageRegisterVerification />}
+          element={<PageVerification />}
         />
         <Route
           path="/login"
