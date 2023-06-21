@@ -146,17 +146,17 @@ const blogsSlice = createSlice({
       );
       state.articleKeywords = state.articleData?.Blog_Keywords;
     },
-    // setArticleKeywords: (state, action) => {
-    //   let articleKeywords = [];
-    //   state.articleData[0]?.Blog_Keywords.forEach((element) => {
-    //     articleKeywords.push({
-    //       id: element.Keyword?.id,
-    //       name: element.Keyword?.name,
-    //     });
-    //   });
+    setArticleKeywords: (state, action) => {
+      let articleKeywords = [];
+      state.articleData[0]?.Blog_Keywords.forEach((element) => {
+        articleKeywords.push({
+          id: element.Keyword?.id,
+          name: element.Keyword?.name,
+        });
+      });
 
-    //   state.articleKeywords = [...articleKeywords];
-    // },
+      state.articleKeywords = [...articleKeywords];
+    },
   },
   extraReducers: (builder) => {
     // GET ARTICLES
