@@ -13,6 +13,8 @@ import {
   setArticleKeywords,
 } from "../../../Store/Slices/Blogs";
 
+import "./styles.css";
+
 import LinkCategory from "../../01-Atoms/Navigations/LinkCategory";
 import ArticleDate from "../../01-Atoms/Texts/ArticleDate";
 import ArticleHeadline from "../../01-Atoms/Texts/ArticleHeadline";
@@ -27,7 +29,7 @@ import ButtonStandard from "../../01-Atoms/Buttons/ButtonStandard";
 import NavKeyword from "../../01-Atoms/Navigations/NavKeyword";
 import ModalCrucial from "../../02-Molecules/ModalCrucial";
 
-export default function PageArticleViewingOther({
+export default function PageArticleViewing({
   authId,
   dispatch,
   subheadline = "This is the article’s subheadline, a simple sentence, to catch user’s attention to this particular article.",

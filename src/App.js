@@ -31,7 +31,7 @@ import SnackbarNotification from "./Components/02-Molecules/SnackbarNotification
 import ButtonStandard from "./Components/01-Atoms/Buttons/ButtonStandard";
 import ModalDefaultText from "./Components/01-Atoms/Texts/ModalDefaultText";
 import NavKeyword from "./Components/01-Atoms/Navigations/NavKeyword";
-import PageArticleViewingOther from "./Components/04-Pages/PageArticleViewingOther";
+import PageArticleViewing from "./Components/04-Pages/PageArticleViewing";
 
 /*import ButtonToTop from "./Components/01-Atoms/Buttons/ButtonToTop";*/
 
@@ -101,7 +101,7 @@ function App() {
         <Route path="/digging" element={<PageDigging />} />
         <Route
           path="/articleViewing/:id"
-          element={<PageArticleViewingOther authId={id} dispatch={dispatch} />}
+          element={<PageArticleViewing authId={id} dispatch={dispatch} />}
         />
         <Route path="/profile/:UserId" element={<PageProfileOther />} />
         <Route
