@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 
 import { resetPassword } from "../../../Store/Slices/Authorization/slices";
-import { resetPasswordValidationSchema } from "../../../ValidationSchemata/resetPasswordValidationSchema";
+import { changePasswordValidationSchema } from "../../../ValidationSchemata/changePasswordValidationSchema";
 
 import PageTitle from "../../01-Atoms/Texts/PageTitle";
 import SectionTitle from "../../01-Atoms/Texts/SectionTitle";
@@ -18,7 +18,7 @@ import "../../01-Atoms/Inputs/InputPassword/styles.css";
 import "../../01-Atoms/Inputs/InputConfirmPassword/styles.css";
 import "../../01-Atoms/Texts/ModalHelp/styles.css";
 
-export default function PageResetPassword({ dispatch }) {
+export default function PageChangePassword({ dispatch }) {
   const navigate = useNavigate();
 
   /*---------------Show Password Guides Toggle-------------*/
@@ -29,9 +29,15 @@ export default function PageResetPassword({ dispatch }) {
   };
 
   /*--------------Show Password Toggle--------------*/
-
+  const [currentPasswordIsShown, setCurrentPasswordIsShown] = useState(false);
   const [passwordIsShown, setPasswordIsShown] = useState(false);
   const [confirmPasswordIsShown, setConfirmPasswordIsShown] = useState(false);
+
+  const toggleCurrentPassword = () => {
+    setCurrentPasswordIsShown(
+      (currentPasswordIsShown) => !currentPasswordIsShown
+    );
+  };
 
   const togglePassword = () => {
     setPasswordIsShown((passwordIsShown) => !passwordIsShown);
@@ -48,14 +54,15 @@ export default function PageResetPassword({ dispatch }) {
       <PageTitle content="Reset Password" />
       <Formik
         initialValues={{
+          currentPassword: "",
           password: "",
           confirmPassword: "",
         }}
-        validationSchema={resetPasswordValidationSchema}
+        validationSchema={changePasswordValidationSchema}
         onSubmit={(values, { setSubmitting }) => {
           try {
             dispatch(resetPassword(values));
-            console.log(`CLICKED: reset password`);
+            console.log(`CLICKED: change password`);
             setSubmitting(false);
             navigate("/");
           } catch (error) {
@@ -85,6 +92,35 @@ export default function PageResetPassword({ dispatch }) {
                 bgColor="main"
               />
               <div className="container">
+                <div className="input-confirm-password label-and-input d-flex-column">
+                  <label htmlFor="currentPassword" className="label-for-input">
+                    Current Password
+                  </label>
+                  <input
+                    className="input-for-label"
+                    type={currentPasswordIsShown ? "text" : "password"}
+                    id="currentPassword"
+                    name="currentPassword"
+                    title="Type your current password"
+                    value={values.currentPassword}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  />
+                  <CheckboxShowPassword
+                    showClicked={toggleCurrentPassword}
+                    id="checkbox-show-confirm-password"
+                  />
+                </div>
+                {touched.currentPassword && errors.currentPassword ? (
+                  <SnackbarNotification
+                    content={errors.currentPassword}
+                    color="main"
+                    bgColor="accent"
+                  />
+                ) : null}
+
+                {/*======================================================*/}
+
                 <div className="input-password label-and-input d-flex-column">
                   <label htmlFor="password" className="label-for-input">
                     Password
@@ -124,7 +160,9 @@ export default function PageResetPassword({ dispatch }) {
                     bgColor="accent"
                   />
                 ) : null}
+
                 {/*======================================================*/}
+
                 <div className="input-confirm-password label-and-input d-flex-column">
                   <label htmlFor="confirmPassword" className="label-for-input">
                     Confirm Password
@@ -154,7 +192,10 @@ export default function PageResetPassword({ dispatch }) {
 
                 <div className="form-button-container d-flex-column">
                   <div className="decor-custom-div"></div>
-                  <InputSubmit value="Reset password" disabled={isSubmitting} />
+                  <InputSubmit
+                    value="Change password"
+                    disabled={isSubmitting}
+                  />
                 </div>
               </div>
             </form>

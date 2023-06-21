@@ -86,11 +86,15 @@ export default function PageProfileEdit() {
     }
   };
 
-  /*=====================================================*/
+  /*========================GO TO PAGE CHANGE PASSWORD=============================*/
 
-  const changeClicked = () => {};
+  const changeClicked = () => {
+    navigate("/changePassword");
+  };
 
   /*=======================USE EFFECT TO DISPATCH==============================*/
+  // still stuck!!!
+  /*=========================================================================*/
   useEffect(() => {
     console.log("useEffect is running");
     // console.log(isPhotoUploaded);
@@ -103,14 +107,13 @@ export default function PageProfileEdit() {
         .then(() => {
           setPhoto(null);
           setIsPhotoUploaded(false);
-          window.location.reload();
         })
         .catch((error) => {
           toastError("Failed updating photo");
           console.log(error);
         });
     }
-  }, [isPhotoUploaded]); //[isPhotoUploaded, photo]);
+  }, [isPhotoUploaded]);
 
   /*======================UTILITY FUNCTIONS===============================*/
   const uploadPhotoHandler = () => {
@@ -129,11 +132,7 @@ export default function PageProfileEdit() {
       <PageTitle content="Edit Profile Data" />
       <div className="form-container d-flex-row">
         <div className="left-side d-flex-column">
-          {photo ? (
-            <UserPhoto imgSource={photo} />
-          ) : (
-            <UserPhoto imgSource={imgProfile} />
-          )}
+          <UserPhoto imgSource={imgProfile} />
           <form
             className="upload-photo d-flex-column"
             onSubmit={uploadPhotoHandler}
@@ -367,7 +366,7 @@ export default function PageProfileEdit() {
                   flexDirection="row"
                   content="Password"
                   buttonContent="Go to change password page"
-                  buttonClicked={() => changeClicked()}
+                  buttonClicked={changeClicked}
                 />
               </fieldset>
 

@@ -26,6 +26,7 @@ import PageForgotPassword from "./Components/04-Pages/PageForgotPassword";
 import PageResetPassword from "./Components/04-Pages/PageResetPassword";
 import PageRegister from "./Components/04-Pages/PageRegisterFormik";
 import PageProfileEdit from "./Components/04-Pages/PageProfileEdit";
+import PageChangePassword from "./Components/04-Pages/PageChangePassword";
 import Loader from "./Components/01-Atoms/Loader";
 import SnackbarNotification from "./Components/02-Molecules/SnackbarNotification";
 import ButtonStandard from "./Components/01-Atoms/Buttons/ButtonStandard";
@@ -129,6 +130,14 @@ function App() {
           element={
             <ProtectedRoute>
               <PageProfileEdit />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/changePassword"
+          element={
+            <ProtectedRoute>
+              <PageChangePassword dispatch={dispatch} />
             </ProtectedRoute>
           }
         />
