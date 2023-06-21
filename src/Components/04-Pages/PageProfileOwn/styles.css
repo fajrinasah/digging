@@ -1,0 +1,10 @@
+/*=========================================
+=============PAGE PROFILE OWN==========
+===============================================*/
+
+.page-profile.own .profile-section {
+  width: 95vw;
+  border-bottom: 2px solid var(--accent);
+  justify-content: center;
+  margin: 5rem 0;
+}

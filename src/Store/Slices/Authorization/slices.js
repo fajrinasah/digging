@@ -6,6 +6,7 @@ import api from "../../Utilities/api.instance";
 import {
   toastSuccess,
   toastError,
+  toastBlank,
 } from "../../../Components/01-Atoms/CustomToasts";
 
 /*==========================================
@@ -47,7 +48,7 @@ export const verifyAccount = createAsyncThunk(
       // show toast or snackbar if needed
       // ...
 
-      return;
+      return null;
     } catch (error) {
       toastError(error.response ? error.response.data : error);
       return rejectWithValue(error.response ? error.response.data : error);
@@ -99,7 +100,7 @@ export const resetPassword = createAsyncThunk(
       // //remove token from local storage
       // localStorage.removeItem("token");
 
-      return data?.message;
+      return data;
     } catch (error) {
       // toastError(error.response ? error.response.data : error);
       toastError("Something went wrong");
@@ -184,14 +185,14 @@ export const changeUsername = createAsyncThunk(
     try {
       // PATCH data to change username
       // payload : {currentUsername, newUsername}
-      // WRONG API PATH!!! it's for changing email hm
-      // const { data } = await api.patch("/auth/changeUsername", payload);
+      const { data } = await api.patch("/auth/changeUsername", payload);
 
       // show toast or snackbar if needed
       toastSuccess("Username has been changed");
+      toastBlank("Please check your email to re-verify your account");
 
       // return data;
-      return null;
+      return data;
     } catch (error) {
       toastError(error.response ? error.response.data : error);
       return rejectWithValue(error.response ? error.response.data : error);
@@ -212,6 +213,7 @@ export const changePhone = createAsyncThunk(
 
       // show toast or snackbar if needed
       toastSuccess("Phone number has been changed");
+      toastBlank("Please check your email to re-verify your account");
 
       return data;
     } catch (error) {
@@ -234,6 +236,7 @@ export const changeEmail = createAsyncThunk(
 
       // show toast or snackbar if needed
       toastSuccess("Email has been changed");
+      toastBlank("Please check your email to re-verify your account");
 
       return data;
     } catch (error) {
@@ -274,6 +277,8 @@ export const logout = createAsyncThunk(
     try {
       //remove token from local storage
       localStorage.removeItem("token");
+
+      toastSuccess("See you later!");
 
       return null;
     } catch (error) {

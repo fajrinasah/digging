@@ -73,3 +73,9 @@
   resize: none;
   height: 150px;
 }
+
+/*------------------INPUT BUTTON----------------*/
+.input-button .input-for-label {
+  place-content: center;
+  place-items: center;
+}

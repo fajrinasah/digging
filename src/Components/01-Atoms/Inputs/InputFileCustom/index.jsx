@@ -11,18 +11,19 @@ export default function InputFileCustom({
   onBlur,
 }) {
   return (
-    <label class="input-file-custom">
+    <label className="input-file-custom">
       <input
         className="input-hidden"
         type="file"
         id="change-photo"
-        name="change-photo"
+        name="file"
         accept={accept}
         value={value}
         onChange={onChange}
         onBlur={onBlur}
       />
       <FontAwesomeIcon icon={faUpload} /> {buttonContent}
+      <span className="sr-only">Upload a photo</span>
     </label>
   );
 }

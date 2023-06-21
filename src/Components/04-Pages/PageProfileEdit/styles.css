@@ -1,8 +1,6 @@
 /*=========================================
 =============PAGE PROFILE EDIT==========
 ===============================================*/
-.page-profile-edit {
-}
 
 .form-container {
   place-content: center;
@@ -10,6 +8,11 @@
 
 .form-container .left-side {
   align-self: center;
+}
+
+.form-container .left-side .upload-photo {
+  margin-top: 3rem;
+  place-content: center;
 }
 
 .form-container .left-side .input-file-custom {

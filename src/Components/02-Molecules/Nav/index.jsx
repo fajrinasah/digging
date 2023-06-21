@@ -14,7 +14,7 @@ export default function Nav({ flexDirection = "row" }) {
         </li>
         <div className="decor-custom-div"></div>
         <li>
-          <NavLinkLi destination="/profile" content="My Conservations" />
+          <NavLinkLi destination="/myProfile" content="My Conservations" />
         </li>
       </ul>
     </nav>

@@ -95,11 +95,11 @@ export default function PageArticleViewing({
   const conserveClicked = () => {
     if (!authId) {
       console.log("redirected to register page");
-      toastError("You must register or login to conserve a finding");
+      toastError("You must register or login first to conserve a finding");
       navigate("/register", { replace: true });
     }
 
-    // dispatch(doConserveArticle({ BlogId: articleData?.id }));
+    dispatch(doConserveArticle({ BlogId: articleData?.id }));
     console.log(
       `DISPATCHED: doConserveArticle(${{ BlogId: articleData?.id }})`
     );

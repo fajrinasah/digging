@@ -7,21 +7,6 @@ VALIDATION SCHEMA: Change Profile
 // const SUPPORTED_FORMATS = ["image/jpg", "image/jpeg", "image/webp", "image/png"];
 
 export const changeProfileValidationSchema = Yup.object({
-  file: Yup.mixed()
-    .test(
-      "fileSize",
-      "File too large",
-      (value) => value && value.size <= 2784 * 1856
-    )
-    .test(
-      "fileFormat",
-      "Unsupported Format",
-      (value) =>
-        value &&
-        ["image/jpg", "image/jpeg", "image/webp", "image/png"].includes(
-          value.type
-        )
-    ),
   email: Yup.string()
     .email("Email must be valid.")
     .matches(

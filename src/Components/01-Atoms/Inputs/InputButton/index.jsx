@@ -9,11 +9,11 @@ export default function InputButton({
   buttonClicked,
 }) {
   return (
-    <div className={`label-and-input d-flex-${flexDirection}`}>
+    <div className={`input-button label-and-input d-flex-${flexDirection}`}>
       <div className="label-for-input">
         <p>{content}</p>
       </div>
-      <div className="input-for-label">
+      <div className="input-for-label d-flex-row">
         <ButtonStandard
           story="ghost"
           content={buttonContent}

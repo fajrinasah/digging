@@ -121,7 +121,7 @@ export const getConservedArticles = createAsyncThunk(
       // GET list of conserved articles
       const { data } = await api.get("/blog/pagLike");
 
-      return data;
+      return data.result;
     } catch (error) {
       return rejectWithValue(error.response ? error.response.data : error);
     }

@@ -1,0 +1,20 @@
+/*=========================================
+=============DIGGING TOOLBAR SORT==========
+===============================================*/
+
+.digging-toolbar-sort {
+  place-items: center;
+  justify-content: space-evenly;
+
+  font-size: 1.6rem;
+
+  padding: 0rem 2rem 0 3rem;
+
+  border-right: 1px solid var(--contrast);
+  border-left: 1px solid var(--contrast);
+}
+
+.digging-toolbar-sort .button-standard {
+  padding: 0 1rem;
+  color: var(--contrast);
+}

@@ -27,6 +27,7 @@ const INITIAL_STATE = {
   articleKeywords: [],
   myInformation: [],
   myArticles: [],
+  myFilteredArticles: [],
   myConservedArticles: [],
 };
 
@@ -42,34 +43,37 @@ const blogsSlice = createSlice({
   name: "blogs",
   initialState: INITIAL_STATE,
   reducers: {
+    /*=======================================*/
+    // For: SectionDigging @ home
+    /*=======================================*/
     setFilteredArticles: (state, action) => {
       state.filteredArticles = state.articles;
       console.log("DONE: setFilteredArticles");
     },
-    getFilteredArticles: (state, action) => {
-      const getResult = () => {
-        let filteredArticlesResult = [...state.filteredArticles];
-        return filteredArticlesResult;
-      };
-      getResult();
-    },
-    searchArticles: (state, action) => {
-      const { searchOption, searchInput } = action.payload;
-      let regex = new RegExp(`${searchInput}`, "i");
+    // getFilteredArticles: (state, action) => {
+    //   const getResult = () => {
+    //     let filteredArticlesResult = [...state.filteredArticles];
+    //     return filteredArticlesResult;
+    //   };
+    //   getResult();
+    // },
+    // searchArticles: (state, action) => {
+    //   const { searchOption, searchInput } = action.payload;
+    //   let regex = new RegExp(`${searchInput}`, "i");
 
-      if (searchOption == "title") {
-        state.filteredArticles = state.filteredArticles.filter((article) =>
-          regex.test(article.title)
-        );
-      } else if (searchOption == "keyword") {
-        state.filteredArticles = state.filteredArticles.filter((article) =>
-          article.Blog_Keywords.filter((keywordObj) =>
-            regex.test(keywordObj.Keyword.name)
-          )
-        );
-      }
-      console.log("DONE: searchArticles");
-    },
+    //   if (searchOption == "title") {
+    //     state.filteredArticles = state.filteredArticles.filter((article) =>
+    //       regex.test(article.title)
+    //     );
+    //   } else if (searchOption == "keyword") {
+    //     state.filteredArticles = state.filteredArticles.filter((article) =>
+    //       article.Blog_Keywords.filter((keywordObj) =>
+    //         regex.test(keywordObj.Keyword.name)
+    //       )
+    //     );
+    //   }
+    //   console.log("DONE: searchArticles");
+    // },
     searchArticlesTitle: (state, action) => {
       let regex = new RegExp(action?.payload, "i");
       // state.filteredArticles = state.articles;
@@ -90,37 +94,69 @@ const blogsSlice = createSlice({
         )
       );
     },
-    setArticleData: (state, action) => {
-      state.articleData = state.articles.filter(
-        (article) => article.id == action?.payload
-      );
-      state.articleKeywords = state.articleData?.Blog_Keywords;
-    },
-    setArticleKeywords: (state, action) => {
-      let articleKeywords = [];
-      state.articleData[0]?.Blog_Keywords.forEach((element) => {
-        articleKeywords.push({
-          id: element.Keyword?.id,
-          name: element.Keyword?.name,
-        });
-      });
 
-      state.articleKeywords = [...articleKeywords];
-    },
-    setMyInformation: (state, action) => {
-      const myUsername = state.myArticles[0].User.username;
-      const myPhotoProfile = state.myArticles[0].User.imgProfile;
-      state.myInformation.push({
-        myUsername: myUsername,
-        myPhotoProfile: myPhotoProfile,
-      });
-    },
+    /*=======================================*/
+    // For: SectionDigging @ myProfile
+    /*=======================================*/
     setMyArticles: (state, action) => {
       // payload: userId
       state.myArticles = state.articles.filter(
         (article) => article?.UserId == action.payload
       );
     },
+
+    // setMyInformation: (state, action) => {
+    //   const myUsername = state.myArticles[0]?.User.username;
+    //   const myPhotoProfile = state.myArticles[0]?.User?.imgProfile;
+    //   state.myInformation.push({
+    //     myUsername: myUsername,
+    //     myPhotoProfile: myPhotoProfile,
+    //   });
+    // },
+
+    setMyFilteredArticles: (state, action) => {
+      state.myFilteredArticles = state.myArticles;
+      console.log("DONE: setMyFilteredArticles");
+    },
+
+    searchMyArticlesTitle: (state, action) => {
+      let regex = new RegExp(action?.payload, "i");
+
+      state.myFilteredArticles = state.myArticles.filter((article) =>
+        regex.test(article.title)
+      );
+    },
+
+    searchMyArticlesKeyword: (state, action) => {
+      let regex = new RegExp(action?.payload, "i");
+
+      state.myFilteredArticles = state.myArticles.filter((article) =>
+        article.Blog_Keywords.filter((keywordObj) =>
+          regex.test(keywordObj.Keyword.name)
+        )
+      );
+    },
+
+    /*=======================================*/
+    // For: PageArticleViewing
+    /*=======================================*/
+    setArticleData: (state, action) => {
+      state.articleData = state.articles.filter(
+        (article) => article.id == action?.payload
+      );
+      state.articleKeywords = state.articleData?.Blog_Keywords;
+    },
+    // setArticleKeywords: (state, action) => {
+    //   let articleKeywords = [];
+    //   state.articleData[0]?.Blog_Keywords.forEach((element) => {
+    //     articleKeywords.push({
+    //       id: element.Keyword?.id,
+    //       name: element.Keyword?.name,
+    //     });
+    //   });
+
+    //   state.articleKeywords = [...articleKeywords];
+    // },
   },
   extraReducers: (builder) => {
     // GET ARTICLES
@@ -161,7 +197,7 @@ const blogsSlice = createSlice({
     });
     builder.addCase(getConservedArticles.fulfilled, (state, action) => {
       state.isLoading = false;
-      state.myConservedArticles = action.payload?.result;
+      state.myConservedArticles = action.payload;
     });
 
     // GET MOST CONSERVED ARTICLES
@@ -206,10 +242,15 @@ export default blogsSlice.reducer;
 // export actions
 export const {
   setFilteredArticles,
-  getFilteredArticles,
-  searchArticles,
+  // getFilteredArticles,
+  // searchArticles,
   searchArticlesTitle,
   searchArticlesKeyword,
+  setMyArticles,
+  // setMyInformation,
+  setMyFilteredArticles,
+  searchMyArticlesTitle,
+  searchMyArticlesKeyword,
   setArticleData,
   setArticleKeywords,
 } = blogsSlice.actions;

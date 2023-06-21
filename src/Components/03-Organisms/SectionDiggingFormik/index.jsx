@@ -6,7 +6,7 @@ import Loader from "../../01-Atoms/Loader";
 export default function SectionDigging({
   searchState = false,
   setSearchState = () => {},
-  articles = [],
+  unfilteredArticles = [],
   filteredArticles = [],
   categories = [],
   isLoading,
@@ -25,7 +25,7 @@ export default function SectionDigging({
 }) {
   const RenderCardArticle = () => {
     if (!searchState) {
-      return articles.map((article) => {
+      return unfilteredArticles.map((article) => {
         return (
           <CardArticle
             key={article?.id}

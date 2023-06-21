@@ -5,6 +5,9 @@ import FindingsCounter from "../../01-Atoms/Texts/FindingsCounter";
 import ButtonStandard from "../../01-Atoms/Buttons/ButtonStandard";
 
 export default function ProfileSectionInformation({
+  // displayName,
+  username,
+  imgSource,
   totalFindings = "99",
   composeClicked,
   editClicked,
@@ -46,7 +49,11 @@ export default function ProfileSectionInformation({
   return (
     <div className={`profile-section-information ${whose}`}>
       <div className="main-info d-flex-row">
-        <ProfileInfo />
+        <ProfileInfo
+          // displayName={displayName}
+          username={username}
+          imgSource={imgSource}
+        />
       </div>
       <div className="side-info">
         <FindingsCounter totalFindings={totalFindings} />

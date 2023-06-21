@@ -1,0 +1,39 @@
+/*=========================================
+=============PROFILE SECTION RADIOS==========
+===============================================*/
+
+.profile-section-radios {
+  place-items: center;
+  justify-content: space-evenly;
+
+  font-size: 1.6rem;
+
+  padding: 0rem 2rem 0 3rem;
+
+  border-right: 1px solid var(--contrast);
+  border-left: 1px solid var(--contrast);
+}
+
+/*--------------RADIOS-------------------*/
+fieldset.profile-section-radios {
+  border: none;
+  padding: 1rem 0 1rem 2rem;
+  /* border-bottom: 3px solid var(--accent); */
+}
+
+fieldset.profile-section-radios .legend-container {
+  padding-right: 1rem;
+}
+
+fieldset.profile-section-radios .radio-container {
+  padding: 0.5rem 0 0.5rem 1rem;
+  place-content: center;
+  place-items: center;
+}
+
+fieldset.profile-section-radios .radio-container input[type="radio"] {
+  width: 2.2rem;
+  height: 2.2rem;
+  accent-color: var(--accent);
+  margin-right: 1rem;
+}

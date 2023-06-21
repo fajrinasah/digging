@@ -14,7 +14,7 @@ import "./App.css";
 
 import Header from "./Components/03-Organisms/Header";
 import Footer from "./Components/03-Organisms/Footer";
-import PageHome from "../src/Components/04-Pages/PageHome2";
+import PageHome from "./Components/04-Pages/PageHome";
 import PageDigging from "./Components/04-Pages/PageDigging";
 import PageCompose from "../src/Components/04-Pages/PageCompose";
 import PageProfileOwn from "./Components/04-Pages/PageProfileOwn";
@@ -25,7 +25,7 @@ import PageProfileOther from "./Components/04-Pages/PageProfileOther";
 import PageForgotPassword from "./Components/04-Pages/PageForgotPassword";
 import PageResetPassword from "./Components/04-Pages/PageResetPassword";
 import PageRegister from "./Components/04-Pages/PageRegisterFormik";
-import PageProfileEdit from "./Components/04-Pages/PageProfileEditFormik";
+import PageProfileEdit from "./Components/04-Pages/PageProfileEdit";
 import Loader from "./Components/01-Atoms/Loader";
 import SnackbarNotification from "./Components/02-Molecules/SnackbarNotification";
 import ButtonStandard from "./Components/01-Atoms/Buttons/ButtonStandard";
@@ -87,6 +87,10 @@ function App() {
           element={<PageRegisterVerification />}
         />
         <Route
+          path="/verification-change-email/:token"
+          element={<PageRegisterVerification />}
+        />
+        <Route
           path="/login"
           element={<PageLogin dispatch={dispatch} id={id} />}
         />
@@ -116,7 +120,15 @@ function App() {
           path="/myProfile"
           element={
             <ProtectedRoute>
-              <PageProfileOwn />
+              <PageProfileOwn dispatch={dispatch} />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/editProfile"
+          element={
+            <ProtectedRoute>
+              <PageProfileEdit />
             </ProtectedRoute>
           }
         />

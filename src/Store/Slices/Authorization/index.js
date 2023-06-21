@@ -183,7 +183,7 @@ const authSlice = createSlice({
         username: action.payload?.username,
         email: action.payload?.email,
         phone: action.payload?.phone,
-        imgProfile: action.payload?.imageProfile,
+        imgProfile: action.payload?.imgProfile,
         isVerified: action.payload?.isVerified,
         role: action.payload?.role,
       });
