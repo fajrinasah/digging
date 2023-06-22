@@ -91,7 +91,7 @@ export const resetPassword = createAsyncThunk(
       const { data } = await api.patch("/auth/resetPass", payload);
 
       // show toast or snackbar if needed
-      toastSuccess("Password has been reset");
+      toastSuccess("Password has been reset. Please login.");
 
       // //remove token from local storage
       // localStorage.removeItem("token");
