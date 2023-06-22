@@ -39,6 +39,7 @@
   justify-content: space-between;
   width: max-content;
   padding: 0 5rem;
+  flex-wrap: wrap;
 }
 
 .pagination .button-page {
