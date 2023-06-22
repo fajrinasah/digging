@@ -89,6 +89,8 @@ const authSlice = createSlice({
     });
     builder.addCase(resetPassword.fulfilled, (state, action) => {
       state.isResetPasswordLoading = false;
+      //remove token from local storage
+      localStorage.removeItem("token");
     });
 
     // LOGIN
