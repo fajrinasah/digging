@@ -1,5 +1,5 @@
 import PageTitle from "../../01-Atoms/Texts/PageTitle";
-import SectionDigging from "../../03-Organisms/SectionDigging";
+import SectionDigging from "../../03-Organisms/SectionDiggingFormik";
 
 export default function PageDigging({ category }) {
   return (

@@ -1,7 +1,7 @@
 import PageTitle from "../../01-Atoms/Texts/PageTitle";
 import ProfileSectionInformation from "../../03-Organisms/ProfileSectionInformation";
 import ProfileSubnav from "../../02-Molecules/ProfileSubnav";
-import SectionDigging from "../../03-Organisms/SectionDigging";
+import SectionDigging from "../../03-Organisms/SectionDiggingFormik";
 
 export default function PageProfileOther() {
   return (
