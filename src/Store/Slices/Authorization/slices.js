@@ -1,5 +1,4 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { toast } from "react-hot-toast";
 import { Navigate } from "react-router-dom";
 
 import api from "../../Utilities/api.instance";
@@ -66,9 +65,6 @@ export const forgotPassword = createAsyncThunk(
       // PUT data to verify
       // payload: {email}
       const { data } = await api.put("/auth/forgotPass", payload);
-
-      // // set token (from data) in local storage
-      // localStorage.setItem("token", data?.data);
 
       <Navigate to="/" replace />;
 
