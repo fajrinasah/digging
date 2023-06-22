@@ -96,7 +96,7 @@ function App() {
           element={<PageForgotPassword dispatch={dispatch} />}
         />
         <Route
-          path="reset-password/:token"
+          path="/reset-password/:token"
           element={<PageResetPassword dispatch={dispatch} />}
         />
         <Route path="/digging" element={<PageDigging />} />
