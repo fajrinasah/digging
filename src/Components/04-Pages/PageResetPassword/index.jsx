@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Formik } from "formik";
 
 import { resetPassword } from "../../../Store/Slices/Authorization/slices";
@@ -20,6 +20,13 @@ import "../../01-Atoms/Texts/ModalHelp/styles.css";
 
 export default function PageResetPassword({ dispatch }) {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const verifyToken = location.pathname.split("/")[2];
+
+  useEffect(() => {
+    localStorage.setItem("token", verifyToken);
+  }, [verifyToken]);
 
   /*---------------Show Password Guides Toggle-------------*/
   const [guidesIsShown, setGuidesIsShown] = useState(false);
