@@ -166,7 +166,7 @@ export const publishArticle = createAsyncThunk(
       // payload: formData that consist of data (stringified) and file (article's mainshot)
       const { data } = await api.post("/blog", payload);
 
-      toastSuccess("Your finding is successfully published");
+      toastSuccess("Your finding was successfully published");
 
       return data;
     } catch (error) {
