@@ -10,6 +10,7 @@ import {
   doConserveArticle,
   getConservedArticles,
   getMostConserved,
+  publishArticle,
   deleteArticle,
 } from "./slices";
 import { isErrorOccured } from "../Authorization";
@@ -105,15 +106,6 @@ const blogsSlice = createSlice({
       );
     },
 
-    // setMyInformation: (state, action) => {
-    //   const myUsername = state.myArticles[0]?.User.username;
-    //   const myPhotoProfile = state.myArticles[0]?.User?.imgProfile;
-    //   state.myInformation.push({
-    //     myUsername: myUsername,
-    //     myPhotoProfile: myPhotoProfile,
-    //   });
-    // },
-
     setMyFilteredArticles: (state, action) => {
       state.myFilteredArticles = state.myArticles;
       console.log("DONE: setMyFilteredArticles");
@@ -144,7 +136,7 @@ const blogsSlice = createSlice({
       state.articleData = state.articles.filter(
         (article) => article.id == action?.payload
       );
-      state.articleKeywords = state.articleData?.Blog_Keywords;
+      // state.articleKeywords = state.articleData?.Blog_Keywords;
     },
     setArticleKeywords: (state, action) => {
       let articleKeywords = [];
@@ -188,7 +180,6 @@ const blogsSlice = createSlice({
     });
     builder.addCase(doConserveArticle.fulfilled, (state, action) => {
       state.isLoading = false;
-      toastSuccess("Successfully conserved!");
     });
 
     // GET CONSERVED ARTICLES
@@ -208,13 +199,20 @@ const blogsSlice = createSlice({
       state.mostConservedArticles = action.payload?.result;
     });
 
+    // POST COMPOSE ARTICLE
+    builder.addCase(publishArticle.pending, (state, action) => {
+      state.isLoading = true;
+    });
+    builder.addCase(publishArticle.fulfilled, (state, action) => {
+      state.isLoading = false;
+    });
+
     // PATCH DELETE ARTICLE
     builder.addCase(deleteArticle.pending, (state, action) => {
       state.isLoading = true;
     });
     builder.addCase(deleteArticle.fulfilled, (state, action) => {
       state.isLoading = false;
-      toastSuccess("Successfully deleted");
     });
 
     // success handler

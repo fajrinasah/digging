@@ -6,7 +6,13 @@ import InputText from "../../01-Atoms/Inputs/InputText";
 import InputTextArea from "../../01-Atoms/Inputs/InputTextArea";
 import InputFile from "../../01-Atoms/Inputs/InputFile";
 
-export default function FormComposeArticleDetails({ optionsArrObj }) {
+export default function FormComposeArticleDetails({
+  optionsArray = [],
+  categoryRef,
+  titleRef,
+  onChangeFile = () => {},
+  keywordsRef,
+}) {
   return (
     <fieldset className="form-compose-article-details">
       <legend>
@@ -20,10 +26,12 @@ export default function FormComposeArticleDetails({ optionsArrObj }) {
       <div className="form-container">
         <InputSelect
           flexDirection="row"
-          inputId=""
+          inputId="category"
           labelText="Category"
           placeholderOption="Choose this article's category"
-          // optionsArray={optionsArray}
+          ref={categoryRef}
+          optionsArray={optionsArray}
+          required={true}
           // value={categoryValue}
           // onChange={handleChange}
           // onBlur={handleBlur}
@@ -32,74 +40,53 @@ export default function FormComposeArticleDetails({ optionsArrObj }) {
           flexDirection="row"
           inputId="headline"
           labelText="Headline"
-          required=""
-          autoCapitalize=""
-          inputName=""
+          inputName="headline"
           inputPlaceholder="An intriguing title to give the gist of your finding."
-          minLength=""
-          maxLength=""
-          title=""
+          ref={titleRef}
+          required={true}
         />
         <InputText
           flexDirection="row"
           inputId="subheadline"
           labelText="Subheadline"
-          required=""
-          autoCapitalize=""
-          inputName=""
+          inputName="subheadline"
           inputPlaceholder="This is the article’s subheadline to catch user’s attention to this particular article."
-          minLength=""
-          maxLength=""
-          title=""
+          required={false}
         />
         <InputFile
           flexDirection="row"
-          inputId="mainImage"
-          labelText="Main Image"
-          required=""
-          autoCapitalize=""
-          inputName=""
+          inputId="mainshot"
+          labelText="Mainshot"
+          inputName="mainshot"
           inputPlaceholder=""
-          accept=""
-          title=""
+          accept="image/jpg, image/jpeg, image/webp, image/png"
+          onChange={onChangeFile}
+          required={true}
         />
         <InputText
           flexDirection="row"
-          inputId="mainImageCaption"
-          labelText="Main Image Caption"
-          required=""
-          autoCapitalize=""
-          inputName=""
+          inputId="mainshotCaption"
+          labelText="Mainshot caption"
+          inputName="mainshot-caption"
           inputPlaceholder="This is the main image’s caption that gives more information about the image concisely."
-          minLength=""
-          maxLength=""
-          title=""
+          required={false}
         />
         <InputTextArea
           flexDirection="row"
           inputId="lede"
           labelText="Lede"
-          required=""
-          autoCapitalize=""
-          inputName=""
+          inputName="lede"
           inputPlaceholder="An opening sentence or paragraph that summarized the most important aspects of your finding."
-          cols=""
-          rows=""
-          minLength=""
-          maxLength=""
-          title=""
+          required={false}
         />
         <InputText
           flexDirection="row"
           inputId="keywords"
           labelText="Keywords"
-          required=""
-          autoCapitalize=""
-          inputName=""
+          inputName="keywords"
           inputPlaceholder="A group of three to five keywords, each separated by a comma."
-          minLength=""
-          maxLength=""
-          title=""
+          ref={keywordsRef}
+          required={false}
         />
       </div>
     </fieldset>

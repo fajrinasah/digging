@@ -1,6 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 import api from "../../Utilities/api.instance";
+import {
+  toastSuccess,
+  toastError,
+} from "../../../Components/01-Atoms/CustomToasts";
 
 /*==========================================
 AsyncThunk: Get Articles
@@ -103,8 +107,11 @@ export const doConserveArticle = createAsyncThunk(
       // payload: {BlogId: id}
       await api.post("/blog/like", payload);
 
+      toastSuccess("Successfully conserved!");
+
       return null;
     } catch (error) {
+      toastError(error.response ? error.response.data : error);
       return rejectWithValue(error.response ? error.response.data : error);
     }
   }
@@ -123,6 +130,7 @@ export const getConservedArticles = createAsyncThunk(
 
       return data.result;
     } catch (error) {
+      toastError(error.response ? error.response.data : error);
       return rejectWithValue(error.response ? error.response.data : error);
     }
   }
@@ -141,6 +149,28 @@ export const getMostConserved = createAsyncThunk(
 
       return data;
     } catch (error) {
+      toastError(error.response ? error.response.data : error);
+      return rejectWithValue(error.response ? error.response.data : error);
+    }
+  }
+);
+
+/*==========================================
+AsyncThunk: COMPOSE A FINDING (ARTICLE)
+===========================================*/
+export const publishArticle = createAsyncThunk(
+  "blogs/publishArticle",
+  async (payload, { rejectWithValue }) => {
+    try {
+      // POST article's data
+      // payload: formData that consist of data (stringified) and file (article's mainshot)
+      const { data } = await api.post("/blog", payload);
+
+      toastSuccess("Your finding is successfully published");
+
+      return data;
+    } catch (error) {
+      toastError(error.response ? error.response.data.err : error);
       return rejectWithValue(error.response ? error.response.data : error);
     }
   }
@@ -157,8 +187,11 @@ export const deleteArticle = createAsyncThunk(
       // payload = id
       const { data } = await api.patch(`/blog/remove/${payload}`);
 
-      return null;
+      toastSuccess("Successfully buried your finding");
+
+      return data;
     } catch (error) {
+      toastError(error.response ? error.response.data : error);
       return rejectWithValue(error.response ? error.response.data : error);
     }
   }

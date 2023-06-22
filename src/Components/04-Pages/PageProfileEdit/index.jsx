@@ -93,8 +93,6 @@ export default function PageProfileEdit() {
   };
 
   /*=======================USE EFFECT TO DISPATCH==============================*/
-  // still stuck!!!
-  /*=========================================================================*/
   useEffect(() => {
     console.log("useEffect is running");
     // console.log(isPhotoUploaded);

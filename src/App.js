@@ -109,7 +109,7 @@ function App() {
           path="/compose"
           element={
             <ProtectedRoute>
-              <PageCompose />
+              <PageCompose dispatch={dispatch} />
             </ProtectedRoute>
           }
         />

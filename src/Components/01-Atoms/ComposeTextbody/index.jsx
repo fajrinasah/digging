@@ -12,13 +12,14 @@ const modules = {
   ],
 };
 
-export default function ComposeTextbody() {
+export default function ComposeTextbody({ textbodyRef }) {
   return (
     <div className="compose-textbody">
       <ReactQuill
         modules={modules}
         theme="snow"
         placeholder="Content goes here..."
+        ref={textbodyRef}
       />
     </div>
   );

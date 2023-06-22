@@ -4,7 +4,7 @@ import SectionTitle from "../../01-Atoms/Texts/SectionTitle";
 import ComposeTextbody from "../../01-Atoms/ComposeTextbody";
 import ComposeReferences from "../../01-Atoms/ComposeReferences";
 
-export default function FormComposeArticleContent({}) {
+export default function FormComposeArticleContent({ textbodyRef }) {
   return (
     <div className="form-compose-article-content fieldset-container d-flex-row">
       <fieldset className="form-container-article-content d-flex-column">
@@ -17,7 +17,7 @@ export default function FormComposeArticleContent({}) {
           />
         </legend>
         <div className="form-container">
-          <ComposeTextbody />
+          <ComposeTextbody textbodyRef={textbodyRef} />
           <div className="decor-custom-div"></div>
           <ComposeReferences />
         </div>

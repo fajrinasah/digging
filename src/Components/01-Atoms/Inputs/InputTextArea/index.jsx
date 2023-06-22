@@ -20,7 +20,7 @@ export default function InputTextArea({
 }) {
   return (
     <div className={`label-and-textarea d-flex-${flexDirection}`}>
-      <label for={inputId} className="label-for-textarea">
+      <label htmlFor={inputId} className="label-for-textarea">
         {labelText}
       </label>
       <textarea

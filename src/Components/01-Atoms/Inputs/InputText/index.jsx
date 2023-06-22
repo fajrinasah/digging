@@ -8,18 +8,19 @@ export default function InputText({
   autoCapitalize = "",
   inputName = "",
   inputPlaceholder = "",
-  defaultValue,
-  minLength = "",
-  maxLength = "",
-  pattern = "",
-  title = "",
-  value,
-  onChange,
-  onBlur,
+  // defaultValue,
+  // minLength = "",
+  // maxLength = "",
+  // pattern = "",
+  // title = "",
+  ref,
+  // value,
+  // onChange,
+  // onBlur,
 }) {
   return (
     <div className={`label-and-input d-flex-${flexDirection}`}>
-      <label for={inputId} className="label-for-input">
+      <label htmlFor={inputId} className="label-for-input">
         {labelText}
       </label>
       <input
@@ -30,14 +31,15 @@ export default function InputText({
         id={inputId}
         name={inputName}
         placeholder={inputPlaceholder}
-        defaultValue={defaultValue}
-        minLength={minLength}
-        maxLength={maxLength}
-        pattern={pattern}
-        title={title}
-        value={value}
-        onChange={onChange}
-        onBlur={onBlur}
+        // defaultValue={defaultValue}
+        // minLength={minLength}
+        // maxLength={maxLength}
+        // pattern={pattern}
+        // title={title}
+        ref={ref}
+        // value={value}
+        // onChange={onChange}
+        // onBlur={onBlur}
       />
     </div>
   );

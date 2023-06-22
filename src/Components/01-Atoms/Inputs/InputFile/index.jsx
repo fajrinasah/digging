@@ -10,13 +10,13 @@ export default function InputFile({
   multiple = true,
   accept = "",
   title = "",
-  value,
+  // value,
   onChange,
-  onBlur,
+  // onBlur,
 }) {
   return (
     <div className={`label-and-input d-flex-${flexDirection}`}>
-      <label for={inputId} className="label-for-input">
+      <label htmlFor={inputId} className="label-for-input">
         {labelText}
       </label>
       <input
@@ -29,9 +29,9 @@ export default function InputFile({
         multiple={multiple}
         accept={accept}
         title={title}
-        value={value}
+        // value={value}
         onChange={onChange}
-        onBlur={onBlur}
+        // onBlur={onBlur}
       />
     </div>
   );

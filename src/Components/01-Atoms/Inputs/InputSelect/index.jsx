@@ -5,9 +5,10 @@ export default function InputSelect({
   inputId,
   labelText,
   placeholderOption = "",
-  value,
-  onChange,
-  onBlur,
+  ref,
+  // value,
+  // onChange,
+  // onBlur,
   optionsArray = [],
 }) {
   // const categories = [
@@ -30,16 +31,17 @@ export default function InputSelect({
 
   return (
     <div className={`label-and-input d-flex-${flexDirection}`}>
-      <label for={inputId} className="label-for-input">
+      <label htmlFor={inputId} className="label-for-input">
         {labelText}
       </label>
       <select
         className="input-for-label"
         name={inputId}
         id={inputId}
-        value={value}
-        onChange={onChange}
-        onBlur={onBlur}
+        ref={ref}
+        // value={value}
+        // onChange={onChange}
+        // onBlur={onBlur}
       >
         <option className="placeholder-option" value="">
           {placeholderOption}

@@ -22,11 +22,15 @@ export default function PageProfileOwn({ dispatch }) {
   /*========================USE EFFECT========================*/
   useEffect(() => {
     dispatch(getArticles(""));
-    dispatch(setMyArticles());
+    dispatch(setMyArticles(id));
     dispatch(getConservedArticles());
   }, []);
 
   /*========================GLOBAL STATE========================*/
+  const id = useSelector((state) => {
+    return state.auth?.id;
+  });
+
   const username = useSelector((state) => {
     return state.auth?.username;
   });
