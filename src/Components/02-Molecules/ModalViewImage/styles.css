@@ -1,0 +1,39 @@
+/*=========================================
+=============MODAL CRUCIAL==========
+===============================================*/
+
+.modal-view-image {
+  box-shadow: -2px -1px 5px 1px grey;
+
+  padding: 2rem 2rem 4rem 2rem;
+  margin: 8rem 5rem;
+}
+
+.modal-view-image .modal-image-container {
+  background-color: transparent;
+  padding: 3rem;
+
+  place-content: center;
+}
+
+.modal-view-image-button {
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+.modal-view-image .article-mainshot {
+  padding: 0;
+}
+
+.modal-view-image .article-mainshot img {
+  max-width: 100%;
+  max-height: 90%;
+}
+/* .modal-crucial-buttons .button-standard.raised {
+    background-color: var(--accent);
+  }
+  
+  .modal-crucial-buttons .button-standard.raised:hover {
+    color: var(--main);
+    box-shadow: -2px 2px 2px 0px black;
+  } */

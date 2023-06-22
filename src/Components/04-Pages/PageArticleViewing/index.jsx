@@ -26,6 +26,7 @@ import ArticleTextbody from "../../01-Atoms/Texts/ArticleTextbody";
 import ArticleViewingDetails from "../../02-Molecules/ArticleViewingDetails";
 import ButtonStandard from "../../01-Atoms/Buttons/ButtonStandard";
 import ModalCrucial from "../../02-Molecules/ModalCrucial";
+import ModalViewImage from "../../02-Molecules/ModalViewImage";
 
 export default function PageArticleViewing({
   authId,
@@ -52,6 +53,9 @@ export default function PageArticleViewing({
   /*===============LOCAL STATES================*/
   const [deleteConfirmationModal, showDeleteConfirmationModal] =
     useState(false);
+
+  const [viewMainshot, SetViewMainshot] = useState(false);
+  const [viewUserPhoto, setViewUserPhoto] = useState(false);
 
   /*===============USE EFFECT================*/
   useEffect(() => {
@@ -103,6 +107,25 @@ export default function PageArticleViewing({
     );
   };
 
+  /*===============CONDITIONAL RENDERING================*/
+  if (viewMainshot) {
+    return (
+      <ModalViewImage
+        imgSource={articleData?.imageURL}
+        closeClicked={() => SetViewMainshot(false)}
+      />
+    );
+  }
+
+  if (viewUserPhoto) {
+    return (
+      <ModalViewImage
+        imgSource={articleData?.User?.imgProfile}
+        closeClicked={() => setViewUserPhoto(false)}
+      />
+    );
+  }
+
   return (
     <div className="page-article-viewing other">
       <div className="category">
@@ -138,7 +161,11 @@ export default function PageArticleViewing({
       <div className="figure">
         <figure className="article-figure d-flex-row">
           <ArticleFigureFigcaption figcaption={figcaption} />
-          <ArticleFigureImage size="large" imgSource={articleData?.imageURL} />
+          <ArticleFigureImage
+            size="large"
+            imgSource={articleData?.imageURL}
+            onClick={() => SetViewMainshot(true)}
+          />
         </figure>
       </div>
       <div className="lede">
@@ -152,6 +179,7 @@ export default function PageArticleViewing({
           articleKeywords={articleKeywords}
           references={references}
           authorPhoto={articleData?.User?.imgProfile}
+          userPhotoOnClick={() => setViewUserPhoto(true)}
           authorPhotoAlt={authorPhotoAlt}
           authorDisplayName={authorDisplayName}
           authorUsername={articleData?.User?.username}

@@ -10,6 +10,7 @@ export default function ArticleViewingDetails({
   articleKeywords = [],
   references = [{ listNumber: 0, listContent: "" }],
   authorPhoto,
+  userPhotoOnClick = () => {},
   authorPhotoAlt,
   authorDisplayName = "Author's Display Name",
   authorUsername = "@author_username",
@@ -62,7 +63,12 @@ export default function ArticleViewingDetails({
         </details>
       </div>
       <div className="author-details d-flex-row">
-        <UserPhoto size="small" imgSource={authorPhoto} alt={authorPhotoAlt} />
+        <UserPhoto
+          size="small"
+          imgSource={authorPhoto}
+          alt={authorPhotoAlt}
+          onClick={userPhotoOnClick}
+        />
         <div className="to-author-page d-flex-col as-end">
           <LinkDisplayName
             destination={authorProfilePage}

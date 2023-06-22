@@ -30,6 +30,11 @@
   height: 300px;
 }
 
+.article-mainshot.x-large {
+  width: 70vw;
+  height: 50vw;
+}
+
 .article-mainshot img {
   max-width: 100%;
   max-height: 90%;
