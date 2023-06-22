@@ -24,7 +24,7 @@
 }
 
 .this-article-details .references-list {
-  padding: 1rem 3rem;
+  padding: 2rem 1rem 0 3rem;
 }
 
 .this-article-details .references-list li {
@@ -32,14 +32,12 @@
 }
 
 .author-details {
-  padding: 1rem 0;
+  padding: 1rem 1rem 3rem 1rem;
 }
 
 .author-details .user-photo img {
-  max-width: 90%;
+  max-width: 100%;
   max-height: 90%;
-
-  /* object-fit: cover; */
 }
 
 .to-author-page {
