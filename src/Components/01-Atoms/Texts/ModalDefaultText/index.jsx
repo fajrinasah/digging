@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import "./styles.css";
 
 export default function ModalDefaultText({

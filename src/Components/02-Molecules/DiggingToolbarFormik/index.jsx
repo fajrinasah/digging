@@ -39,14 +39,14 @@ export default function DiggingToolbarFormik({
           dispatch(getArticles(payload));
           console.log(payload);
 
-          if (values.searchInput.length == 0) {
+          if (values.searchInput.length === 0) {
             setSearchState(false);
             console.log(`NO SEARCH`);
-          } else if (values.searchOption == "title") {
+          } else if (values.searchOption === "title") {
             setSearchState(true);
             dispatch(searchArticlesTitle(values.searchInput));
             console.log(`SEARCHED: title`);
-          } else if (values.searchOption == "keyword") {
+          } else if (values.searchOption === "keyword") {
             setSearchState(true);
             dispatch(searchArticlesKeyword(values.searchInput));
             console.log(`SEARCHED: keyword`);

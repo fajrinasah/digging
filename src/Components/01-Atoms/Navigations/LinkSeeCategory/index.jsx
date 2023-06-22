@@ -3,15 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesRight } from "@fortawesome/free-solid-svg-icons";
 
 import "./styles.css";
-{
-  /* import { Link } from "react-router-dom";
-    
-        <Link
-            to={destination}
-            className={}
-          >
-        </Link> */
-}
 
 export default function LinkSeeCategory({ destination = "", category = "" }) {
   return (

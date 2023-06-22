@@ -42,7 +42,7 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(keepLogin());
-  }, []);
+  }, [dispatch]);
 
   // const id = useSelector((state) => {
   //   return state.auth?.id;

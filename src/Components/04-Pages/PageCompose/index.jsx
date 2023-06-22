@@ -13,19 +13,15 @@ import "../../01-Atoms/ComposeReferences/styles.css";
 
 import PageTitle from "../../01-Atoms/Texts/PageTitle";
 import SectionTitle from "../../01-Atoms/Texts/SectionTitle";
-import FormComposeArticleDetails from "../../02-Molecules/FormComposeArticleDetails";
-import FormComposeArticleContent from "../../02-Molecules/FormComposeArticleContent";
 import InputSubmit from "../../01-Atoms/Inputs/InputSubmit";
 
 import InputText from "../../01-Atoms/Inputs/InputText";
 import InputTextArea from "../../01-Atoms/Inputs/InputTextArea";
 import InputFile from "../../01-Atoms/Inputs/InputFile";
-import InputSelect from "../../01-Atoms/Inputs/InputSelect";
-import ComposeTextbody from "../../01-Atoms/ComposeTextbody";
 import ComposeReferences from "../../01-Atoms/ComposeReferences";
 
 import { publishArticle } from "../../../Store/Slices/Blogs/slices";
-import { toastError, toastSuccess } from "../../01-Atoms/CustomToasts";
+import { toastError } from "../../01-Atoms/CustomToasts";
 
 const modules = {
   toolbar: [
@@ -46,10 +42,6 @@ export default function PageCompose({ dispatch }) {
   /*=====================GLOBAL STATE=============================*/
   const categories = useSelector((state) => {
     return state.blogs?.categories;
-  });
-
-  const isLoading = useSelector((state) => {
-    return state.blogs?.isLoading;
   });
 
   /*=====================LOCAL STATE=============================*/

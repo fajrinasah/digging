@@ -7,12 +7,7 @@ import "./styles.css";
 import CarouselTitle from "../../01-Atoms/Texts/CarouselTitle";
 import CarouselSlide from "../../02-Molecules/CarouselSlide";
 
-export default function Carousel({
-  carouselArticles = [],
-  navigate,
-  dispatch,
-  setArticleData,
-}) {
+export default function Carousel({ carouselArticles = [], navigate }) {
   const settings = {
     dots: true,
     infinite: true,

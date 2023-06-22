@@ -1,11 +1,6 @@
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./styles.css";
-{
-  /*
-import { Link, Navigate } from "react-router-dom";
-*/
-}
 
 export default function LinkDisplayName({
   destination = "",

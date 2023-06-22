@@ -3,9 +3,6 @@ import * as Yup from "yup";
 /*==========================================
 VALIDATION SCHEMA: Change Profile
 ===========================================*/
-// const FILE_SIZE = 160 * 1024;
-// const SUPPORTED_FORMATS = ["image/jpg", "image/jpeg", "image/webp", "image/png"];
-
 export const changeProfileValidationSchema = Yup.object({
   email: Yup.string()
     .email("Email must be valid.")

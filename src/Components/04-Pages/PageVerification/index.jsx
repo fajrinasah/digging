@@ -17,7 +17,7 @@ export default function PageVerification() {
 
   useEffect(() => {
     dispatch(verifyAccount());
-  }, []);
+  }, [dispatch]);
 
   const RenderPageVerification = () => {
     if (isRegisterLoading) {

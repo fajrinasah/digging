@@ -14,7 +14,7 @@ export default function DiggingToolbarSortFormik() {
             type="radio"
             name="sortOption"
             value="DESC"
-            id="sortFromOldest"
+            id="sortFromNewest"
           />
           <label htmlFor="sortFromNewest" className="label-for-radio">
             Newest

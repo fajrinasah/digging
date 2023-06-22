@@ -5,7 +5,7 @@
 export const generatePayload = (categoryId = "", sortValue = "DESC") => {
   let payload = `?`;
 
-  if (categoryId == 0) {
+  if (categoryId === 0) {
     payload = `${payload}sort=${sortValue}&page=1`;
   } else {
     payload = `${payload}id_cat=${categoryId}&sort=${sortValue}&page=1`;

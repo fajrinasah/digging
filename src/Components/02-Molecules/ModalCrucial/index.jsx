@@ -27,7 +27,7 @@ export default function ModalCrucial({
           content="Cancel"
           onClick={cancelClicked}
         />
-        {crucialType == "danger" ? (
+        {crucialType === "danger" ? (
           <ButtonStandard
             story="raised-warning"
             bold="bold"

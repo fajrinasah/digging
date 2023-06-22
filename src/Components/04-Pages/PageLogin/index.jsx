@@ -145,17 +145,17 @@ export default function PageLogin({ dispatch, id }) {
                 <div className={`label-and-input d-flex-column`}>
                   <label
                     htmlFor={
-                      optionData == "email"
+                      optionData === "email"
                         ? "inputEmail"
-                        : optionData == "phone"
+                        : optionData === "phone"
                         ? "inputPhone"
                         : "inputUsername"
                     }
                     className="label-for-input"
                   >
-                    {(optionData == "email"
+                    {(optionData === "email"
                       ? "Email"
-                      : optionData == "phone"
+                      : optionData === "phone"
                       ? "Phone Number"
                       : "Username") || "(Choose login option)"}
                   </label>
@@ -163,9 +163,9 @@ export default function PageLogin({ dispatch, id }) {
                     className="input-for-label"
                     type={optionData}
                     id={
-                      optionData == "email"
+                      optionData === "email"
                         ? "inputEmail"
-                        : optionData == "phone"
+                        : optionData === "phone"
                         ? "inputPhone"
                         : "inputUsername"
                     }
@@ -173,9 +173,9 @@ export default function PageLogin({ dispatch, id }) {
                     placeholder="Input your email, phone number, or username here"
                     title="Input for email, phone number, or username"
                     value={
-                      optionData == "email"
+                      optionData === "email"
                         ? values.email
-                        : optionData == "phone"
+                        : optionData === "phone"
                         ? values.phone
                         : values.username
                     }

@@ -1,5 +1,3 @@
-import { Field } from "formik";
-
 import "./styles.css";
 
 export default function ProfileSectionRadios({

@@ -15,7 +15,7 @@ export default function ProfileSectionInformation({
   whose,
 }) {
   const RenderButton = () => {
-    if (whose == "own") {
+    if (whose === "own") {
       return (
         <div className="buttons-container d-flex-column">
           <ButtonStandard
@@ -32,7 +32,7 @@ export default function ProfileSectionInformation({
           />
         </div>
       );
-    } else if (whose == "other") {
+    } else if (whose === "other") {
       return (
         <div className="buttons-container d-flex-column">
           <ButtonStandard

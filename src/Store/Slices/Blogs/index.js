@@ -1,7 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { toastSuccess } from "../../../Components/01-Atoms/CustomToasts";
-
 // created AsyncThunks
 import {
   getArticles,
@@ -51,30 +49,7 @@ const blogsSlice = createSlice({
       state.filteredArticles = state.articles;
       console.log("DONE: setFilteredArticles");
     },
-    // getFilteredArticles: (state, action) => {
-    //   const getResult = () => {
-    //     let filteredArticlesResult = [...state.filteredArticles];
-    //     return filteredArticlesResult;
-    //   };
-    //   getResult();
-    // },
-    // searchArticles: (state, action) => {
-    //   const { searchOption, searchInput } = action.payload;
-    //   let regex = new RegExp(`${searchInput}`, "i");
 
-    //   if (searchOption == "title") {
-    //     state.filteredArticles = state.filteredArticles.filter((article) =>
-    //       regex.test(article.title)
-    //     );
-    //   } else if (searchOption == "keyword") {
-    //     state.filteredArticles = state.filteredArticles.filter((article) =>
-    //       article.Blog_Keywords.filter((keywordObj) =>
-    //         regex.test(keywordObj.Keyword.name)
-    //       )
-    //     );
-    //   }
-    //   console.log("DONE: searchArticles");
-    // },
     searchArticlesTitle: (state, action) => {
       let regex = new RegExp(action?.payload, "i");
       // state.filteredArticles = state.articles;
@@ -85,6 +60,7 @@ const blogsSlice = createSlice({
       //   regex.test(article.title)
       // );
     },
+
     searchArticlesKeyword: (state, action) => {
       let regex = new RegExp(action?.payload, "i");
       // state.filteredArticles = state.articles;
@@ -102,7 +78,7 @@ const blogsSlice = createSlice({
     setMyArticles: (state, action) => {
       // payload: userId
       state.myArticles = state.articles.filter(
-        (article) => article?.UserId == action.payload
+        (article) => article?.UserId === action.payload
       );
     },
 
@@ -134,10 +110,10 @@ const blogsSlice = createSlice({
     /*=======================================*/
     setArticleData: (state, action) => {
       state.articleData = state.articles.filter(
-        (article) => article.id == action?.payload
+        (article) => article.id === action?.payload
       );
-      // state.articleKeywords = state.articleData?.Blog_Keywords;
     },
+
     setArticleKeywords: (state, action) => {
       let articleKeywords = [];
       state.articleData[0]?.Blog_Keywords.forEach((element) => {

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import "./styles.css";
 
-export default function AccessLoginRegister({}) {
+export default function AccessLoginRegister() {
   return (
     <div className="access-login-register-container">
       <div className="access-login-register">

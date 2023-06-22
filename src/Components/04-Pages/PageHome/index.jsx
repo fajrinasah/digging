@@ -78,7 +78,7 @@ export default function PageHome({ id, dispatch }) {
     dispatch(getCarouselArticles());
     dispatch(getMostConserved());
     dispatch(getCategories());
-  }, []);
+  }, [dispatch]);
 
   /*===============PAGINATION CONFIGURATIONS================*/
 
@@ -86,12 +86,12 @@ export default function PageHome({ id, dispatch }) {
   const disabledNext = currentPage >= totalPage;
 
   const onChangePagination = (page) => {
-    if (page == "previous") {
+    if (page === "previous") {
       console.log(
         `DISPATCHED: getArticles(${currentQuery}&page=${currentPage - 1})`
       );
       dispatch(getArticles(`${currentQuery}&page=${currentPage - 1}`));
-    } else if (page == "next") {
+    } else if (page === "next") {
       console.log(
         `DISPATCHED: getArticles(${currentQuery}&page=${currentPage + 1})`
       );

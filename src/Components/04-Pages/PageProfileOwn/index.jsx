@@ -10,11 +10,11 @@ import ProfileSectionInformation from "../../03-Organisms/ProfileSectionInformat
 import SectionDiggingMyProfile from "../../03-Organisms/SectionDiggingMyProfile";
 import ProfileSectionRadios from "../../02-Molecules/ProfileSectionRadios";
 
-import { setMyArticles, setMyInformation } from "../../../Store/Slices/Blogs";
 import {
   getArticles,
   getConservedArticles,
 } from "../../../Store/Slices/Blogs/slices";
+import { setMyArticles } from "../../../Store/Slices/Blogs";
 
 export default function PageProfileOwn({ dispatch }) {
   const navigate = useNavigate();

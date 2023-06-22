@@ -1,4 +1,4 @@
-import { useLocation, useNavigate, Navigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 
@@ -23,10 +23,8 @@ import ArticleFigureFigcaption from "../../01-Atoms/Media/ArticleFigure/ArticleF
 import ArticleFigureImage from "../../01-Atoms/Media/ArticleFigure/ArticleFigureImage";
 import ArticleLede from "../../01-Atoms/Texts/ArticleLede";
 import ArticleTextbody from "../../01-Atoms/Texts/ArticleTextbody";
-import DummyArticleTextbody from "../../../DummyData/DummyArticleTextbody";
 import ArticleViewingDetails from "../../02-Molecules/ArticleViewingDetails";
 import ButtonStandard from "../../01-Atoms/Buttons/ButtonStandard";
-import NavKeyword from "../../01-Atoms/Navigations/NavKeyword";
 import ModalCrucial from "../../02-Molecules/ModalCrucial";
 
 export default function PageArticleViewing({
@@ -61,7 +59,7 @@ export default function PageArticleViewing({
     dispatch(setArticleData(articleId));
     dispatch(setArticleKeywords());
     console.log(`articleId: ${articleId}`);
-  }, [location]);
+  }, [articleId, dispatch]);
 
   /*===============RENDER FUNCTIONS================*/
 
@@ -161,7 +159,7 @@ export default function PageArticleViewing({
           userId={articleData?.UserId}
         />
         <div className="button-container">
-          {userId && userId == authId ? (
+          {userId && userId === authId ? (
             <ButtonStandard
               story="ghost-warning"
               bold="bold"

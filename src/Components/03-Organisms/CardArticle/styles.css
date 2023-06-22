@@ -55,7 +55,7 @@
   display: flex;
 
   /* justify-content: flex-start; */
-  place-items: start;
+  place-items: flex-start;
 }
 
 .card-article .first-half {
