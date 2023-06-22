@@ -83,7 +83,7 @@ export default function PageArticleViewing({
   };
 
   const confirmDelete = () => {
-    // dispatch(deleteArticle(articleId));
+    dispatch(deleteArticle(articleId));
     console.log(`DISPATCHED: deleteArticle(${articleId})`);
     navigate("/myProfile", { replace: true });
   };
@@ -165,7 +165,7 @@ export default function PageArticleViewing({
             <ButtonStandard
               story="ghost-warning"
               bold="bold"
-              content="Delete"
+              content="Bury"
               onClick={() => deleteClicked()}
             />
           ) : (
@@ -179,8 +179,8 @@ export default function PageArticleViewing({
           {deleteConfirmationModal ? (
             <ModalCrucial
               crucialType="danger"
-              content="Are you sure want to delete this finding?"
-              confirmCrucial="Delete"
+              content="Are you sure you want to bury this finding?"
+              confirmCrucial="Bury"
               cancelClicked={() => cancelDelete()}
               confirmClicked={() => confirmDelete()}
             />
