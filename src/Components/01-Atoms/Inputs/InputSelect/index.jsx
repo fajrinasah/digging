@@ -8,23 +8,25 @@ export default function InputSelect({
   value,
   onChange,
   onBlur,
+  optionsArray = [],
 }) {
-  const categories = [
-    { value: "all", content: "All" },
-    { value: "anthropology", content: "Anthropology" },
-    { value: "archaeology", content: "Archaeology" },
-    { value: "museology", content: "Museology" },
-    { value: "others", content: "Others" },
-  ];
+  // const categories = [
+  //   { value: "all", content: "All" },
+  //   { value: "anthropology", content: "Anthropology" },
+  //   { value: "archaeology", content: "Archaeology" },
+  //   { value: "museology", content: "Museology" },
+  //   { value: "others", content: "Others" },
+  // ];
 
-  const RenderOptions = () =>
-    categories.map((option, index) => {
+  const RenderOptions = () => {
+    return optionsArray.map((option) => {
       return (
-        <option key={index} value={option.value}>
-          {option.content}
+        <option key={option?.id} value={option?.id}>
+          {option?.name}
         </option>
       );
     });
+  };
 
   return (
     <div className={`label-and-input d-flex-${flexDirection}`}>

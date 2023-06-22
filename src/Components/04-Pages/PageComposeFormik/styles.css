@@ -1,0 +1,29 @@
+/*=========================================
+=============PAGE COMPOSE==========
+===============================================*/
+.form-compose {
+  display: grid;
+  grid-template: auto auto auto / 1fr auto auto 1fr;
+  grid-template-areas:
+    "details details details details"
+    ". content content ."
+    ". content content submit";
+  justify-items: center;
+}
+
+.form-compose .form-compose-article-details {
+  grid-area: details;
+  width: 90%;
+  margin: 3rem 0;
+}
+
+.form-compose .form-compose-article-content {
+  grid-area: content;
+  width: max-content;
+}
+
+.form-compose .button-container {
+  grid-area: submit;
+  width: 100%;
+  justify-self: start;
+}

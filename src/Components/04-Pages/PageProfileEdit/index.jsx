@@ -107,17 +107,18 @@ export default function PageProfileEdit() {
         .then(() => {
           setPhoto(null);
           setIsPhotoUploaded(false);
+          window.location.reload();
         })
         .catch((error) => {
           toastError("Failed updating photo");
           console.log(error);
         });
     }
-  }, [isPhotoUploaded]);
+  }, [isPhotoUploaded, photo]);
 
   /*======================UTILITY FUNCTIONS===============================*/
-  const uploadPhotoHandler = () => {
-    // e.preventDefault();
+  const uploadPhotoHandler = (e) => {
+    e.preventDefault();
     setIsPhotoUploaded(true);
     console.log("selected photo was uploaded");
   };
@@ -148,7 +149,7 @@ export default function PageProfileEdit() {
                   story="raised"
                   value="Upload"
                   disabled={false}
-                  onSubmit={uploadPhotoHandler}
+                  // onSubmit={uploadPhotoHandler}
                 />
                 <ButtonStandard
                   story="ghost"

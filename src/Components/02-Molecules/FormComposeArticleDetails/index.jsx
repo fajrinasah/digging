@@ -23,7 +23,10 @@ export default function FormComposeArticleDetails({ optionsArrObj }) {
           inputId=""
           labelText="Category"
           placeholderOption="Choose this article's category"
-          optionsArrObj={optionsArrObj}
+          // optionsArray={optionsArray}
+          // value={categoryValue}
+          // onChange={handleChange}
+          // onBlur={handleBlur}
         />
         <InputText
           flexDirection="row"

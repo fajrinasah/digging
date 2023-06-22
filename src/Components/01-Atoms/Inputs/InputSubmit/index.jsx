@@ -2,7 +2,7 @@ import "../../Buttons/ButtonStandard/styles.css";
 
 export default function InputSubmit({
   value = "Submit",
-  disabled = "false",
+  disabled = false,
   story = "raised",
 }) {
   return (

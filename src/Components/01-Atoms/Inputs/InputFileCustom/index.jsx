@@ -6,9 +6,9 @@ import "./styles.css";
 export default function InputFileCustom({
   accept,
   buttonContent = "Choose file",
-  value,
+  // value,
   onChange,
-  onBlur,
+  // onBlur,
 }) {
   return (
     <label className="input-file-custom">
@@ -18,9 +18,9 @@ export default function InputFileCustom({
         id="change-photo"
         name="file"
         accept={accept}
-        value={value}
+        // value={value}
         onChange={onChange}
-        onBlur={onBlur}
+        // onBlur={onBlur}
       />
       <FontAwesomeIcon icon={faUpload} /> {buttonContent}
       <span className="sr-only">Upload a photo</span>
