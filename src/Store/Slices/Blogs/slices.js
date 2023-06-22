@@ -111,7 +111,7 @@ export const doConserveArticle = createAsyncThunk(
 
       return null;
     } catch (error) {
-      // toastError(error.response ? error.response.data.err : error);
+      toastError(error.response ? error.response.data.err : error);
       return rejectWithValue(error.response ? error.response.data : error);
     }
   }
