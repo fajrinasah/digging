@@ -104,8 +104,7 @@ export default function PageHome({ id, dispatch }) {
       dispatch(getArticles(`${currentQuery}&page=${page}`));
     }
 
-    window.scrollTo({
-      top: 0,
+    document.querySelector(".digging-container").scrollIntoView({
       behavior: "smooth",
     });
   };
