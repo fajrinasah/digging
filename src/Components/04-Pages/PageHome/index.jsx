@@ -8,6 +8,7 @@ import {
   getCarouselArticles,
   getMostConserved,
   getCategories,
+  getMostConservedInEachCategory,
 } from "../../../Store/Slices/Blogs/slices";
 import {
   setFilteredArticles,
@@ -47,6 +48,10 @@ export default function PageHome({ id, dispatch }) {
     return state.blogs?.mostConservedArticles;
   });
 
+  const mostConservedInEachCategory = useSelector((state) => {
+    return state.blogs?.mostConservedInEachCategory;
+  });
+
   const articles = useSelector((state) => {
     return state.blogs?.articles;
   });
@@ -74,6 +79,7 @@ export default function PageHome({ id, dispatch }) {
 
   /*===============USE EFFECT================*/
   useEffect(() => {
+    dispatch(getMostConservedInEachCategory());
     dispatch(getArticles(`?sort=DESC&page=1`));
     dispatch(getCarouselArticles());
     dispatch(getMostConserved());
@@ -119,7 +125,10 @@ export default function PageHome({ id, dispatch }) {
       </div>
 
       <div className="categories-container">
-        <HomeSectionCategoryCards flexDirection="row" categories={categories} />
+        <HomeSectionCategoryCards
+          flexDirection="row"
+          categories={mostConservedInEachCategory}
+        />
       </div>
 
       <div className="carousel-container d-flex-row">

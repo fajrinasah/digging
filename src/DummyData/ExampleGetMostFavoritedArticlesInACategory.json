@@ -1,0 +1,392 @@
+{
+  "page": 30,
+  "rows": 233,
+  "blogPage": 1,
+  "listLimit": 8,
+  "result": [
+    {
+      "id": 4,
+      "title": "Tesla teases new Cybertruck accessory: a tool rack",
+      "imageURL": "Public/Blog-1684748301356413511.png",
+      "content": "Tesla has teased a new Cybertruck accessory, a rugged-looking tool rack that fits on the bed of the electric pickup truck.\r\nWhen Tesla first unveiled the Cybertruck back in 2019, the automaker talked… [+731 chars]",
+      "videoURL": "",
+      "country": "USA",
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-05-22T09:38:21.000Z",
+      "updatedAt": "2023-05-22T09:38:21.000Z",
+      "UserId": 1,
+      "CategoryId": 3,
+      "total_fav": 72,
+      "User": {
+        "username": "rawap52",
+        "imgProfile": "Public/PIMG-168190662836066279.png"
+      },
+      "Category": {
+        "id": 3,
+        "name": "Teknologi"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 14,
+          "BlogId": 4,
+          "KeywordId": 6,
+          "createdAt": "2023-05-22T09:38:21.000Z",
+          "updatedAt": "2023-05-22T09:38:21.000Z",
+          "Keyword": {
+            "id": 6,
+            "name": "Inovation",
+            "createdAt": "2023-05-08T21:39:47.000Z",
+            "updatedAt": "2023-05-08T21:39:47.000Z"
+          }
+        }
+      ],
+      "Likes": [
+        {
+          "id": 5,
+          "BlogId": 4,
+          "UserId": 6,
+          "User": {
+            "username": "denoxet58"
+          }
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Tesla teases new Cybertruck accessory: a tool rack",
+      "imageURL": "Public/Blog-1684748322075747418.png",
+      "content": "Tesla has teased a new Cybertruck accessory, a rugged-looking tool rack that fits on the bed of the electric pickup truck.\r\nWhen Tesla first unveiled the Cybertruck back in 2019, the automaker talked… [+731 chars]",
+      "videoURL": "",
+      "country": null,
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-05-22T09:38:42.000Z",
+      "updatedAt": "2023-05-22T09:38:42.000Z",
+      "UserId": 1,
+      "CategoryId": 4,
+      "total_fav": 16,
+      "User": {
+        "username": "rawap52",
+        "imgProfile": "Public/PIMG-168190662836066279.png"
+      },
+      "Category": {
+        "id": 4,
+        "name": "Olahraga"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 18,
+          "BlogId": 5,
+          "KeywordId": 6,
+          "createdAt": "2023-05-22T09:38:42.000Z",
+          "updatedAt": "2023-05-22T09:38:42.000Z",
+          "Keyword": {
+            "id": 6,
+            "name": "Inovation",
+            "createdAt": "2023-05-08T21:39:47.000Z",
+            "updatedAt": "2023-05-08T21:39:47.000Z"
+          }
+        }
+      ],
+      "Likes": [
+        {
+          "id": 34,
+          "BlogId": 5,
+          "UserId": 13,
+          "User": {
+            "username": "daviddavid"
+          }
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Tesla teases new Cybertruck accessory: a tool rack asdsad",
+      "imageURL": "Public/Blog-1684982452232207727.png",
+      "content": "asdasd Tesla has teased a new Cybertruck accessory, a rugged-looking tool rack that fits on the bed of the electric pickup truck.\r\nWhen Tesla first unveiled the Cybertruck back in 2019, the automaker talked… [+731 chars]",
+      "videoURL": "",
+      "country": "USA",
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-05-25T02:40:52.000Z",
+      "updatedAt": "2023-05-25T02:40:52.000Z",
+      "UserId": 7,
+      "CategoryId": 2,
+      "total_fav": 16,
+      "User": {
+        "username": "ridhozhr10",
+        "imgProfile": "Public/Avatar-7.png"
+      },
+      "Category": {
+        "id": 2,
+        "name": "Ekonomi"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 26,
+          "BlogId": 8,
+          "KeywordId": 6,
+          "createdAt": "2023-05-25T02:40:52.000Z",
+          "updatedAt": "2023-05-25T02:40:52.000Z",
+          "Keyword": {
+            "id": 6,
+            "name": "Inovation",
+            "createdAt": "2023-05-08T21:39:47.000Z",
+            "updatedAt": "2023-05-08T21:39:47.000Z"
+          }
+        }
+      ],
+      "Likes": [
+        {
+          "id": 179,
+          "BlogId": 8,
+          "UserId": 204,
+          "User": {
+            "username": "fjdahfkhakhkfasjfh"
+          }
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Tesla teases new Cybertruck accessory: a tool rack asdsad",
+      "imageURL": "Public/Blog-1684982731441635015.png",
+      "content": "asdasd Tesla has teased a new Cybertruck accessory, a rugged-looking tool rack that fits on the bed of the electric pickup truck.\r\nWhen Tesla first unveiled the Cybertruck back in 2019, the automaker talked… [+731 chars]",
+      "videoURL": "",
+      "country": "USA",
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-05-25T02:45:31.000Z",
+      "updatedAt": "2023-05-25T02:45:31.000Z",
+      "UserId": 7,
+      "CategoryId": 2,
+      "total_fav": 8,
+      "User": {
+        "username": "ridhozhr10",
+        "imgProfile": "Public/Avatar-7.png"
+      },
+      "Category": {
+        "id": 2,
+        "name": "Ekonomi"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 30,
+          "BlogId": 9,
+          "KeywordId": 6,
+          "createdAt": "2023-05-25T02:45:31.000Z",
+          "updatedAt": "2023-05-25T02:45:31.000Z",
+          "Keyword": {
+            "id": 6,
+            "name": "Inovation",
+            "createdAt": "2023-05-08T21:39:47.000Z",
+            "updatedAt": "2023-05-08T21:39:47.000Z"
+          }
+        }
+      ],
+      "Likes": [
+        {
+          "id": 40,
+          "BlogId": 9,
+          "UserId": 13,
+          "User": {
+            "username": "daviddavid"
+          }
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Semangat semangat",
+      "imageURL": "Public/Blog-1684983380334548638.jpeg",
+      "content": "Tesla has teased a new Cybertruck accessory, a rugged-looking tool rack that fits on the bed of the electric pickup truck.\r\nWhen Tesla first unveiled the Cybertruck back in 2019, the automaker talked… [+731 chars]",
+      "videoURL": "",
+      "country": "USA",
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-05-25T02:56:20.000Z",
+      "updatedAt": "2023-05-25T02:56:20.000Z",
+      "UserId": 8,
+      "CategoryId": 3,
+      "total_fav": 48,
+      "User": {
+        "username": "vanessaa",
+        "imgProfile": "Public/Avatar-8.jpeg"
+      },
+      "Category": {
+        "id": 3,
+        "name": "Teknologi"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 38,
+          "BlogId": 11,
+          "KeywordId": 6,
+          "createdAt": "2023-05-25T02:56:20.000Z",
+          "updatedAt": "2023-05-25T02:56:20.000Z",
+          "Keyword": {
+            "id": 6,
+            "name": "Inovation",
+            "createdAt": "2023-05-08T21:39:47.000Z",
+            "updatedAt": "2023-05-08T21:39:47.000Z"
+          }
+        }
+      ],
+      "Likes": [
+        {
+          "id": 19,
+          "BlogId": 11,
+          "UserId": 8,
+          "User": {
+            "username": "vanessaa"
+          }
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Tesla teases new Cybertruck accessory: a tool rack asdsad",
+      "imageURL": "Public/Blog-1684983702279556485.png",
+      "content": "asdasd Tesla has teased a new Cybertruck accessory, a rugged-looking tool rack that fits on the bed of the electric pickup truck.\r\nWhen Tesla first unveiled the Cybertruck back in 2019, the automaker talked… [+731 chars]",
+      "videoURL": "",
+      "country": "USA",
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-05-25T03:01:42.000Z",
+      "updatedAt": "2023-05-25T03:01:42.000Z",
+      "UserId": 7,
+      "CategoryId": 2,
+      "total_fav": 16,
+      "User": {
+        "username": "ridhozhr10",
+        "imgProfile": "Public/Avatar-7.png"
+      },
+      "Category": {
+        "id": 2,
+        "name": "Ekonomi"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 42,
+          "BlogId": 12,
+          "KeywordId": 6,
+          "createdAt": "2023-05-25T03:01:42.000Z",
+          "updatedAt": "2023-05-25T03:01:42.000Z",
+          "Keyword": {
+            "id": 6,
+            "name": "Inovation",
+            "createdAt": "2023-05-08T21:39:47.000Z",
+            "updatedAt": "2023-05-08T21:39:47.000Z"
+          }
+        }
+      ],
+      "Likes": [
+        {
+          "id": 81,
+          "BlogId": 12,
+          "UserId": 11,
+          "User": {
+            "username": "usaidaka"
+          }
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "title": "Demo Blog Post 2",
+      "imageURL": "Public/Blog-168503828504738140.jpeg",
+      "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,",
+      "videoURL": "",
+      "country": "Indonesia",
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-05-25T18:11:25.000Z",
+      "updatedAt": "2023-05-25T18:11:25.000Z",
+      "UserId": 8,
+      "CategoryId": 2,
+      "total_fav": 33,
+      "User": {
+        "username": "vanessaa",
+        "imgProfile": "Public/Avatar-8.jpeg"
+      },
+      "Category": {
+        "id": 2,
+        "name": "Ekonomi"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 90,
+          "BlogId": 33,
+          "KeywordId": 16,
+          "createdAt": "2023-05-25T18:11:25.000Z",
+          "updatedAt": "2023-05-25T18:11:25.000Z",
+          "Keyword": {
+            "id": 16,
+            "name": "Ekonomi",
+            "createdAt": "2023-05-25T18:11:25.000Z",
+            "updatedAt": "2023-05-25T18:11:25.000Z"
+          }
+        }
+      ],
+      "Likes": [
+        {
+          "id": 30,
+          "BlogId": 33,
+          "UserId": 13,
+          "User": {
+            "username": "daviddavid"
+          }
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "title": "Demo Blog Post 2",
+      "imageURL": "Public/Blog-1685038333322881588.jpeg",
+      "content": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,",
+      "videoURL": "",
+      "country": "Indonesia",
+      "isPublished": false,
+      "isDeleted": false,
+      "createdAt": "2023-05-25T18:12:13.000Z",
+      "updatedAt": "2023-05-25T18:12:13.000Z",
+      "UserId": 8,
+      "CategoryId": 2,
+      "total_fav": 48,
+      "User": {
+        "username": "vanessaa",
+        "imgProfile": "Public/Avatar-8.jpeg"
+      },
+      "Category": {
+        "id": 2,
+        "name": "Ekonomi"
+      },
+      "Blog_Keywords": [
+        {
+          "id": 93,
+          "BlogId": 34,
+          "KeywordId": 16,
+          "createdAt": "2023-05-25T18:12:13.000Z",
+          "updatedAt": "2023-05-25T18:12:13.000Z",
+          "Keyword": {
+            "id": 16,
+            "name": "Ekonomi",
+            "createdAt": "2023-05-25T18:11:25.000Z",
+            "updatedAt": "2023-05-25T18:11:25.000Z"
+          }
+        }
+      ],
+      "Likes": [
+        {
+          "id": 17,
+          "BlogId": 34,
+          "UserId": 13,
+          "User": {
+            "username": "daviddavid"
+          }
+        }
+      ]
+    }
+  ]
+}

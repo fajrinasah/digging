@@ -8,6 +8,7 @@ import {
   doConserveArticle,
   getConservedArticles,
   getMostConserved,
+  getMostConservedInEachCategory,
   publishArticle,
   deleteArticle,
 } from "./slices";
@@ -17,6 +18,7 @@ const INITIAL_STATE = {
   categories: [],
   carouselArticles: [],
   mostConservedArticles: [],
+  mostConservedInEachCategory: [],
   articles: [],
   filteredArticles: [],
   totalPage: 1,
@@ -175,6 +177,17 @@ const blogsSlice = createSlice({
       state.mostConservedArticles = action.payload;
     });
 
+    // GET THE MOST CONSERVED ARTICLE IN EACH CATEGORY
+    builder.addCase(getMostConservedInEachCategory.pending, (state, action) => {
+      state.isLoading = true;
+    });
+    builder.addCase(
+      getMostConservedInEachCategory.fulfilled,
+      (state, action) => {
+        state.mostConservedInEachCategory = action.payload;
+      }
+    );
+
     // POST COMPOSE ARTICLE
     builder.addCase(publishArticle.pending, (state, action) => {
       state.isLoading = true;
@@ -196,7 +209,6 @@ const blogsSlice = createSlice({
       state = Object.assign(state, {
         isLoading: false,
         articles: action.payload?.result,
-        // filteredArticles: action.payload?.result,
         totalPage: action.payload?.page,
         currentPage: action.payload?.blogPage,
       });
@@ -216,12 +228,9 @@ export default blogsSlice.reducer;
 // export actions
 export const {
   setFilteredArticles,
-  // getFilteredArticles,
-  // searchArticles,
   searchArticlesTitle,
   searchArticlesKeyword,
   setMyArticles,
-  // setMyInformation,
   setMyFilteredArticles,
   searchMyArticlesTitle,
   searchMyArticlesKeyword,

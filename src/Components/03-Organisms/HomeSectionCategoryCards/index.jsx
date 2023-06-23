@@ -9,7 +9,16 @@ export default function HomeSectionCategoryCards({
 }) {
   const RenderCategoryCards = () => {
     return categories.map((category) => {
-      return <CardCategory key={category.id} category={category.name} />;
+      return (
+        <CardCategory
+          key={category.id}
+          category={category.name}
+          articlePage={`/articleViewing/${category.data.id}`}
+          articleId={category.data.id}
+          headline={category.data.title}
+          byline={category.data.User.username}
+        />
+      );
     });
   };
 

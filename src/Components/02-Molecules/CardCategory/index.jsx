@@ -10,6 +10,7 @@ export default function CardCategory({
   category,
   categoryPage,
   articlePage,
+  articleId,
   headline,
   byline = "byline",
 }) {
@@ -18,7 +19,11 @@ export default function CardCategory({
       <LinkCategory category={category} destination={categoryPage} />
       <p className="p-top">TOP</p>
 
-      <Link destination={articlePage} className="article-details">
+      <Link
+        destination={articlePage}
+        state={{ articleId: { articleId } }}
+        className="article-details"
+      >
         <ArticleHeadline headline={headline} color="contrast" size="smallest" />
         <p className="article-byline">{byline}</p>
       </Link>
