@@ -1,0 +1,152 @@
+{
+  "page": 7,
+  "rows": 54,
+  "blogPage": 1,
+  "listLimit": 8,
+  "result": [
+    {
+      "id": 4,
+      "total_fav": 15,
+      "title": "Tesla teases new Cybertruck accessory: a tool rack",
+      "Likes": [
+        {
+          "id": 206,
+          "BlogId": 4,
+          "UserId": 224,
+          "User": {
+            "username": "Bagas888"
+          }
+        }
+      ],
+      "Category": {
+        "name": "Teknologi"
+      }
+    },
+    {
+      "id": 34,
+      "total_fav": 15,
+      "title": "Demo Blog Post 2",
+      "Likes": [
+        {
+          "id": 191,
+          "BlogId": 34,
+          "UserId": 194,
+          "User": {
+            "username": "vsebas7"
+          }
+        }
+      ],
+      "Category": {
+        "name": "Ekonomi"
+      }
+    },
+    {
+      "id": 33,
+      "total_fav": 11,
+      "title": "Demo Blog Post 2",
+      "Likes": [
+        {
+          "id": 182,
+          "BlogId": 33,
+          "UserId": 194,
+          "User": {
+            "username": "vsebas7"
+          }
+        }
+      ],
+      "Category": {
+        "name": "Ekonomi"
+      }
+    },
+    {
+      "id": 77,
+      "total_fav": 10,
+      "title": "Haloo teman-teman",
+      "Likes": [
+        {
+          "id": 145,
+          "BlogId": 77,
+          "UserId": 142,
+          "User": {
+            "username": "hanifrffminiproject1"
+          }
+        }
+      ],
+      "Category": {
+        "name": "Internasional"
+      }
+    },
+    {
+      "id": 11,
+      "total_fav": 10,
+      "title": "Semangat semangat",
+      "Likes": [
+        {
+          "id": 257,
+          "BlogId": 11,
+          "UserId": 311,
+          "User": {
+            "username": "sadfasfasfasfasfd"
+          }
+        }
+      ],
+      "Category": {
+        "name": "Teknologi"
+      }
+    },
+    {
+      "id": 35,
+      "total_fav": 8,
+      "title": "Demo Blog Post 3",
+      "Likes": [
+        {
+          "id": 209,
+          "BlogId": 35,
+          "UserId": 188,
+          "User": {
+            "username": "edokusmayuda"
+          }
+        }
+      ],
+      "Category": {
+        "name": "Olahraga"
+      }
+    },
+    {
+      "id": 73,
+      "total_fav": 5,
+      "title": "Hii, semangat frenn",
+      "Likes": [
+        {
+          "id": 246,
+          "BlogId": 73,
+          "UserId": 311,
+          "User": {
+            "username": "sadfasfasfasfasfd"
+          }
+        }
+      ],
+      "Category": {
+        "name": "Kuliner"
+      }
+    },
+    {
+      "id": 86,
+      "total_fav": 5,
+      "title": "hari terakhir",
+      "Likes": [
+        {
+          "id": 249,
+          "BlogId": 86,
+          "UserId": 311,
+          "User": {
+            "username": "sadfasfasfasfasfd"
+          }
+        }
+      ],
+      "Category": {
+        "name": "Fiksi"
+      }
+    }
+  ]
+}

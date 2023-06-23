@@ -172,7 +172,7 @@ const blogsSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(getMostConserved.fulfilled, (state, action) => {
-      state.mostConservedArticles = action.payload?.result;
+      state.mostConservedArticles = action.payload;
     });
 
     // POST COMPOSE ARTICLE
