@@ -24,7 +24,7 @@ export default function HomeSectionTopTenList({ mostConservedArticles = [] }) {
     });
 
   return (
-    <div className="home-section-top-ten-list">
+    <section className="home-section-top-ten-list">
       <SectionTitle
         content="Most Conserved"
         size="small"
@@ -32,6 +32,6 @@ export default function HomeSectionTopTenList({ mostConservedArticles = [] }) {
         bgColor="main"
       />
       <RenderList />
-    </div>
+    </section>
   );
 }

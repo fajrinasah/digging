@@ -17,7 +17,7 @@ export default function Carousel({ carouselArticles = [], navigate }) {
   };
 
   return (
-    <div className="carousel d-flex-column">
+    <section className="carousel d-flex-column">
       <CarouselTitle />
       <div className="slider-container">
         <Slider {...settings}>
@@ -109,6 +109,6 @@ export default function Carousel({ carouselArticles = [], navigate }) {
           </div>
         </Slider>
       </div>
-    </div>
+    </section>
   );
 }

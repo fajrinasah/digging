@@ -129,6 +129,10 @@ export default function PageHome({ id, dispatch }) {
         <HomeSectionCategoryCards flexDirection="row" categories={categories} />
       </div>
 
+      <div className="top-ten-container">
+        <HomeSectionTopTenList mostConservedArticles={mostConservedArticles} />
+      </div>
+
       <div className="carousel-container d-flex-row">
         <HomeSectionCarousel
           carouselArticles={carouselArticles}
@@ -136,10 +140,6 @@ export default function PageHome({ id, dispatch }) {
           dispatch={dispatch}
           setArticleData={setArticleData}
         />
-      </div>
-
-      <div className="top-ten-container">
-        <HomeSectionTopTenList mostConservedArticles={mostConservedArticles} />
       </div>
 
       <div className="digging-container d-flex-row">

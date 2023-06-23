@@ -14,7 +14,7 @@ export default function HomeSectionCategoryCards({
   };
 
   return (
-    <div className="home-section-category-cards">
+    <section className="home-section-category-cards">
       <SectionTitle
         content="Categories"
         size="small"
@@ -26,6 +26,6 @@ export default function HomeSectionCategoryCards({
           <RenderCategoryCards />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

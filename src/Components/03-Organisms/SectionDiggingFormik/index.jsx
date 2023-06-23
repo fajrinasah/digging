@@ -70,7 +70,7 @@ export default function SectionDigging({
   };
 
   return (
-    <div className="section-digging d-flex-column">
+    <section className="section-digging d-flex-column">
       <DiggingToolbar
         setSearchState={setSearchState}
         categories={categories}
@@ -93,6 +93,6 @@ export default function SectionDigging({
         disabledNext={disabledNext}
         onChangePagination={onChangePagination}
       />
-    </div>
+    </section>
   );
 }
