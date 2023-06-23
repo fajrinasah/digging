@@ -90,16 +90,24 @@ export default function PageHome({ id, dispatch }) {
       console.log(
         `DISPATCHED: getArticles(${currentQuery}&page=${currentPage - 1})`
       );
+
       dispatch(getArticles(`${currentQuery}&page=${currentPage - 1}`));
     } else if (page === "next") {
       console.log(
         `DISPATCHED: getArticles(${currentQuery}&page=${currentPage + 1})`
       );
+
       dispatch(getArticles(`${currentQuery}&page=${currentPage + 1}`));
     } else {
       console.log(`DISPATCHED: getArticles(${currentQuery}&page=${page})`);
+
       dispatch(getArticles(`${currentQuery}&page=${page}`));
     }
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   /*===============ACTIVE PAGE STYLE================*/
