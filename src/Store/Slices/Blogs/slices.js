@@ -145,15 +145,35 @@ export const getMostConserved = createAsyncThunk(
   async (payload, { rejectWithValue }) => {
     try {
       // GET list of the most conserved articles
-      const { data } = await api.get("/blog/pagFav");
+      const { data } = await api.get("/blog/pagFav?sort=ASC");
 
-      return data;
+      return data.result.sort((a, b) => b.total_fav - a.total_fav);
     } catch (error) {
       toastError(error.response ? error.response.data : error);
       return rejectWithValue(error.response ? error.response.data : error);
     }
   }
 );
+
+// /*==========================================
+// AsyncThunk: GET All Articles in Category
+// ===========================================*/
+
+// export const getAllArticlesInCategory = createAsyncThunk(
+//   "blogs/getMostConservedInCategory",
+//   async (payload, { rejectWithValue }) => {
+//     try {
+//       // GET list of the most conserved articles from all
+//       const { data } = await api.get(`/blog/pagFav?id_cat=${payload}`);
+
+//       console.log(data);
+//       return data.result.sort((a, b) => b.total_fav - a.total_fav);
+//     } catch (error) {
+//       toastError(error.response ? error.response.data : error);
+//       return rejectWithValue(error.response ? error.response.data : error);
+//     }
+//   }
+// );
 
 /*==========================================
 AsyncThunk: COMPOSE A FINDING (ARTICLE)
