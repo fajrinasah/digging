@@ -56,10 +56,10 @@ export default function PageRegister({ dispatch, id }) {
   return (
     <div className="page-form-template page-register d-flex-column">
       <PageTitle content="Hello, Felow History Enthusiast!" />
-      <div className="nav-to-register-page d-flex-row">
+      <div className="nav-to-login-page d-flex-row">
         <p>
           Already have an account?{" "}
-          <Link to="/login" className="link-to-register-page">
+          <Link to="/login" className="link-to-login-page">
             Login
           </Link>
         </p>

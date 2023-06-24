@@ -2,6 +2,26 @@
 =============PAGE LOGIN==========
 ===============================================*/
 
+.page-login .nav-to-register-page {
+  justify-content: center;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.page-login .nav-to-register-page .link-to-register-page {
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid var(--contrast);
+  padding: 0.5rem 1rem;
+}
+
+.page-login .nav-to-register-page .link-to-register-page:hover,
+.page-login .nav-to-register-page .link-to-register-page:active {
+  background-color: var(--contrast);
+  color: var(--main);
+  font-weight: bold;
+}
+
 .page-login .nav-to-reset-password-page {
   justify-content: right;
   padding: 1rem 1rem 3rem 0;
