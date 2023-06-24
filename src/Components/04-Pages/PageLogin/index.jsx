@@ -43,6 +43,14 @@ export default function PageLogin({ dispatch, id }) {
   return (
     <div className="page-form-template page-login d-flex-column">
       <PageTitle content="Welcome Back!" />
+      <div className="nav-to-register-page d-flex-row">
+        <p>
+          Don't have an account yet?{" "}
+          <Link to="/register" className="link-to-register-page">
+            Register
+          </Link>
+        </p>
+      </div>
       <Formik
         initialValues={{
           email: "",

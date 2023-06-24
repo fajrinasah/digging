@@ -63,13 +63,19 @@ const blogsSlice = createSlice({
 
     searchArticlesKeyword: (state, action) => {
       let regex = new RegExp(action?.payload, "i");
-      // state.filteredArticles = state.articles;
 
-      state.filteredArticles = state.articles.filter((article) =>
-        article.Blog_Keywords.filter((keywordObj) =>
-          regex.test(keywordObj.Keyword.name)
-        )
-      );
+      state.filteredArticles = state.articles
+        .map((article) => {
+          return {
+            ...article,
+            Blog_Keywords: article.Blog_Keywords.filter((keywordObj) => {
+              // filtering based on regex
+              return regex.test(keywordObj.Keyword.name);
+            }),
+          };
+        })
+        // filtering based on the length of the data
+        .filter((article) => article.Blog_Keywords.length > 0);
     },
 
     /*=======================================*/
@@ -98,11 +104,14 @@ const blogsSlice = createSlice({
     searchMyArticlesKeyword: (state, action) => {
       let regex = new RegExp(action?.payload, "i");
 
-      state.myFilteredArticles = state.myArticles.filter((article) =>
-        article.Blog_Keywords.filter((keywordObj) =>
-          regex.test(keywordObj.Keyword.name)
-        )
-      );
+      state.myFilteredArticles = state.myArticles.map((article) => {
+        return {
+          ...article,
+          Blog_Keywords: article.Blog_Keywords.filter((keywordObj) =>
+            regex.test(keywordObj.Keyword.name)
+          ),
+        };
+      });
     },
 
     /*=======================================*/
@@ -196,7 +205,6 @@ const blogsSlice = createSlice({
       state = Object.assign(state, {
         isLoading: false,
         articles: action.payload?.result,
-        // filteredArticles: action.payload?.result,
         totalPage: action.payload?.page,
         currentPage: action.payload?.blogPage,
       });
@@ -216,12 +224,9 @@ export default blogsSlice.reducer;
 // export actions
 export const {
   setFilteredArticles,
-  // getFilteredArticles,
-  // searchArticles,
   searchArticlesTitle,
   searchArticlesKeyword,
   setMyArticles,
-  // setMyInformation,
   setMyFilteredArticles,
   searchMyArticlesTitle,
   searchMyArticlesKeyword,

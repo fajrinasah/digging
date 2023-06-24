@@ -2,21 +2,21 @@
 =============PAGE REGISTER==========
 ===============================================*/
 
-.page-register .nav-to-register-page {
+.page-register .nav-to-login-page {
   justify-content: center;
   padding: 2rem;
   margin-bottom: 2rem;
 }
 
-.page-register .nav-to-register-page .link-to-register-page {
+.page-register .nav-to-login-page .link-to-login-page {
   text-decoration: none;
   color: inherit;
   border-bottom: 1px solid var(--contrast);
   padding: 0.5rem 1rem;
 }
 
-.page-register .nav-to-register-page .link-to-register-page:hover,
-.page-register .nav-to-register-page .link-to-register-page:active {
+.page-register .nav-to-login-page .link-to-login-page:hover,
+.page-register .nav-to-login-page .link-to-login-page:active {
   background-color: var(--contrast);
   color: var(--main);
   font-weight: bold;
