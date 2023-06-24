@@ -50,8 +50,8 @@ export default function PageChangePassword({ dispatch }) {
   };
 
   return (
-    <div className="page-form-template page-reset-password d-flex-column">
-      <PageTitle content="Reset Password" />
+    <div className="page-form-template page-change-password d-flex-column">
+      <PageTitle content="Change Password" />
       <Formik
         initialValues={{
           currentPassword: "",
@@ -83,10 +83,10 @@ export default function PageChangePassword({ dispatch }) {
           <div className="container">
             <form
               onSubmit={handleSubmit}
-              className="form-template form-reset-password d-flex-column"
+              className="form-template form-change-password d-flex-column"
             >
               <SectionTitle
-                content="Complete your data below to register"
+                content="Complete data below to change your password"
                 size="small"
                 color="contrast"
                 bgColor="main"

@@ -86,7 +86,7 @@ export default function PageResetPassword({ dispatch }) {
               className="form-template form-reset-password d-flex-column"
             >
               <SectionTitle
-                content="Complete your data below to register"
+                content="Complete data below to reset your password"
                 size="small"
                 color="contrast"
                 bgColor="main"

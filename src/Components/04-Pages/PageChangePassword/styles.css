@@ -1,15 +1,15 @@
 /*=========================================
 =============PAGE RESET PASSWORD==========
 ===============================================*/
-.page-reset-password > .container {
+.page-change-password > .container {
   margin-top: 2rem;
 }
 
-.page-reset-password .guides-container {
+.page-change-password .guides-container {
   position: relative;
 }
 
-.page-reset-password .guides-container .modal-help {
+.page-change-password .guides-container .modal-help {
   display: block;
   position: absolute;
   bottom: 50px;
