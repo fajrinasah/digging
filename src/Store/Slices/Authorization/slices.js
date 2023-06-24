@@ -49,7 +49,7 @@ export const verifyAccount = createAsyncThunk(
 
       return null;
     } catch (error) {
-      toastError(error.response ? error.response.data : error);
+      toastError(error.response ? error.response.data.err.message : error);
       return rejectWithValue(error.response ? error.response.data : error);
     }
   }
@@ -98,8 +98,8 @@ export const resetPassword = createAsyncThunk(
 
       return data;
     } catch (error) {
-      // toastError(error.response ? error.response.data : error);
-      toastError("Something went wrong");
+      toastError(error.response ? error.response.data.err.message : error);
+      // toastError("Something went wrong");
       return rejectWithValue(error.response ? error.response.data : error);
     }
   }
@@ -126,7 +126,7 @@ export const login = createAsyncThunk(
       return data?.isAccountExist;
       // return data;
     } catch (error) {
-      toastError(error.response ? error.response.data : error);
+      toastError(error.response ? error.response.data.err : error);
       return rejectWithValue(error.response ? error.response.data : error);
     }
   }
