@@ -23,6 +23,8 @@
   grid-area: masthead;
   justify-self: center;
   align-self: center;
+
+  padding: 4rem;
 }
 
 .page-home .access-container {
@@ -54,7 +56,9 @@
 .page-home .categories-container {
   grid-area: categories;
   align-self: start;
-  padding: 0 3rem;
+  padding: 3rem;
+
+  border: 1px solid aqua;
 }
 
 .page-home .top-ten-container {
